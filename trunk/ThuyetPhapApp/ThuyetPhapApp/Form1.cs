@@ -95,22 +95,13 @@ namespace ThuyetPhapApp
             }
         }
 
-        private void lvVideo_ItemActivate(object sender, EventArgs e)
-        {
-            
-        }
-                
-        private void lvVideo_MouseDoubleClick_1(object sender, MouseEventArgs e)
+        private void lvVideo_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             ListView.SelectedListViewItemCollection items = lvVideo.SelectedItems;
-            MessageBox.Show(items[0].Tag.ToString());
+            //MessageBox.Show(items[0].Tag.ToString());
             sfMovie.Movie = items[0].Tag.ToString();
         }
 
-        private void lvVideo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-        
+                
     }
 }

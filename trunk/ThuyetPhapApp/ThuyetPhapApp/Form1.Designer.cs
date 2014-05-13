@@ -34,9 +34,9 @@
             this.trvCategory = new System.Windows.Forms.TreeView();
             this.imApp = new System.Windows.Forms.ImageList(this.components);
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.sfMovie = new AxShockwaveFlashObjects.AxShockwaveFlash();
             this.lvVideo = new System.Windows.Forms.ListView();
             this.imVideo = new System.Windows.Forms.ImageList(this.components);
-            this.sfMovie = new AxShockwaveFlashObjects.AxShockwaveFlash();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -94,33 +94,14 @@
             // 
             // splitContainer2.Panel1
             // 
-            this.splitContainer2.Panel1.Controls.Add(this.lvVideo);
+            this.splitContainer2.Panel1.Controls.Add(this.sfMovie);
             // 
             // splitContainer2.Panel2
             // 
-            this.splitContainer2.Panel2.Controls.Add(this.sfMovie);
+            this.splitContainer2.Panel2.Controls.Add(this.lvVideo);
             this.splitContainer2.Size = new System.Drawing.Size(608, 741);
             this.splitContainer2.SplitterDistance = 377;
             this.splitContainer2.TabIndex = 1;
-            // 
-            // lvVideo
-            // 
-            this.lvVideo.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lvVideo.LargeImageList = this.imVideo;
-            this.lvVideo.Location = new System.Drawing.Point(0, 0);
-            this.lvVideo.Name = "lvVideo";
-            this.lvVideo.Size = new System.Drawing.Size(608, 377);
-            this.lvVideo.SmallImageList = this.imVideo;
-            this.lvVideo.TabIndex = 1;
-            this.lvVideo.UseCompatibleStateImageBehavior = false;
-            this.lvVideo.SelectedIndexChanged += new System.EventHandler(this.lvVideo_SelectedIndexChanged);
-            this.lvVideo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvVideo_MouseDoubleClick_1);
-            // 
-            // imVideo
-            // 
-            this.imVideo.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imVideo.ImageStream")));
-            this.imVideo.TransparentColor = System.Drawing.Color.Transparent;
-            this.imVideo.Images.SetKeyName(0, "YouTube-icon.png");
             // 
             // sfMovie
             // 
@@ -129,8 +110,26 @@
             this.sfMovie.Location = new System.Drawing.Point(0, 0);
             this.sfMovie.Name = "sfMovie";
             this.sfMovie.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("sfMovie.OcxState")));
-            this.sfMovie.Size = new System.Drawing.Size(608, 360);
-            this.sfMovie.TabIndex = 0;
+            this.sfMovie.Size = new System.Drawing.Size(608, 377);
+            this.sfMovie.TabIndex = 2;
+            // 
+            // lvVideo
+            // 
+            this.lvVideo.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvVideo.LargeImageList = this.imVideo;
+            this.lvVideo.Location = new System.Drawing.Point(0, 0);
+            this.lvVideo.Name = "lvVideo";
+            this.lvVideo.Size = new System.Drawing.Size(608, 360);
+            this.lvVideo.SmallImageList = this.imVideo;
+            this.lvVideo.TabIndex = 2;
+            this.lvVideo.UseCompatibleStateImageBehavior = false;
+            this.lvVideo.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lvVideo_MouseDoubleClick);
+            // 
+            // imVideo
+            // 
+            this.imVideo.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imVideo.ImageStream")));
+            this.imVideo.TransparentColor = System.Drawing.Color.Transparent;
+            this.imVideo.Images.SetKeyName(0, "YouTube-icon.png");
             // 
             // frmMain
             // 
@@ -159,10 +158,10 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TreeView trvCategory;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.ListView lvVideo;
-        private AxShockwaveFlashObjects.AxShockwaveFlash sfMovie;
         private System.Windows.Forms.ImageList imApp;
         private System.Windows.Forms.ImageList imVideo;
+        private AxShockwaveFlashObjects.AxShockwaveFlash sfMovie;
+        private System.Windows.Forms.ListView lvVideo;
 
     }
 }
