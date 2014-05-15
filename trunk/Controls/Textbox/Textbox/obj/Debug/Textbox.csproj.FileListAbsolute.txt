@@ -1,0 +1,9 @@
+E:\Projects\dotnet\Controls\Textbox\Textbox\bin\Debug\Textbox.exe.config
+E:\Projects\dotnet\Controls\Textbox\Textbox\bin\Debug\Textbox.exe
+E:\Projects\dotnet\Controls\Textbox\Textbox\bin\Debug\Textbox.pdb
+E:\Projects\dotnet\Controls\Textbox\Textbox\obj\Debug\Textbox.csprojResolveAssemblyReference.cache
+E:\Projects\dotnet\Controls\Textbox\Textbox\obj\Debug\Textbox.Properties.Resources.resources
+E:\Projects\dotnet\Controls\Textbox\Textbox\obj\Debug\Textbox.csproj.GenerateResource.Cache
+E:\Projects\dotnet\Controls\Textbox\Textbox\obj\Debug\Textbox.exe
+E:\Projects\dotnet\Controls\Textbox\Textbox\obj\Debug\Textbox.pdb
+E:\Projects\dotnet\Controls\Textbox\Textbox\obj\Debug\Textbox.FrmTextbox.resources
