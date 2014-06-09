@@ -12,9 +12,17 @@ namespace EmailMarketing
 {
     public partial class frmScheduleView : Form
     {
-        public frmScheduleView()
+        private CollectionScheduler lstScheduler;
+        public frmScheduleView(CollectionScheduler lstScheduler_=null)
         {
+            this.lstScheduler = lstScheduler_;
             InitializeComponent();
+        }
+
+        private void frmScheduleView_Load(object sender, EventArgs e)
+        {
+            var blist = new BindingList<Scheduler>(this.lstScheduler.getAll());
+            grdScheduler.DataSource = blist;
         }
     }
 }
