@@ -1,18 +1,67 @@
 ﻿using System.Collections.Generic;
 
 public class Customer { 
-    public int Id;
-    public string Name;
-    public string Email;
-    public string Phone;
+    private int _Id;
+    private string _Name;
+    private string _Email;
+    private string _Phone;
 
-    public Customer(int Id_=0, string Name_="", string Email_="", string Phone_="") {
-        this.Id = Id_;
-        this.Name = Name_;
-        this.Email = Email_;
-        this.Phone = Phone_;
+    public Customer(int Id=0, string Name="", string Email="", string Phone="")
+    {
+        this._Id = Id;
+        this._Name = Name;
+        this._Email = Email;
+        this._Phone = Phone;
     }
-    
+
+    public int Id
+    {
+        get
+        {
+            return this._Id;
+        }
+        set
+        {
+            this._Id = Id;
+        }
+    }    
+
+    public string Name
+    {
+        get
+        {
+            return this._Name;
+        }
+        set
+        {
+            this._Name = Name;
+        }
+    }
+
+    public string Email
+    {
+        get
+        {
+            return this._Email;
+        }
+        set
+        {
+            this._Email = Email;
+        }
+    }
+
+    public string Phone
+    {
+        get
+        {
+            return this._Phone;
+        }
+        set
+        {
+            this._Phone = Phone;
+        }
+    }    
+
 }
 
 public class CollectionCustomer {
@@ -28,6 +77,11 @@ public class CollectionCustomer {
         this.lstCustomer.Add( new Customer(5, "Thạnh", "thanhlyvan@gmail.com", "0983 991239"));
         this.lstCustomer.Add( new Customer(6, "Vĩ", "truonglapvi@gmail.com", "0902 743218"));
         this.lstCustomer.Add( new Customer(7, "Trí", "trinm1987@gmail.com", "0946 124 142"));
+    }
+
+    public List<Customer> getAll()
+    {
+        return this.lstCustomer;
     }
 
 }
