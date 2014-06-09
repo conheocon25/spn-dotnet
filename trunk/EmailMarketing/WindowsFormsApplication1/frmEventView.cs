@@ -12,9 +12,18 @@ namespace EmailMarketing
 {
     public partial class frmEventView : Form
     {
-        public frmEventView()
+        private CollectionEvent lstEvent;
+
+        public frmEventView(CollectionEvent lstEvent_ = null)
         {
+            this.lstEvent = lstEvent_;
             InitializeComponent();
+        }
+
+        private void frmEventView_Load(object sender, EventArgs e)
+        {
+            var blist = new BindingList<Event>(this.lstEvent.getAll());
+            grdEvent.DataSource = blist;
         }
     }
 }

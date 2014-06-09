@@ -28,34 +28,35 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grdSchedule = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.grdSchedule)).BeginInit();
+            this.grdScheduler = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.grdScheduler)).BeginInit();
             this.SuspendLayout();
             // 
-            // grdSchedule
+            // grdScheduler
             // 
-            this.grdSchedule.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdSchedule.Location = new System.Drawing.Point(12, 12);
-            this.grdSchedule.Name = "grdSchedule";
-            this.grdSchedule.Size = new System.Drawing.Size(768, 549);
-            this.grdSchedule.TabIndex = 0;
+            this.grdScheduler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdScheduler.Location = new System.Drawing.Point(12, 12);
+            this.grdScheduler.Name = "grdScheduler";
+            this.grdScheduler.Size = new System.Drawing.Size(768, 549);
+            this.grdScheduler.TabIndex = 0;
             // 
             // frmScheduleView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 573);
-            this.Controls.Add(this.grdSchedule);
+            this.Controls.Add(this.grdScheduler);
             this.Name = "frmScheduleView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Email Marketing > Lên lịch";
-            ((System.ComponentModel.ISupportInitialize)(this.grdSchedule)).EndInit();
+            this.Load += new System.EventHandler(this.frmScheduleView_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdScheduler)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView grdSchedule;
+        private System.Windows.Forms.DataGridView grdScheduler;
     }
 }

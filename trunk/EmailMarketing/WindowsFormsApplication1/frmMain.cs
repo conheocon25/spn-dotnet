@@ -10,7 +10,10 @@ namespace EmailMarketing
 {
     public partial class frmMain : Form
     {
-        public CollectionCustomer lstCustomer;
+        public CollectionCustomer   lstCustomer;
+        public CollectionEvent      lstEvent;
+        public CollectionScheduler  lstScheduler;
+
         public frmMain()
         {
             InitializeComponent();
@@ -19,6 +22,8 @@ namespace EmailMarketing
         private void frmMain_Load(object sender, EventArgs e)
         {
             lstCustomer = new CollectionCustomer();
+            lstEvent    = new CollectionEvent();
+            lstScheduler = new CollectionScheduler();
         }
 
         private void mnuCustomerView_Click(object sender, EventArgs e)
@@ -35,7 +40,7 @@ namespace EmailMarketing
 
         private void mnuEventView_Click(object sender, EventArgs e)
         {
-            frmEventView F = new frmEventView();
+            frmEventView F = new frmEventView(this.lstEvent);
             F.ShowDialog();
         }
 
@@ -53,7 +58,7 @@ namespace EmailMarketing
 
         private void mnuScheduleView_Click(object sender, EventArgs e)
         {
-            frmScheduleView F = new frmScheduleView();
+            frmScheduleView F = new frmScheduleView(this.lstScheduler);
             F.ShowDialog();
         }
 
