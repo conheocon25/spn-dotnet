@@ -23,7 +23,7 @@ namespace EmailMarketing
 
         private void mnuCustomerView_Click(object sender, EventArgs e)
         {
-            frmCustomerView F = new frmCustomerView();
+            frmCustomerView F = new frmCustomerView(this.lstCustomer);
             F.ShowDialog();
         }
 
