@@ -1,6 +1,6 @@
 ﻿namespace EmailMarketing
 {
-    partial class frmCustomerView
+    partial class frmSchedulerView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomerView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSchedulerView));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tvwTag = new System.Windows.Forms.TreeView();
-            this.grdCustomer = new System.Windows.Forms.DataGridView();
+            this.lstMain = new System.Windows.Forms.ListBox();
+            this.dgvScheduler = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvScheduler)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -47,35 +47,36 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.tvwTag);
+            this.splitContainer1.Panel1.Controls.Add(this.lstMain);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.grdCustomer);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvScheduler);
             this.splitContainer1.Size = new System.Drawing.Size(792, 573);
             this.splitContainer1.SplitterDistance = 264;
             this.splitContainer1.TabIndex = 0;
             // 
-            // tvwTag
+            // lstMain
             // 
-            this.tvwTag.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tvwTag.Location = new System.Drawing.Point(0, 0);
-            this.tvwTag.Name = "tvwTag";
-            this.tvwTag.Size = new System.Drawing.Size(264, 573);
-            this.tvwTag.TabIndex = 0;
-            this.tvwTag.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwTag_AfterSelect);
-            this.tvwTag.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvwTag_NodeMouseDoubleClick);
+            this.lstMain.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lstMain.FormattingEnabled = true;
+            this.lstMain.Location = new System.Drawing.Point(0, 0);
+            this.lstMain.Name = "lstMain";
+            this.lstMain.Size = new System.Drawing.Size(264, 573);
+            this.lstMain.TabIndex = 0;
+            this.lstMain.SelectedIndexChanged += new System.EventHandler(this.lstMain_SelectedIndexChanged);
+            this.lstMain.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.lstMain_MouseDoubleClick);
             // 
-            // grdCustomer
+            // dgvScheduler
             // 
-            this.grdCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdCustomer.Location = new System.Drawing.Point(0, 0);
-            this.grdCustomer.Name = "grdCustomer";
-            this.grdCustomer.Size = new System.Drawing.Size(524, 573);
-            this.grdCustomer.TabIndex = 0;
+            this.dgvScheduler.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvScheduler.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvScheduler.Location = new System.Drawing.Point(0, 0);
+            this.dgvScheduler.Name = "dgvScheduler";
+            this.dgvScheduler.Size = new System.Drawing.Size(524, 573);
+            this.dgvScheduler.TabIndex = 0;
             // 
-            // frmCustomerView
+            // frmSchedulerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -84,15 +85,15 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmCustomerView";
+            this.Name = "frmSchedulerView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Email Marketing > Khách hàng";
-            this.Load += new System.EventHandler(this.frmCustomerView_Load);
+            this.Text = "Email Marketing > Lên lịch";
+            this.Load += new System.EventHandler(this.frmSchedulerView_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvScheduler)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -100,8 +101,8 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TreeView tvwTag;
-        private System.Windows.Forms.DataGridView grdCustomer;
+        private System.Windows.Forms.ListBox lstMain;
+        private System.Windows.Forms.DataGridView dgvScheduler;
 
     }
 }

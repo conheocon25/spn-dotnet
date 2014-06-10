@@ -7,19 +7,20 @@ using System.Threading.Tasks;
 namespace EmailMarketing
 {
     public class CScheduler
-    {
-        private int     _Id;
+    {        
+        private int _Id;
         private string _Name;
-        private string _DateFrom;
-        private string _DateTo;
-        private string _Note;
+        private DateTime _Time;
+        private int _IdTemplate;
+        private int _IdCustomer;
 
-        public CScheduler(int Id = 0, string Name = "", string DateFrom = "", string DateTo = "", string Note = "")
+        public CScheduler(int Id = 0, string Name = "", DateTime Time = new DateTime(), int IdTemplate = 0, int IdCustomer = 0)
         {
             this._Id = Id;
             this._Name = Name;
-            this._DateFrom = DateFrom;
-            this._DateTo = DateTo;
+            this._Time = Time;
+            this._IdTemplate = IdTemplate;
+            this._IdCustomer = IdCustomer;
         }
 
         public int Id
@@ -46,41 +47,42 @@ namespace EmailMarketing
             }
         }
 
-        public string DateFrom
+        public int IdTemplate
         {
             get
             {
-                return this._DateFrom;
+                return this._IdTemplate;
             }
             set
             {
-                this._DateFrom = DateFrom;
+                this._IdTemplate = IdTemplate;
             }
         }
 
-        public string DateTo
+        public DateTime Time
         {
             get
             {
-                return this._DateTo;
+                return this._Time;
             }
             set
             {
-                this._DateTo = DateTo;
+                this._Time = Time;
             }
         }
 
-        public string Note
+        public int IdCustomer
         {
             get
             {
-                return this._Note;
+                return this._IdCustomer;
             }
             set
             {
-                this._Note = Note;
+                this._IdCustomer = IdCustomer;
             }
         }
+        
     }
     public class CollectionScheduler
     {
@@ -90,14 +92,19 @@ namespace EmailMarketing
         {
             this.lstScheduler = new List<CScheduler>();
 
-            this.lstScheduler.Add(new CScheduler(1, "Sự kiện mùa hè", "1/6/2014", "15/6/2014", "Sự kiện dành cho mùa hè"));
-            this.lstScheduler.Add(new CScheduler(2, "Sự kiện mùa thu", "1/9/2014", "15/9/2014", "Sự kiện dành cho mùa thu"));
-            this.lstScheduler.Add(new CScheduler(3, "Sự kiện mùa đông", "1/12/2014", "15/12/2014", "Sự kiện dành cho mùa đông"));
+            //this.lstScheduler.Add(new CScheduler(1, "Sự kiện mùa hè", "1/6/2014", "15/6/2014", "Sự kiện dành cho mùa hè"));
+            //this.lstScheduler.Add(new CScheduler(2, "Sự kiện mùa thu", "1/9/2014", "15/9/2014", "Sự kiện dành cho mùa thu"));
+            //this.lstScheduler.Add(new CScheduler(3, "Sự kiện mùa đông", "1/12/2014", "15/12/2014", "Sự kiện dành cho mùa đông"));
         }
 
         public List<CScheduler> getAll()
         {
             return this.lstScheduler;
+        }
+
+        public void Add(CScheduler Scheduler)
+        {
+            this.lstScheduler.Add(Scheduler);
         }
 
     }

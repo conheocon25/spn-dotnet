@@ -60,16 +60,10 @@ namespace EmailMarketing
 
         private void mnuScheduleView_Click(object sender, EventArgs e)
         {
-            frmScheduleView F = new frmScheduleView(this.lstScheduler);
+            frmSchedulerView F = new frmSchedulerView(this.lstEvent, this.lstCustomer);
             F.ShowDialog();
         }
-
-        private void mnuScheduleInsert_Click(object sender, EventArgs e)
-        {
-            frmScheduleInsert F = new frmScheduleInsert();
-            F.ShowDialog();
-        }
-
+                
         private void mnuAbout_Click(object sender, EventArgs e)
         {
             frmAbout F = new frmAbout();
