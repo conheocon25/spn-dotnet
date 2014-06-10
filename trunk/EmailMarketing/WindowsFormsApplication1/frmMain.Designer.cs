@@ -37,7 +37,6 @@
             this.mnuEventInsert = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuEventView = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuScheduleInsert = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuScheduleView = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuOption = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
@@ -107,23 +106,15 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuScheduleInsert,
             this.mnuScheduleView});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.aboutToolStripMenuItem.Text = "Lên lịch";
             // 
-            // mnuScheduleInsert
-            // 
-            this.mnuScheduleInsert.Name = "mnuScheduleInsert";
-            this.mnuScheduleInsert.Size = new System.Drawing.Size(100, 22);
-            this.mnuScheduleInsert.Text = "Thêm";
-            this.mnuScheduleInsert.Click += new System.EventHandler(this.mnuScheduleInsert_Click);
-            // 
             // mnuScheduleView
             // 
             this.mnuScheduleView.Name = "mnuScheduleView";
-            this.mnuScheduleView.Size = new System.Drawing.Size(100, 22);
+            this.mnuScheduleView.Size = new System.Drawing.Size(94, 22);
             this.mnuScheduleView.Text = "Xem";
             this.mnuScheduleView.Click += new System.EventHandler(this.mnuScheduleView_Click);
             // 
@@ -145,6 +136,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::EmailMarketing.Properties.Resources.e_mail;
             this.ClientSize = new System.Drawing.Size(792, 573);
             this.Controls.Add(this.mnuSystem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -174,7 +166,6 @@
         private System.Windows.Forms.ToolStripMenuItem eventToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuEventInsert;
         private System.Windows.Forms.ToolStripMenuItem mnuEventView;
-        private System.Windows.Forms.ToolStripMenuItem mnuScheduleInsert;
         private System.Windows.Forms.ToolStripMenuItem mnuScheduleView;
         private System.Windows.Forms.ToolStripMenuItem mnuOption;
     }

@@ -53,5 +53,10 @@ namespace EmailMarketing
             grdCustomer.DataSource = blist;
 
         }
+
+        private void tvwTag_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
     }
 }

@@ -10,16 +10,17 @@ namespace EmailMarketing
     {
         private int     _Id;
         private string _Name;
-        private string _DateFrom;
-        private string _DateTo;
-        private string _Note;
+        private DateTime _Time;
+        private int _IdTemplate;
+        private int _IdTag;
 
-        public CEvent(int Id = 0, string Name = "", string DateFrom = "", string DateTo = "",  string Note = "")
+        public CEvent(int Id = 0, string Name = "", DateTime Time = new DateTime(), int IdTemplate = 0, int IdTag = 0)
         {
             this._Id = Id;
             this._Name = Name;
-            this._DateFrom = DateFrom;
-            this._DateTo = DateTo;
+            this._Time = Time;
+            this._IdTemplate = IdTemplate;
+            this._IdTag = IdTag;
         }
 
         public int Id
@@ -46,39 +47,39 @@ namespace EmailMarketing
             }
         }
 
-        public string DateFrom
+        public int IdTemplate
         {
             get
             {
-                return this._DateFrom;
+                return this._IdTemplate;
             }
             set
             {
-                this._DateFrom = DateFrom;
+                this._IdTemplate = IdTemplate;
             }
         }
 
-        public string DateTo
+        public DateTime Time
         {
             get
             {
-                return this._DateTo;
+                return this._Time;
             }
             set
             {
-                this._DateTo = DateTo;
+                this._Time = Time;
             }
         }
 
-        public string Note
+        public int IdTag
         {
             get
             {
-                return this._Note;
+                return this._IdTag;
             }
             set
             {
-                this._Note = Note;
+                this._IdTag = IdTag;
             }
         }
     }
@@ -91,9 +92,7 @@ namespace EmailMarketing
         {
             this.lstEvent = new List<CEvent>();
 
-            this.lstEvent.Add(new CEvent(1, "Sự kiện mùa hè", "1/6/2014", "15/6/2014", "Sự kiện dành cho mùa hè"));
-            this.lstEvent.Add(new CEvent(2, "Sự kiện mùa thu", "1/9/2014", "15/9/2014", "Sự kiện dành cho mùa thu"));
-            this.lstEvent.Add(new CEvent(3, "Sự kiện mùa đông", "1/12/2014", "15/12/2014", "Sự kiện dành cho mùa đông"));
+            this.lstEvent.Add(new CEvent(1, "Sự kiện mùa hè", new DateTime(2014, 6, 20, 9, 30, 0), 1, 1));
         }
 
         public List<CEvent> getAll()
