@@ -67,6 +67,7 @@
             // 
             // trvCategory
             // 
+            this.trvCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.trvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.trvCategory.ImageIndex = 0;
             this.trvCategory.ImageList = this.imApp;
@@ -115,6 +116,7 @@
             // 
             // lvVideo
             // 
+            this.lvVideo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.lvVideo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvVideo.LargeImageList = this.imVideo;
             this.lvVideo.Location = new System.Drawing.Point(0, 0);
@@ -137,8 +139,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(916, 741);
             this.Controls.Add(this.splitContainer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmMain";
-            this.Text = "Ứng dụng nghe Pháp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Ứng dụng Thuyết Pháp - Chùa Long Viễn";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmMain_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);

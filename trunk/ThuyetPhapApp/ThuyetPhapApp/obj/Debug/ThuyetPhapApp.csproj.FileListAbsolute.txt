@@ -1,14 +1,17 @@
-E:\Projects\dotnet\ThuyetPhapApp\ThuyetPhapApp\bin\Debug\ThuyetPhapApp.exe.config
-E:\Projects\dotnet\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\Interop.ShockwaveFlashObjects.dll
-E:\Projects\dotnet\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
-E:\Projects\dotnet\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.csproj.ResolveComReference.cache
-E:\Projects\dotnet\ThuyetPhapApp\ThuyetPhapApp\bin\Debug\ThuyetPhapApp.exe
-E:\Projects\dotnet\ThuyetPhapApp\ThuyetPhapApp\bin\Debug\ThuyetPhapApp.pdb
-E:\Projects\dotnet\ThuyetPhapApp\ThuyetPhapApp\bin\Debug\Interop.ShockwaveFlashObjects.dll
-E:\Projects\dotnet\ThuyetPhapApp\ThuyetPhapApp\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
-E:\Projects\dotnet\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.csprojResolveAssemblyReference.cache
-E:\Projects\dotnet\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.frmMain.resources
-E:\Projects\dotnet\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.Properties.Resources.resources
-E:\Projects\dotnet\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.csproj.GenerateResource.Cache
-E:\Projects\dotnet\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.exe
-E:\Projects\dotnet\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.pdb
+c:\users\spn\documents\visual studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\bin\Debug\ThuyetPhapApp.exe.config
+c:\users\spn\documents\visual studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\bin\Debug\ThuyetPhapApp.exe
+c:\users\spn\documents\visual studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\bin\Debug\ThuyetPhapApp.pdb
+c:\users\spn\documents\visual studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\bin\Debug\Interop.ShockwaveFlashObjects.dll
+c:\users\spn\documents\visual studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\bin\Debug\AxInterop.ShockwaveFlashObjects.dll
+c:\users\spn\documents\visual studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\Interop.ShockwaveFlashObjects.dll
+c:\users\spn\documents\visual studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\AxInterop.ShockwaveFlashObjects.dll
+c:\users\spn\documents\visual studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.csproj.ResolveComReference.cache
+c:\users\spn\documents\visual studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.Properties.Resources.resources
+c:\users\spn\documents\visual studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.csproj.GenerateResource.Cache
+c:\users\spn\documents\visual studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.exe
+c:\users\spn\documents\visual studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.pdb
+C:\Users\SPN\Documents\Visual Studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.frmMain.resources
+C:\Users\SPN\Documents\Visual Studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\bin\Debug\ThuyetPhapApp.exe.manifest
+C:\Users\SPN\Documents\Visual Studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\bin\Debug\ThuyetPhapApp.application
+C:\Users\SPN\Documents\Visual Studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.exe.manifest
+C:\Users\SPN\Documents\Visual Studio 2012\Projects\ThuyetPhapApp\ThuyetPhapApp\obj\Debug\ThuyetPhapApp.application
