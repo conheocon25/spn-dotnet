@@ -7,3 +7,6 @@ E:\Projects\dotnet\Controls\Textbox\Textbox\obj\Debug\Textbox.csproj.GenerateRes
 E:\Projects\dotnet\Controls\Textbox\Textbox\obj\Debug\Textbox.exe
 E:\Projects\dotnet\Controls\Textbox\Textbox\obj\Debug\Textbox.pdb
 E:\Projects\dotnet\Controls\Textbox\Textbox\obj\Debug\Textbox.FrmTextbox.resources
+D:\AppWebServer\SPN_DOTNET\Controls\Textbox\Textbox\bin\Debug\Textbox.exe.config
+D:\AppWebServer\SPN_DOTNET\Controls\Textbox\Textbox\obj\Debug\Textbox.exe
+D:\AppWebServer\SPN_DOTNET\Controls\Textbox\Textbox\obj\Debug\Textbox.pdb
