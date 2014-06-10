@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmScheduleView));
             this.grdScheduler = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.grdScheduler)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 573);
             this.Controls.Add(this.grdScheduler);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmScheduleView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Email Marketing > Lên lịch";

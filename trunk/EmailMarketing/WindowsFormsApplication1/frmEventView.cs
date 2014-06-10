@@ -22,7 +22,7 @@ namespace EmailMarketing
 
         private void frmEventView_Load(object sender, EventArgs e)
         {
-            var blist = new BindingList<Event>(this.lstEvent.getAll());
+            var blist = new BindingList<CEvent>(this.lstEvent.getAll());
             grdEvent.DataSource = blist;
         }
     }

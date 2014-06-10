@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEventView));
             this.grdEvent = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.grdEvent)).BeginInit();
             this.SuspendLayout();
@@ -46,6 +47,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 573);
             this.Controls.Add(this.grdEvent);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmEventView";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Email Marketing > Sự kiện";

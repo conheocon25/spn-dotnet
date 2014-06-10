@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmailMarketing
 {
-    public class Event
+    public class CEvent
     {
         private int     _Id;
         private string _Name;
@@ -14,7 +14,7 @@ namespace EmailMarketing
         private string _DateTo;
         private string _Note;
 
-        public Event(int Id = 0, string Name = "", string DateFrom = "", string DateTo = "",  string Note = "")
+        public CEvent(int Id = 0, string Name = "", string DateFrom = "", string DateTo = "",  string Note = "")
         {
             this._Id = Id;
             this._Name = Name;
@@ -85,18 +85,18 @@ namespace EmailMarketing
 
     public class CollectionEvent
     {
-        private List<Event> lstEvent;
+        private List<CEvent> lstEvent;
 
         public CollectionEvent()
         {
-            this.lstEvent = new List<Event>();
+            this.lstEvent = new List<CEvent>();
 
-            this.lstEvent.Add(new Event(1, "Sự kiện mùa hè", "1/6/2014", "15/6/2014", "Sự kiện dành cho mùa hè"));
-            this.lstEvent.Add(new Event(2, "Sự kiện mùa thu", "1/9/2014", "15/9/2014", "Sự kiện dành cho mùa thu"));
-            this.lstEvent.Add(new Event(3, "Sự kiện mùa đông", "1/12/2014", "15/12/2014", "Sự kiện dành cho mùa đông"));
+            this.lstEvent.Add(new CEvent(1, "Sự kiện mùa hè", "1/6/2014", "15/6/2014", "Sự kiện dành cho mùa hè"));
+            this.lstEvent.Add(new CEvent(2, "Sự kiện mùa thu", "1/9/2014", "15/9/2014", "Sự kiện dành cho mùa thu"));
+            this.lstEvent.Add(new CEvent(3, "Sự kiện mùa đông", "1/12/2014", "15/12/2014", "Sự kiện dành cho mùa đông"));
         }
 
-        public List<Event> getAll()
+        public List<CEvent> getAll()
         {
             return this.lstEvent;
         }

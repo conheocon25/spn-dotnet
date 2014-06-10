@@ -21,7 +21,7 @@ namespace EmailMarketing
 
         private void frmScheduleView_Load(object sender, EventArgs e)
         {
-            var blist = new BindingList<Scheduler>(this.lstScheduler.getAll());
+            var blist = new BindingList<CScheduler>(this.lstScheduler.getAll());
             grdScheduler.DataSource = blist;
         }
     }
