@@ -63,6 +63,7 @@
             this.tvwTag.Name = "tvwTag";
             this.tvwTag.Size = new System.Drawing.Size(264, 573);
             this.tvwTag.TabIndex = 0;
+            this.tvwTag.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvwTag_NodeMouseDoubleClick);
             // 
             // grdCustomer
             // 
