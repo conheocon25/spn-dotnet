@@ -1,0 +1,9 @@
+E:\Projects\dotnet\CustomerMng\CustomerMng\bin\Debug\CustomerMng.exe.config
+E:\Projects\dotnet\CustomerMng\CustomerMng\bin\Debug\CustomerMng.exe
+E:\Projects\dotnet\CustomerMng\CustomerMng\bin\Debug\CustomerMng.pdb
+E:\Projects\dotnet\CustomerMng\CustomerMng\obj\Debug\CustomerMng.FCustomer.resources
+E:\Projects\dotnet\CustomerMng\CustomerMng\obj\Debug\CustomerMng.Properties.Resources.resources
+E:\Projects\dotnet\CustomerMng\CustomerMng\obj\Debug\CustomerMng.csproj.GenerateResource.Cache
+E:\Projects\dotnet\CustomerMng\CustomerMng\obj\Debug\CustomerMng.exe
+E:\Projects\dotnet\CustomerMng\CustomerMng\obj\Debug\CustomerMng.pdb
+E:\Projects\dotnet\CustomerMng\CustomerMng\obj\Debug\CustomerMng.csprojResolveAssemblyReference.cache
