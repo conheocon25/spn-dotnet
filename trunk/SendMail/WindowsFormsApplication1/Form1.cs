@@ -75,6 +75,11 @@ namespace WindowsFormsApplication1
             tt.ShowAlways = true;
             tt.SetToolTip(txtCCEmail, "Nhập email cần gửi CC vào đây!.");
         }
+
+        private void btExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         
     }
 }

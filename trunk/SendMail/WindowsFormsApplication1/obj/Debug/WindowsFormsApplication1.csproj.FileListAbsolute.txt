@@ -16,3 +16,12 @@ D:\AppWebServer\MyCodePHP\MyDotNet\SendMail\WindowsFormsApplication1\obj\Debug\W
 D:\AppWebServer\MyCodePHP\MyDotNet\SendMail\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
 D:\AppWebServer\MyCodePHP\MyDotNet\SendMail\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
 D:\AppWebServer\MyCodePHP\MyDotNet\SendMail\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+D:\AppWebServer\DOTNET\SendMail\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+D:\AppWebServer\DOTNET\SendMail\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+D:\AppWebServer\DOTNET\SendMail\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+D:\AppWebServer\DOTNET\SendMail\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+D:\AppWebServer\DOTNET\SendMail\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+D:\AppWebServer\DOTNET\SendMail\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+D:\AppWebServer\DOTNET\SendMail\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
+D:\AppWebServer\DOTNET\SendMail\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+D:\AppWebServer\DOTNET\SendMail\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
