@@ -12,10 +12,13 @@ namespace EmailMarketing
 {
     public partial class frmCustomerView : Form
     {
-        private CollectionCustomer lstCustomer;    
-        public frmCustomerView( CollectionCustomer lstCustomer_ = null )
+        private CollectionCustomer lstCustomer;
+        private CollectionTag lstTag;
+
+        public frmCustomerView( CollectionTag lstTag_ = null, CollectionCustomer lstCustomer_ = null )
         {
             InitializeComponent();
+            this.lstTag = lstTag_;
             this.lstCustomer = lstCustomer_;
         }
 
@@ -23,18 +26,31 @@ namespace EmailMarketing
         {
             var blist = new BindingList<CCustomer>(this.lstCustomer.getAll());
             grdCustomer.DataSource = blist;
-            /*
-            grdCustomer.AutoGenerateColumns = false;                        
-            DataGridViewCell cell = new DataGridViewTextBoxCell();
-            DataGridViewTextBoxColumn colName = new DataGridViewTextBoxColumn()
+
+            TreeNode N = new TreeNode("Cửa hàng ABC", 0, 1);
+            foreach (var Tag in this.lstTag.getAll() )
             {
-                CellTemplate =  cell,
-                                Name = "Name",
-                                HeaderText = "Tên khách hàng",
-                                DataPropertyName = "Name" // Tell the column which property of FileName it should use
-            };
-            grdCustomer.Columns.Add(colName);
-            */
+                string StrId = Tag.Id.ToString();
+                string StrName = Tag.Name;
+
+                //Thêm danh mục cha
+                TreeNode N1 = new TreeNode(StrName, 0, 1);
+                N1.Tag = StrId;
+                N.Nodes.Add(N1);
+            }
+            tvwTag.Nodes.Add(N);
+
+        }
+
+        private void tvwTag_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
+        {
+            int IdTag = Convert.ToInt32(e.Node.Tag);
+            var qryCustomer = from c in this.lstCustomer.getAll()
+                              where c.IdTag == IdTag
+                              select c;
+
+            var blist = new BindingList<CCustomer>(qryCustomer.ToList());
+            grdCustomer.DataSource = blist;
 
         }
     }
