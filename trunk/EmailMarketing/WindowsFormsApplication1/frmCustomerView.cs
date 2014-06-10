@@ -21,7 +21,7 @@ namespace EmailMarketing
 
         private void frmCustomerView_Load(object sender, EventArgs e)
         {
-            var blist = new BindingList<Customer>(this.lstCustomer.getAll());
+            var blist = new BindingList<CCustomer>(this.lstCustomer.getAll());
             grdCustomer.DataSource = blist;
             /*
             grdCustomer.AutoGenerateColumns = false;                        

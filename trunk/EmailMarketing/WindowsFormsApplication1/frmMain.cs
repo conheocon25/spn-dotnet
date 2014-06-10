@@ -52,7 +52,7 @@ namespace EmailMarketing
 
         private void mnuCustomerInsert_Click(object sender, EventArgs e)
         {
-            frmCustomerInsert F = new frmCustomerInsert();
+            frmCustomerInsert F = new frmCustomerInsert(this.lstCustomer);
             F.ShowDialog();
         }
 

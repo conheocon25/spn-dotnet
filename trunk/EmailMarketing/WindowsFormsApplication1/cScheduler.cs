@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EmailMarketing
 {
-    public class Scheduler
+    public class CScheduler
     {
         private int     _Id;
         private string _Name;
@@ -14,7 +14,7 @@ namespace EmailMarketing
         private string _DateTo;
         private string _Note;
 
-        public Scheduler(int Id = 0, string Name = "", string DateFrom = "", string DateTo = "", string Note = "")
+        public CScheduler(int Id = 0, string Name = "", string DateFrom = "", string DateTo = "", string Note = "")
         {
             this._Id = Id;
             this._Name = Name;
@@ -84,18 +84,18 @@ namespace EmailMarketing
     }
     public class CollectionScheduler
     {
-        private List<Scheduler> lstScheduler;
+        private List<CScheduler> lstScheduler;
 
         public CollectionScheduler()
         {
-            this.lstScheduler = new List<Scheduler>();
+            this.lstScheduler = new List<CScheduler>();
 
-            this.lstScheduler.Add(new Scheduler(1, "Sự kiện mùa hè", "1/6/2014", "15/6/2014", "Sự kiện dành cho mùa hè"));
-            this.lstScheduler.Add(new Scheduler(2, "Sự kiện mùa thu", "1/9/2014", "15/9/2014", "Sự kiện dành cho mùa thu"));
-            this.lstScheduler.Add(new Scheduler(3, "Sự kiện mùa đông", "1/12/2014", "15/12/2014", "Sự kiện dành cho mùa đông"));
+            this.lstScheduler.Add(new CScheduler(1, "Sự kiện mùa hè", "1/6/2014", "15/6/2014", "Sự kiện dành cho mùa hè"));
+            this.lstScheduler.Add(new CScheduler(2, "Sự kiện mùa thu", "1/9/2014", "15/9/2014", "Sự kiện dành cho mùa thu"));
+            this.lstScheduler.Add(new CScheduler(3, "Sự kiện mùa đông", "1/12/2014", "15/12/2014", "Sự kiện dành cho mùa đông"));
         }
 
-        public List<Scheduler> getAll()
+        public List<CScheduler> getAll()
         {
             return this.lstScheduler;
         }

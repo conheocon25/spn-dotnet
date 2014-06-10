@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mnuSystem = new System.Windows.Forms.MenuStrip();
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCustomerInsert = new System.Windows.Forms.ToolStripMenuItem();
@@ -92,14 +93,14 @@
             // mnuEventInsert
             // 
             this.mnuEventInsert.Name = "mnuEventInsert";
-            this.mnuEventInsert.Size = new System.Drawing.Size(152, 22);
+            this.mnuEventInsert.Size = new System.Drawing.Size(100, 22);
             this.mnuEventInsert.Text = "Thêm";
             this.mnuEventInsert.Click += new System.EventHandler(this.mnuEventInsert_Click);
             // 
             // mnuEventView
             // 
             this.mnuEventView.Name = "mnuEventView";
-            this.mnuEventView.Size = new System.Drawing.Size(152, 22);
+            this.mnuEventView.Size = new System.Drawing.Size(100, 22);
             this.mnuEventView.Text = "Xem";
             this.mnuEventView.Click += new System.EventHandler(this.mnuEventView_Click);
             // 
@@ -115,14 +116,14 @@
             // mnuScheduleInsert
             // 
             this.mnuScheduleInsert.Name = "mnuScheduleInsert";
-            this.mnuScheduleInsert.Size = new System.Drawing.Size(152, 22);
+            this.mnuScheduleInsert.Size = new System.Drawing.Size(100, 22);
             this.mnuScheduleInsert.Text = "Thêm";
             this.mnuScheduleInsert.Click += new System.EventHandler(this.mnuScheduleInsert_Click);
             // 
             // mnuScheduleView
             // 
             this.mnuScheduleView.Name = "mnuScheduleView";
-            this.mnuScheduleView.Size = new System.Drawing.Size(152, 22);
+            this.mnuScheduleView.Size = new System.Drawing.Size(100, 22);
             this.mnuScheduleView.Text = "Xem";
             this.mnuScheduleView.Click += new System.EventHandler(this.mnuScheduleView_Click);
             // 
@@ -147,8 +148,10 @@
             this.ClientSize = new System.Drawing.Size(792, 573);
             this.Controls.Add(this.mnuSystem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.mnuSystem;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Email Marketing";
