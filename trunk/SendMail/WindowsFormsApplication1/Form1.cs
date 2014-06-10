@@ -17,6 +17,7 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
+
         }
 
         private void btSendMail_Click(object sender, EventArgs e)
@@ -32,6 +33,8 @@ namespace WindowsFormsApplication1
             string msg = string.Empty;
             try
             {
+                string encryptedstring = MyEncrypt.Encrypt("nhatkyty25", "cuibapmialao12345");
+
                 MailAddress fromAddress = new MailAddress(from);
                 message.From = fromAddress;
                 message.To.Add(toList);
@@ -46,7 +49,7 @@ namespace WindowsFormsApplication1
                 smtpClient.EnableSsl = true;
                 smtpClient.UseDefaultCredentials = true;
                 smtpClient.Credentials = new System.Net.NetworkCredential(
-                    "thanhbao2007vl@gmail.com", "nhatkyty25");
+                    "thanhbao2007vl@gmail.com", MyEncrypt.Decrypt(encryptedstring, "cuibapmialao12345"));
 
                 smtpClient.Send(message);
                 msg = "Gửi Mail Thành Công";
@@ -79,6 +82,12 @@ namespace WindowsFormsApplication1
         private void btExit_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string encryptedstring = MyEncrypt.Encrypt("nhatkyty25", "cuibapmialao12345");
+            MessageBox.Show(encryptedstring);
         }
         
     }
