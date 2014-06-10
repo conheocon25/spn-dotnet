@@ -25,3 +25,6 @@ D:\AppWebServer\DOTNET\SendMail\WindowsFormsApplication1\obj\Debug\WindowsFormsA
 D:\AppWebServer\DOTNET\SendMail\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 D:\AppWebServer\DOTNET\SendMail\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
 D:\AppWebServer\DOTNET\SendMail\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+D:\AppWebServer\SPN_DOTNET\SendMail\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+D:\AppWebServer\SPN_DOTNET\SendMail\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+D:\AppWebServer\SPN_DOTNET\SendMail\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
