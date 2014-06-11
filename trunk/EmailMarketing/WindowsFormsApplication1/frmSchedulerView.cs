@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Net.Mail;
+using System.Net;
 
 namespace EmailMarketing
 {
@@ -26,6 +28,7 @@ namespace EmailMarketing
             {
                 lstMain.Items.Add(Event);
             }
+            
         }
 
         private void lstMain_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -33,13 +36,21 @@ namespace EmailMarketing
             CEvent curE = (CEvent)lstMain.SelectedItem;
 
             //Phát sinh ra danh sách thư mời
+            int i = 1;
             foreach( var Customer in CApp.colCustomer.getAll() ){
-                var Scheduler = new CScheduler(1, curE.Name, curE.Time, curE.IdTemplate, Customer.Id);
+                var Scheduler = new CScheduler(i++, curE.Name, curE.Time, curE.IdTemplate, Customer.Id);
                 CApp.colScheduler.Add(Scheduler);
             }
             //Gán vào lưới dữ liệu để xem
             var blist = new BindingList<CScheduler>(CApp.colScheduler.getAll());
             dgvScheduler.DataSource = blist;
+
+            CScheduler my = CApp.colScheduler.find(1);
+            my.sendMail();
+            my.sendMail();
+            my.sendMail();
+            my.sendMail();
+            my.sendMail();
         }
 
         private void lstMain_SelectedIndexChanged(object sender, EventArgs e)

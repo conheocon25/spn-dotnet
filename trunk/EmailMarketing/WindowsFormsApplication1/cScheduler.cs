@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel;
+using System.Net.Mail;
+using System.Net;
 
 namespace EmailMarketing
 {
@@ -62,6 +64,32 @@ namespace EmailMarketing
             }
         }
 
+        [Browsable(false)]
+        public CTemplate Template
+        {
+            get
+            {
+                var Template = CApp.colTemplate.find(this._IdTemplate);
+                return Template;
+            }
+            set
+            {
+                this._IdTemplate = Template.Id;
+            }
+        }
+        public string TemplateName
+        {
+            get
+            {
+                var Template = CApp.colTemplate.find(this._IdTemplate);
+                return Template.Name;
+            }
+            set
+            {
+                //this._IdCustomer = Customer.Id;
+            }
+        }
+        
         [DisplayName("Thời điểm")]
         public DateTime Time
         {
@@ -87,7 +115,42 @@ namespace EmailMarketing
                 this._IdCustomer = IdCustomer;
             }
         }
-        
+
+        [Browsable(false)]
+        public CCustomer Customer
+        {
+            get
+            {
+                var Customer = CApp.colCustomer.find(this._IdCustomer);
+                return Customer; 
+            }
+            set
+            {
+                this._IdCustomer = Customer.Id;
+            }
+        }
+        public string CustomerName
+        {
+            get
+            {
+                var Customer = CApp.colCustomer.find(this._IdCustomer);
+                return Customer.Name;
+            }
+            set
+            {
+                //this._IdCustomer = Customer.Id;
+            }
+        }
+
+        public void sendMail() {
+            //Gửi Email thử nghiệm            
+            MailMessage message = this.Template.getMail();
+            SmtpClient smtpClient = CApp.Sender._smtpClient;
+
+            message.To.Add(this.Customer.Email);
+            smtpClient.Send(message);
+        }
+
     }
     public class CollectionScheduler
     {
@@ -106,6 +169,17 @@ namespace EmailMarketing
         public void Add(CScheduler Scheduler)
         {
             this.lstScheduler.Add(Scheduler);
+        }
+
+        public CScheduler find(int Id)
+        {
+            var qry = from t in CApp.colScheduler.getAll()
+                      where t.Id == Id
+                      select t;
+            var lstScheduler = qry.ToList();
+            if (lstScheduler.Count() == 0) return null;
+
+            return lstScheduler[0];
         }
 
     }

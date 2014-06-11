@@ -65,6 +65,7 @@ namespace EmailMarketing
         {
             this.lstTag.Add(Cus);
         }
+        
         public CTag find(int Id) {
             var qryTag = from t in CApp.colTag.getAll()
                               where t.Id == Id

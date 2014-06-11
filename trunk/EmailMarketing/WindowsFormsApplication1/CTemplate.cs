@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Net.Mail;
+using System.Net;
 
 namespace EmailMarketing
 {
@@ -55,6 +56,16 @@ namespace EmailMarketing
             }
         }
 
+        public MailMessage getMail(){
+
+            MailMessage message = new MailMessage();
+            message.From = new MailAddress(CApp.Sender.UserName);            
+            message.Subject = this._Name;
+            message.IsBodyHtml = true;
+            message.Body = this._Content;
+
+            return message;
+        }
     }
 
     public class CollectionTemplate

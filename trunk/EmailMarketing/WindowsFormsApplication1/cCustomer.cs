@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace EmailMarketing
 {
@@ -128,5 +129,17 @@ namespace EmailMarketing
         {
             this.lstCustomer.Add(Cus);
         }
+
+        public CCustomer find(int Id)
+        {
+            var qry = from t in CApp.colCustomer.getAll()
+                         where t.Id == Id
+                         select t;
+            var lstCustomer = qry.ToList();
+            if (lstCustomer.Count() == 0) return null;
+
+            return lstCustomer[0];
+        }
+
     }
 }
