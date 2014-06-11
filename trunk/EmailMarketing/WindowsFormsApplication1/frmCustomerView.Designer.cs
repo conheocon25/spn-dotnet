@@ -31,12 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomerView));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvwTag = new System.Windows.Forms.TreeView();
-            this.grdCustomer = new System.Windows.Forms.DataGridView();
+            this.dgvCustomer = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.grdCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -51,7 +51,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.grdCustomer);
+            this.splitContainer1.Panel2.Controls.Add(this.dgvCustomer);
             this.splitContainer1.Size = new System.Drawing.Size(792, 573);
             this.splitContainer1.SplitterDistance = 264;
             this.splitContainer1.TabIndex = 0;
@@ -66,14 +66,14 @@
             this.tvwTag.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwTag_AfterSelect);
             this.tvwTag.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvwTag_NodeMouseDoubleClick);
             // 
-            // grdCustomer
+            // dgvCustomer
             // 
-            this.grdCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grdCustomer.Location = new System.Drawing.Point(0, 0);
-            this.grdCustomer.Name = "grdCustomer";
-            this.grdCustomer.Size = new System.Drawing.Size(524, 573);
-            this.grdCustomer.TabIndex = 0;
+            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomer.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCustomer.Location = new System.Drawing.Point(0, 0);
+            this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.Size = new System.Drawing.Size(524, 573);
+            this.dgvCustomer.TabIndex = 0;
             // 
             // frmCustomerView
             // 
@@ -92,7 +92,7 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -101,7 +101,7 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TreeView tvwTag;
-        private System.Windows.Forms.DataGridView grdCustomer;
+        private System.Windows.Forms.DataGridView dgvCustomer;
 
     }
 }

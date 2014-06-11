@@ -1,4 +1,6 @@
-﻿using System.Collections.Generic;
+﻿using System.ComponentModel;
+using System.Collections.Generic;
+
 namespace EmailMarketing
 {
     public class CCustomer
@@ -18,6 +20,7 @@ namespace EmailMarketing
             this._Phone = Phone;
         }
 
+        [DisplayName("#ID")]
         public int Id
         {
             get
@@ -29,6 +32,8 @@ namespace EmailMarketing
                 this._Id = Id;
             }
         }
+
+        [Browsable(false)]
         public int IdTag
         {
             get
@@ -40,7 +45,23 @@ namespace EmailMarketing
                 this._IdTag = IdTag;
             }
         }
+        
+        [Browsable(false)]
+        public CTag Tag
+        {
+            get
+            {                
+                var Tag = CApp.colTag.find(this._IdTag);
+                return Tag;
+            }
+            set
+            {
+                this._IdTag = Tag.Id;
+            }
+        }
 
+
+        [DisplayName("Tên KH")]
         public string Name
         {
             get
@@ -53,6 +74,7 @@ namespace EmailMarketing
             }
         }
 
+        [DisplayName("Email")]
         public string Email
         {
             get
@@ -65,6 +87,7 @@ namespace EmailMarketing
             }
         }
 
+        [DisplayName("Điện thoại")]
         public string Phone
         {
             get

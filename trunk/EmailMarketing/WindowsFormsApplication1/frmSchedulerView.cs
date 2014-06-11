@@ -11,16 +11,9 @@ using System.Windows.Forms;
 namespace EmailMarketing
 {
     public partial class frmSchedulerView : Form
-    {
-        private CollectionEvent lstEvent;
-        private CollectionScheduler lstScheduler;
-        private CollectionCustomer lstCustomer;
-
-        public frmSchedulerView(CollectionEvent lstEvent_ = null, CollectionCustomer lstCustomer_ = null)
-        {
-            this.lstEvent = lstEvent_;
-            this.lstCustomer = lstCustomer_;
-            this.lstScheduler = new CollectionScheduler();
+    {        
+        public frmSchedulerView()
+        {            
             InitializeComponent();
         }
 
@@ -29,7 +22,7 @@ namespace EmailMarketing
             lstMain.DisplayMember = "Name";
             lstMain.ValueMember = "Id";
 
-            foreach (var Event in this.lstEvent.getAll())
+            foreach (var Event in CApp.colEvent.getAll())
             {
                 lstMain.Items.Add(Event);
             }
@@ -40,12 +33,12 @@ namespace EmailMarketing
             CEvent curE = (CEvent)lstMain.SelectedItem;
 
             //Phát sinh ra danh sách thư mời
-            foreach( var Customer in this.lstCustomer.getAll() ){
+            foreach( var Customer in CApp.colCustomer.getAll() ){
                 var Scheduler = new CScheduler(1, curE.Name, curE.Time, curE.IdTemplate, Customer.Id);
-                this.lstScheduler.Add(Scheduler);
+                CApp.colScheduler.Add(Scheduler);
             }
             //Gán vào lưới dữ liệu để xem
-            var blist = new BindingList<CScheduler>(this.lstScheduler.getAll());
+            var blist = new BindingList<CScheduler>(CApp.colScheduler.getAll());
             dgvScheduler.DataSource = blist;
         }
 
