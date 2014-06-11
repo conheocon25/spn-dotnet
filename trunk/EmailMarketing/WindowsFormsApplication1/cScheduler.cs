@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace EmailMarketing
 {
     public class CScheduler
-    {        
+    {
         private int _Id;
         private string _Name;
         private DateTime _Time;
@@ -22,7 +22,8 @@ namespace EmailMarketing
             this._IdTemplate = IdTemplate;
             this._IdCustomer = IdCustomer;
         }
-
+        
+        [DisplayName("#ID")]
         public int Id
         {
             get
@@ -35,6 +36,7 @@ namespace EmailMarketing
             }
         }
 
+        [DisplayName("Tên")]
         public string Name
         {
             get
@@ -47,6 +49,7 @@ namespace EmailMarketing
             }
         }
 
+        [Browsable(false)]
         public int IdTemplate
         {
             get
@@ -59,6 +62,7 @@ namespace EmailMarketing
             }
         }
 
+        [DisplayName("Thời điểm")]
         public DateTime Time
         {
             get
@@ -71,6 +75,7 @@ namespace EmailMarketing
             }
         }
 
+        [Browsable(false)]
         public int IdCustomer
         {
             get
@@ -91,10 +96,6 @@ namespace EmailMarketing
         public CollectionScheduler()
         {
             this.lstScheduler = new List<CScheduler>();
-
-            //this.lstScheduler.Add(new CScheduler(1, "Sự kiện mùa hè", "1/6/2014", "15/6/2014", "Sự kiện dành cho mùa hè"));
-            //this.lstScheduler.Add(new CScheduler(2, "Sự kiện mùa thu", "1/9/2014", "15/9/2014", "Sự kiện dành cho mùa thu"));
-            //this.lstScheduler.Add(new CScheduler(3, "Sự kiện mùa đông", "1/12/2014", "15/12/2014", "Sự kiện dành cho mùa đông"));
         }
 
         public List<CScheduler> getAll()

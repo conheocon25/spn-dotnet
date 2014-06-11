@@ -16,6 +16,10 @@ namespace EmailMarketing
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
+
+            
+            CApp.UserEmail = "ABC";
+
             Application.Run(new frmMain());
         }
     }

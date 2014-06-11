@@ -44,6 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CApp.cs" />
     <Compile Include="CCustomer.cs" />
     <Compile Include="CEvent.cs" />
     <Compile Include="CTemplate.cs" />

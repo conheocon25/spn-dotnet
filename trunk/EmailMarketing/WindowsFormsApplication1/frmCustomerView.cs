@@ -12,23 +12,29 @@ namespace EmailMarketing
 {
     public partial class frmCustomerView : Form
     {
-        private CollectionCustomer lstCustomer;
-        private CollectionTag lstTag;
-
-        public frmCustomerView( CollectionTag lstTag_ = null, CollectionCustomer lstCustomer_ = null )
+        
+        public frmCustomerView()
         {
             InitializeComponent();
-            this.lstTag = lstTag_;
-            this.lstCustomer = lstCustomer_;
+            
+            //dgvCustomer.AutoGenerateColumns = false;
+            
+            //DataGridViewColumn dgvcName = new DataGridViewColumn();
+            //dgvcName.Name = "Name";
+            //dgvcName.HeaderText = "Tên khách hàng";
+            //dgvcName.DataPropertyName = "Name";
+            //dgvCustomer.Columns.Add(dgvcName);
+
         }
 
         private void frmCustomerView_Load(object sender, EventArgs e)
         {
-            var blist = new BindingList<CCustomer>(this.lstCustomer.getAll());
-            grdCustomer.DataSource = blist;
+            var blist = new BindingList<CCustomer>(CApp.colCustomer.getAll());
+
+            dgvCustomer.DataSource = blist;
 
             TreeNode N = new TreeNode("Cửa hàng ABC", 0, 1);
-            foreach (var Tag in this.lstTag.getAll() )
+            foreach (var Tag in CApp.colTag.getAll() )
             {
                 string StrId = Tag.Id.ToString();
                 string StrName = Tag.Name;
@@ -45,12 +51,13 @@ namespace EmailMarketing
         private void tvwTag_NodeMouseDoubleClick(object sender, TreeNodeMouseClickEventArgs e)
         {
             int IdTag = Convert.ToInt32(e.Node.Tag);
-            var qryCustomer = from c in this.lstCustomer.getAll()
+            var qryCustomer = from c in CApp.colCustomer.getAll()
                               where c.IdTag == IdTag
                               select c;
 
             var blist = new BindingList<CCustomer>(qryCustomer.ToList());
-            grdCustomer.DataSource = blist;
+            dgvCustomer.DataSource = blist;
+            
 
         }
 

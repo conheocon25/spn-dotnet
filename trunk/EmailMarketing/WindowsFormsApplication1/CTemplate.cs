@@ -75,5 +75,16 @@ namespace EmailMarketing
             return this.lstTemplate;
         }
 
+        public CTemplate find(int Id)
+        {
+            var qry = from t in CApp.colTemplate.getAll()
+                         where t.Id == Id
+                         select t;
+            var lstTemplate = qry.ToList();
+            if (lstTemplate.Count() == 0) return null;
+
+            return lstTemplate[0];
+        }
+
     }
 }

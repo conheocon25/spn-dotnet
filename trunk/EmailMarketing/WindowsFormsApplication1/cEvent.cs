@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.ComponentModel;
 
 namespace EmailMarketing
 {
@@ -22,7 +21,8 @@ namespace EmailMarketing
             this._IdTemplate = IdTemplate;
             this._IdTag = IdTag;
         }
-
+        
+        [DisplayName("#ID")]
         public int Id
         {
             get
@@ -35,6 +35,7 @@ namespace EmailMarketing
             }
         }
 
+        [DisplayName("Tên")]
         public string Name
         {
             get
@@ -47,6 +48,7 @@ namespace EmailMarketing
             }
         }
 
+        [Browsable(false)]
         public int IdTemplate
         {
             get
@@ -59,6 +61,7 @@ namespace EmailMarketing
             }
         }
 
+        [DisplayName("Thời điểm")]
         public DateTime Time
         {
             get
@@ -71,6 +74,7 @@ namespace EmailMarketing
             }
         }
 
+        [Browsable(false)]
         public int IdTag
         {
             get
@@ -82,6 +86,21 @@ namespace EmailMarketing
                 this._IdTag = IdTag;
             }
         }
+
+        [Browsable(false)]
+        public CTag Tag
+        {
+            get
+            {
+                var Tag = CApp.colTag.find(this._IdTag);
+                return Tag;
+            }
+            set
+            {
+                this._IdTag = Tag.Id;
+            }
+        }
+
     }
 
     public class CollectionEvent
