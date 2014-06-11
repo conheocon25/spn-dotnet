@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadHello", "ThreadSample\ThreadHello.csproj", "{4616806D-9698-49BA-9C06-68A5B8F26751}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadPool", "ThreadPool\ThreadPool.csproj", "{FFC5A09B-9290-4317-8F4C-8810F50F37A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadSync", "ThreadSync\ThreadSync.csproj", "{70E21BB2-BAA8-4CE6-860D-C8FF95E721C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadJoin", "ThreadJoin\ThreadJoin.csproj", "{8B725A33-5DDD-439D-900A-55E50407AAB4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadTimer", "ThreadTimer\ThreadTimer.csproj", "{2BD89336-F642-491B-B615-2508F6020578}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadHello1", "ThreadHello1\ThreadHello1.csproj", "{F524D0A6-A239-46A7-B8F0-1B9A167BF13A}"
+EndProject
+Global
+	GlobalSection(SubversionScc) = preSolution
+		Svn-Managed = True
+		Manager = AnkhSVN - Subversion Support for Visual Studio
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4616806D-9698-49BA-9C06-68A5B8F26751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4616806D-9698-49BA-9C06-68A5B8F26751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4616806D-9698-49BA-9C06-68A5B8F26751}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4616806D-9698-49BA-9C06-68A5B8F26751}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FFC5A09B-9290-4317-8F4C-8810F50F37A3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFC5A09B-9290-4317-8F4C-8810F50F37A3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFC5A09B-9290-4317-8F4C-8810F50F37A3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFC5A09B-9290-4317-8F4C-8810F50F37A3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{70E21BB2-BAA8-4CE6-860D-C8FF95E721C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{70E21BB2-BAA8-4CE6-860D-C8FF95E721C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{70E21BB2-BAA8-4CE6-860D-C8FF95E721C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{70E21BB2-BAA8-4CE6-860D-C8FF95E721C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B725A33-5DDD-439D-900A-55E50407AAB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B725A33-5DDD-439D-900A-55E50407AAB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B725A33-5DDD-439D-900A-55E50407AAB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B725A33-5DDD-439D-900A-55E50407AAB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BD89336-F642-491B-B615-2508F6020578}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BD89336-F642-491B-B615-2508F6020578}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BD89336-F642-491B-B615-2508F6020578}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BD89336-F642-491B-B615-2508F6020578}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F524D0A6-A239-46A7-B8F0-1B9A167BF13A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F524D0A6-A239-46A7-B8F0-1B9A167BF13A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F524D0A6-A239-46A7-B8F0-1B9A167BF13A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F524D0A6-A239-46A7-B8F0-1B9A167BF13A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
