@@ -5,16 +5,22 @@ using System.Text;
 using System.Net.Mail;
 using System.Net;
 using System.Windows.Forms;
+using System.Configuration;
 
 namespace EmailMarketing
 {
     public class CSender
-    {
-        public string UserName = "thanhbao2007vl@gmail.com";
-        public string UserPass = "nhatkyty25";
+    {        
+        
+        public string UserName;
+        public string UserPass;
 
         public SmtpClient _smtpClient;
         public CSender() {
+            
+            string Emailpassword = ConfigurationManager.AppSettings["password"];
+            this.UserName = ConfigurationManager.AppSettings["sender"];
+            this.UserPass = MyEncrypt.Decrypt(Emailpassword,"654789spncompanyadmin368068...");
             this._smtpClient = new SmtpClient();
             this._smtpClient.Host = "smtp.gmail.com";
             this._smtpClient.Port = 587;
