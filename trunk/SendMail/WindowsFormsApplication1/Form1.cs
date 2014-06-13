@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using System.Net.Mail;
 using System.Net;
 
+using System.Configuration;
+
+using System.Data.SqlClient;
+
 namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
@@ -87,7 +91,14 @@ namespace WindowsFormsApplication1
         private void button1_Click(object sender, EventArgs e)
         {
             string encryptedstring = MyEncrypt.Encrypt("nhatkyty25", "cuibapmialao12345");
+            textBox1.Text = encryptedstring;
             MessageBox.Show(encryptedstring);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string[] email = System.Configuration.AppSettingsReader["email"]; 
+            MessageBox.Show(email[0]);
         }
         
     }
