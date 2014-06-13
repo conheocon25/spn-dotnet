@@ -16,15 +16,7 @@ namespace EmailMarketing
         public frmCustomerView()
         {
             InitializeComponent();
-            
-            //dgvCustomer.AutoGenerateColumns = false;
-            
-            //DataGridViewColumn dgvcName = new DataGridViewColumn();
-            //dgvcName.Name = "Name";
-            //dgvcName.HeaderText = "Tên khách hàng";
-            //dgvcName.DataPropertyName = "Name";
-            //dgvCustomer.Columns.Add(dgvcName);
-
+                        
         }
 
         private void frmCustomerView_Load(object sender, EventArgs e)
@@ -58,7 +50,6 @@ namespace EmailMarketing
             var blist = new BindingList<CCustomer>(qryCustomer.ToList());
             dgvCustomer.DataSource = blist;
             
-
         }
 
         private void tvwTag_AfterSelect(object sender, TreeViewEventArgs e)

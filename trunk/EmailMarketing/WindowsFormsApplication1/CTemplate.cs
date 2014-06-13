@@ -76,7 +76,7 @@ namespace EmailMarketing
         {
             this.lstTemplate = new List<CTemplate>();
 
-            this.lstTemplate.Add(new CTemplate(1, "Mẫu 1", "Nội dung mẫu thư thứ 1"));
+            this.lstTemplate.Add(new CTemplate(1, "Mẫu 1", "<H1>Nội dung mẫu thư thứ 1</H1><B>Chúng tôi là Proton</B>"));
             this.lstTemplate.Add(new CTemplate(2, "Mẫu 2", "Nội dung mẫu thư thứ 2"));
             
         }
