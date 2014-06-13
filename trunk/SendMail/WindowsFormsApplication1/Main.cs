@@ -14,9 +14,9 @@ using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
-        public Form1()
+        public Main()
         {
             InitializeComponent();
             
@@ -99,6 +99,26 @@ namespace WindowsFormsApplication1
             string email = ConfigurationManager.AppSettings["password"];
             MessageBox.Show(email);
         }
-        
+
+        private void EncryptToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmEncrypt.ActiveForm.Show();
+        }
+
+       
+
+        private void MenuEncrypt_Click(object sender, EventArgs e)
+        {
+            FrmEncrypt Frm = new FrmEncrypt();
+            Frm.ShowDialog();
+        }
+
+        private void MenuInfoApp_Click(object sender, EventArgs e)
+        {
+            FrmInfoSystem Frm = new FrmInfoSystem();
+            Frm.ShowDialog();
+        }
+
+      
     }
 }
