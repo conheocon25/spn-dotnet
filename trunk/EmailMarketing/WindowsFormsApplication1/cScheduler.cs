@@ -15,8 +15,9 @@ namespace EmailMarketing
         private DateTime _Time;
         private int _IdTemplate;
         private int _IdCustomer;
+        private bool _State;
 
-        public CScheduler(int Id = 0, string Name = "", DateTime Time = new DateTime(), int IdTemplate = 0, int IdCustomer = 0)
+        public CScheduler(int Id = 0, string Name = "", DateTime Time = new DateTime(), int IdTemplate = 0, int IdCustomer = 0, bool State = false)
         {
             this._Id = Id;
             this._Name = Name;
@@ -142,13 +143,26 @@ namespace EmailMarketing
             }
         }
 
+        [Browsable(false)]
+        public bool State
+        {
+            get
+            {
+                return this._State;
+            }
+            set
+            {
+                this._State = State;
+            }
+        }
+
         public void sendMail() {
-            //Gửi Email thử nghiệm            
+            string UserState = "Testing ...";
             MailMessage message = this.Template.getMail();
             SmtpClient smtpClient = CApp.Sender._smtpClient;
 
             message.To.Add(this.Customer.Email);
-            smtpClient.Send(message);
+            smtpClient.SendAsync(message, UserState);
         }
 
     }
@@ -180,6 +194,15 @@ namespace EmailMarketing
             if (lstScheduler.Count() == 0) return null;
 
             return lstScheduler[0];
+        }
+
+        public List<CScheduler> findAll()
+        {
+            var qry = from t in CApp.colScheduler.getAll()
+                      where t.State == false
+                      select t;
+                        
+            return qry.ToList();
         }
 
     }

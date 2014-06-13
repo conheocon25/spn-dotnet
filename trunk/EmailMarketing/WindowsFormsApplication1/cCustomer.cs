@@ -111,7 +111,7 @@ namespace EmailMarketing
         {
             this.lstCustomer = new List<CCustomer>();
 
-            this.lstCustomer.Add(new CCustomer(1, 1, "Tuấn", "tuanbuithanh@gmail.com", "0919 153 189"));
+            this.lstCustomer.Add(new CCustomer(1, 1, "Tuấn Gmail", "tuanbuithanh@gmail.com", "0919 153 189"));
             this.lstCustomer.Add(new CCustomer(2, 1, "Bảo", "thanhbao2007vl@gmail.com", "0903 062 068"));
             this.lstCustomer.Add(new CCustomer(3, 2, "Toàn", "toanmkit@gmail.com", "0944 70 75 15"));
             this.lstCustomer.Add(new CCustomer(4, 2, "Phương", "phanhoduyphuong@gmail.com", "0913 138 338"));
@@ -139,6 +139,14 @@ namespace EmailMarketing
             if (lstCustomer.Count() == 0) return null;
 
             return lstCustomer[0];
+        }
+
+        public List<CCustomer> findByTag(int IdTag)
+        {
+            var qry = from t in CApp.colCustomer.getAll()
+                      where t.IdTag == IdTag
+                      select t;
+            return qry.ToList();
         }
 
     }

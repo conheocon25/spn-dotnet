@@ -46,6 +46,7 @@
   <ItemGroup>
     <Compile Include="CApp.cs" />
     <Compile Include="CCustomer.cs" />
+    <Compile Include="CDeliver.cs" />
     <Compile Include="CEvent.cs" />
     <Compile Include="CTemplate.cs" />
     <Compile Include="frmAbout.cs">
