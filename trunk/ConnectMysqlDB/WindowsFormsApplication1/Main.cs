@@ -52,7 +52,7 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string myConnectionString = "Server=gator3155.hostgator.com:3306;Database=spncom_qlcuahang_hdncomputer;Uid=spncom;Pwd=admin368189";
+            string myConnectionString = "Server=localhost;Database=spncom_qlcuahang_hdncomputer;Uid=root;Pwd=admin123456";
             var connection = new MySqlConnection(myConnectionString);
             connection.Open();
             try
