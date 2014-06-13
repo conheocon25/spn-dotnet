@@ -20,6 +20,7 @@ namespace EmailMarketing
             
             string Emailpassword = ConfigurationManager.AppSettings["password"];
             this.UserName = ConfigurationManager.AppSettings["sender"];
+            //string encryptedstring = MyEncrypt.Encrypt("yourpassword", "654789spncompanyadmin368068...");
             this.UserPass = MyEncrypt.Decrypt(Emailpassword,"654789spncompanyadmin368068...");
             this._smtpClient = new SmtpClient();
             this._smtpClient.Host = "smtp.gmail.com";
