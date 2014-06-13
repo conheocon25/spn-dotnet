@@ -1,6 +1,6 @@
 ﻿namespace WindowsFormsApplication1
 {
-    partial class Form1
+    partial class Main
     {
         /// <summary>
         /// Required designer variable.
@@ -38,9 +38,13 @@
             this.txtContent = new System.Windows.Forms.TextBox();
             this.txtCCEmail = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.MenuEncryptString = new System.Windows.Forms.ToolStripMenuItem();
+            this.EncryptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuEncrypt = new System.Windows.Forms.ToolStripMenuItem();
+            this.hệThốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.MenuInfoApp = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtEmail
@@ -130,41 +134,60 @@
             this.label4.TabIndex = 10;
             this.label4.Text = "CC Email:";
             // 
-            // button1
+            // menuStrip1
             // 
-            this.button1.Location = new System.Drawing.Point(275, 268);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 11;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuEncryptString,
+            this.EncryptToolStripMenuItem,
+            this.hệThốngToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(631, 24);
+            this.menuStrip1.TabIndex = 14;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // textBox1
+            // MenuEncryptString
             // 
-            this.textBox1.Location = new System.Drawing.Point(70, 297);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 20);
-            this.textBox1.TabIndex = 12;
+            this.MenuEncryptString.Name = "MenuEncryptString";
+            this.MenuEncryptString.Size = new System.Drawing.Size(12, 20);
             // 
-            // button2
+            // EncryptToolStripMenuItem
             // 
-            this.button2.Location = new System.Drawing.Point(397, 275);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 41);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.EncryptToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuEncrypt});
+            this.EncryptToolStripMenuItem.Name = "EncryptToolStripMenuItem";
+            this.EncryptToolStripMenuItem.Size = new System.Drawing.Size(61, 20);
+            this.EncryptToolStripMenuItem.Text = "Mã Hóa";
+            this.EncryptToolStripMenuItem.Click += new System.EventHandler(this.EncryptToolStripMenuItem_Click);
             // 
-            // Form1
+            // MenuEncrypt
+            // 
+            this.MenuEncrypt.AutoToolTip = true;
+            this.MenuEncrypt.Name = "MenuEncrypt";
+            this.MenuEncrypt.Size = new System.Drawing.Size(152, 22);
+            this.MenuEncrypt.Text = "Mã hóa chuỗi";
+            this.MenuEncrypt.Click += new System.EventHandler(this.MenuEncrypt_Click);
+            // 
+            // hệThốngToolStripMenuItem
+            // 
+            this.hệThốngToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.MenuInfoApp});
+            this.hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
+            this.hệThốngToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
+            this.hệThốngToolStripMenuItem.Text = "Hệ Thống";
+            // 
+            // MenuInfoApp
+            // 
+            this.MenuInfoApp.Name = "MenuInfoApp";
+            this.MenuInfoApp.Size = new System.Drawing.Size(182, 22);
+            this.MenuInfoApp.Text = "Thông tin Ứng dụng";
+            this.MenuInfoApp.Click += new System.EventHandler(this.MenuInfoApp_Click);
+            // 
+            // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(604, 435);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(631, 264);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtCCEmail);
             this.Controls.Add(this.txtContent);
@@ -175,8 +198,12 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEmail);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "Main";
+            this.Text = "Main";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,9 +221,12 @@
         private System.Windows.Forms.TextBox txtContent;
         private System.Windows.Forms.TextBox txtCCEmail;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem MenuEncryptString;
+        private System.Windows.Forms.ToolStripMenuItem EncryptToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuEncrypt;
+        private System.Windows.Forms.ToolStripMenuItem hệThốngToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem MenuInfoApp;
     }
 }
 
