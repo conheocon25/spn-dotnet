@@ -9,9 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Net.Mail;
 using System.Net;
-
 using System.Configuration;
-
 using System.Data.SqlClient;
 
 namespace WindowsFormsApplication1
@@ -21,9 +19,9 @@ namespace WindowsFormsApplication1
         public Form1()
         {
             InitializeComponent();
-
+            
         }
-
+        
         private void btSendMail_Click(object sender, EventArgs e)
         {
             string result = SendMail(txtEmail.Text, "thanhbao2007vl@gmail.com", txtCCEmail.Text, txtSubject.Text, txtContent.Text);
@@ -90,15 +88,16 @@ namespace WindowsFormsApplication1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            string encryptedstring = MyEncrypt.Encrypt("nhatkyty25", "cuibapmialao12345");
+            //string password = ConfigurationManager.AppSettings["password"];
+            string encryptedstring = MyEncrypt.Encrypt("nhatkyty25", "654789spncompanyadmin368068...");
             textBox1.Text = encryptedstring;
             MessageBox.Show(encryptedstring);
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
-            string[] email = System.Configuration.AppSettingsReader["email"]; 
-            MessageBox.Show(email[0]);
+            string email = ConfigurationManager.AppSettings["password"];
+            MessageBox.Show(email);
         }
         
     }
