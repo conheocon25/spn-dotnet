@@ -23,27 +23,14 @@ namespace CustomerMng
 
         public void initData()
         {
-            /*
-            dtgCustomer.ColumnCount = 6;
-            dtgCustomer.Columns[0].Name = "ID";
-            dtgCustomer.Columns[1].Name = "Họ và Tên";
-            dtgCustomer.Columns[2].Name = "Giới tính";
-            dtgCustomer.Columns[3].Name = "Email";
-            dtgCustomer.Columns[4].Name = "Điện thoại";
-            dtgCustomer.Columns[5].Name = "Địa chỉ";
-            */
             Connect();
-
             string sql = "SELECT * FROM tbl_customer";
             SqlDataAdapter dataadapter = new SqlDataAdapter(sql, conn);
             DataSet ds = new DataSet();
-
             dataadapter.Fill(ds, "Authors_table");
             conn.Close();
             dtgCustomer.DataSource = ds;
             dtgCustomer.DataMember = "Authors_table";
-
-            //dtgCustomer.Rows.Add(new string[] { "1", "Tuấn Bùi Thanh", "Nam", "tuanbuithanh@gmail.com", "0123456789", "Châu Thành - Đồng Tháp" });
         }
 
         private void dtgCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -69,5 +56,42 @@ namespace CustomerMng
                 MessageBox.Show("Lỗi: " + ex.Message);
             }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            if (txtID.Text != "")
+            {
+                Connect();
+                string sql = "INSERT INTO tbl_customer VALUES('" + txtID.Text + "','" + txtName.Text + "','" + txtGender.Text + "','" + txtEmail.Text + "','" + txtPhone.Text + "','" + txtAddress.Text + "')";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+                initData();
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtID.Text != "")
+            {
+                Connect();
+                string sql = "UPDATE tbl_customer SET name='" + txtName.Text + "', gender='" + txtGender.Text + "', email='" + txtEmail.Text + "', phone='" + txtPhone.Text + "', address='" + txtAddress.Text + "' WHERE id='" + txtID.Text + "'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+                initData();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtID.Text != "")
+            {
+                Connect();
+                string sql = "DELETE FROM tbl_customer WHERE id='" + txtID.Text + "'";
+                SqlCommand cmd = new SqlCommand(sql, conn);
+                cmd.ExecuteNonQuery();
+                initData();
+            }
+        }
+
     }
 }
