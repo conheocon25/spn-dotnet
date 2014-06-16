@@ -19,14 +19,16 @@ namespace WindowsFormsApplication1
         public Main()
         {
             InitializeComponent();
-             
+            btSave.Visible = false; 
         }
-
-        private void Main_Load(object sender, EventArgs e)
+        public void LoadData()
         {
             myDBConnection = new cMySQLConnection();
-            myDBConnection.LoadToDataGridView("Select * From cafecoirieng_employee", DGView1);    
-
+            myDBConnection.LoadToDataGridView("Select * From cafecoirieng_employee", DGView1); 
+        }
+        private void Main_Load(object sender, EventArgs e)
+        {
+            LoadData();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -92,13 +94,57 @@ namespace WindowsFormsApplication1
         {
             SetToText();
             btAddNew.Visible = false;
-
+            btSave.Visible = true;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             btAddNew.Visible = true;
+            btSave.Visible = false;
+            int gender = 1;
+            if (cboGender.SelectedText == "Nam")
+            {
+                gender = 0;
+            }
+            string mysql = "Insert into cafecoirieng_employee (id, name, job, gender, phone, address, salary_base, card) VALUES(null,'" 
+                + txtName.Text + "','"
+                + txtJob.Text + "',"
+                + gender + ",'"
+                + txtPhone.Text + "','"
+                + txtAddress.Text + "',"
+                + txtSalaryBase.Text + ",'')";
+            myDBConnection = new cMySQLConnection();
+            myDBConnection.Insert(mysql);
 
+            LoadData();
+        }
+
+        private void btUpdate_Click(object sender, EventArgs e)
+        {
+            int gender = 1;
+            if (cboGender.SelectedText == "Nam")
+            {
+                gender = 0;
+            }
+            string mysql = "Update cafecoirieng_employee set name='" + txtName.Text 
+                +"', job='" + txtJob.Text
+                + "', gender=" + gender
+                + ", phone='" + txtPhone.Text
+                + "', address='" + txtAddress.Text
+                + "', salary_base=" + txtSalaryBase.Text
+                + ", card='' Where id=" + txtStt.Text;
+                
+            myDBConnection = new cMySQLConnection();
+            myDBConnection.Update(mysql);
+            LoadData();
+        }
+
+        private void btDelete_Click(object sender, EventArgs e)
+        {
+            string mysql = "DELETE FROM cafecoirieng_employee WHERE id=" + txtStt.Text;
+            myDBConnection = new cMySQLConnection();
+            myDBConnection.Delete(mysql);
+            LoadData();
         }
     }
 }
