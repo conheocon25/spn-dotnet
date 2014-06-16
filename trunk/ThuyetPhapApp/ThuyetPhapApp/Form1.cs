@@ -75,7 +75,7 @@ namespace ThuyetPhapApp
 
                 //Nạp danh sách  Video Từ Website chualongvien.com
                 var docVideo = XDocument.Load("http://chualongvien.com/model/findby/VideoLibrary/" + e.Node.Tag);
-                var qryVideo = from c in docVideo.Root..Descendants("object")
+                var qryVideo = from c in docVideo.Root.Descendants("object")
                                 select c;
 
                 foreach (var obj in qryVideo)
