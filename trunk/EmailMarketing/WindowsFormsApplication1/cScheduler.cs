@@ -64,7 +64,7 @@ namespace EmailMarketing
                 this._IdTemplate = IdTemplate;
             }
         }
-
+        /*
         [Browsable(false)]
         public CTemplate Template
         {
@@ -90,7 +90,8 @@ namespace EmailMarketing
                 //this._IdCustomer = Customer.Id;
             }
         }
-        
+        */
+
         [DisplayName("Thời điểm")]
         public DateTime Time
         {
@@ -118,6 +119,7 @@ namespace EmailMarketing
         }
 
         [Browsable(false)]
+        /*
         public CCustomer Customer
         {
             get
@@ -130,6 +132,7 @@ namespace EmailMarketing
                 this._IdCustomer = Customer.Id;
             }
         }
+         
         public string CustomerName
         {
             get
@@ -142,8 +145,9 @@ namespace EmailMarketing
                 //this._IdCustomer = Customer.Id;
             }
         }
+        */
 
-        [Browsable(false)]
+        //[Browsable(false)]
         public bool State
         {
             get
@@ -157,12 +161,14 @@ namespace EmailMarketing
         }
 
         public void sendMail() {
+            /*
             string UserState = "Testing ...";
             MailMessage message = this.Template.getMail();
             SmtpClient smtpClient = CApp.Sender._smtpClient;
 
             message.To.Add(this.Customer.Email);
             smtpClient.SendAsync(message, UserState);
+             */
         }
 
     }
@@ -187,22 +193,28 @@ namespace EmailMarketing
 
         public CScheduler find(int Id)
         {
+            /*
             var qry = from t in CApp.colScheduler.getAll()
                       where t.Id == Id
                       select t;
             var lstScheduler = qry.ToList();
             if (lstScheduler.Count() == 0) return null;
-
+            
             return lstScheduler[0];
+             */
+            return null;
         }
 
         public List<CScheduler> findAll()
         {
+            /*
             var qry = from t in CApp.colScheduler.getAll()
                       where t.State == false
                       select t;
                         
             return qry.ToList();
+             */
+            return null;
         }
 
     }

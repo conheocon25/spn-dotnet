@@ -87,7 +87,8 @@ namespace EmailMarketing
             }
         }
 
-        [Browsable(false)]
+        /*
+        [Browsable(false)]        
         public CTag Tag
         {
             get
@@ -99,7 +100,7 @@ namespace EmailMarketing
             {
                 this._IdTag = Tag.Id;
             }
-        }
+        }*/
 
     }
 

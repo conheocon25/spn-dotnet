@@ -35,6 +35,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -46,10 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CApp.cs" />
-    <Compile Include="CCustomer.cs" />
     <Compile Include="CDeliver.cs" />
     <Compile Include="CEvent.cs" />
-    <Compile Include="CTemplate.cs" />
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -61,6 +60,12 @@
     </Compile>
     <Compile Include="frmCustomerInsert.Designer.cs">
       <DependentUpon>frmCustomerInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCustomerUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCustomerUpdate.Designer.cs">
+      <DependentUpon>frmCustomerUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="frmEventInsert.cs">
       <SubType>Form</SubType>
@@ -102,13 +107,15 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CScheduler.cs" />
-    <Compile Include="CTag.cs" />
     <Compile Include="CSender.cs" />
     <EmbeddedResource Include="frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCustomerInsert.resx">
       <DependentUpon>frmCustomerInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCustomerUpdate.resx">
+      <DependentUpon>frmCustomerUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEventInsert.resx">
       <DependentUpon>frmEventInsert.cs</DependentUpon>
@@ -155,6 +162,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="image\e_mail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
