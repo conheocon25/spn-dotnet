@@ -7,3 +7,12 @@ E:\Projects\dotnet\CustomerMng\CustomerMng\obj\Debug\CustomerMng.csproj.Generate
 E:\Projects\dotnet\CustomerMng\CustomerMng\obj\Debug\CustomerMng.exe
 E:\Projects\dotnet\CustomerMng\CustomerMng\obj\Debug\CustomerMng.pdb
 E:\Projects\dotnet\CustomerMng\CustomerMng\obj\Debug\CustomerMng.csprojResolveAssemblyReference.cache
+F:\AppWebServer\SPN_DOTNET\CustomerMng\CustomerMng\bin\Debug\CustomerMng.exe.config
+F:\AppWebServer\SPN_DOTNET\CustomerMng\CustomerMng\obj\Debug\CustomerMng.exe
+F:\AppWebServer\SPN_DOTNET\CustomerMng\CustomerMng\obj\Debug\CustomerMng.pdb
+F:\AppWebServer\SPN_DOTNET\CustomerMng\CustomerMng\bin\Debug\CustomerMng.exe
+F:\AppWebServer\SPN_DOTNET\CustomerMng\CustomerMng\bin\Debug\CustomerMng.pdb
+F:\AppWebServer\SPN_DOTNET\CustomerMng\CustomerMng\obj\Debug\CustomerMng.csprojResolveAssemblyReference.cache
+F:\AppWebServer\SPN_DOTNET\CustomerMng\CustomerMng\obj\Debug\CustomerMng.FCustomer.resources
+F:\AppWebServer\SPN_DOTNET\CustomerMng\CustomerMng\obj\Debug\CustomerMng.Properties.Resources.resources
+F:\AppWebServer\SPN_DOTNET\CustomerMng\CustomerMng\obj\Debug\CustomerMng.csproj.GenerateResource.Cache

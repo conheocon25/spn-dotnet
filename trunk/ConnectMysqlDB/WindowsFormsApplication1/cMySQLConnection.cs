@@ -28,15 +28,14 @@ namespace WindowsFormsApplication1
         }
         private void Initialize()
         {
-            server = "localhost";
-            database = "qlcafe_cafecoirieng";
+            server = "mysql.net";
+            database = "spncom_qlcafe_cafecoirieng";
             uid = "root";
-            password = "admin123456";
+            password = "nhatkyty25";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
-
-            connection = new MySqlConnection(connectionString);
+            connection = new MySqlConnection(connectionString);            
         }
 
         //open connection to database
@@ -99,9 +98,9 @@ namespace WindowsFormsApplication1
             this.CloseConnection();
         }
         //Insert statement
-        public void Insert()
+        public void Insert(string query)
         {
-            string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
+            //string query = "INSERT INTO tableinfo (name, age) VALUES('John Smith', '33')";
 
             //open connection
             if (this.OpenConnection() == true)
@@ -117,10 +116,11 @@ namespace WindowsFormsApplication1
             }
         }
 
+
         //Update statement
-        public void Update()
+        public void Update(string query)
         {
-            string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
+            //string query = "UPDATE tableinfo SET name='Joe', age='22' WHERE name='John Smith'";
 
             //Open connection
             if (this.OpenConnection() == true)
@@ -141,9 +141,9 @@ namespace WindowsFormsApplication1
         }
 
         //Delete statement
-        public void Delete()
+        public void Delete (string query)
         {
-            string query = "DELETE FROM tableinfo WHERE name='John Smith'";
+           // string query = "DELETE FROM tableinfo WHERE name='John Smith'";
 
             if (this.OpenConnection() == true)
             {
@@ -177,7 +177,7 @@ namespace WindowsFormsApplication1
                 {
                     list[0].Add(dataReader["id"] + "");
                     list[1].Add(dataReader["name"] + "");
-                    list[2].Add(dataReader["age"] + "");
+                    list[2].Add(dataReader["job"] + "");
                 }
 
                 //close Data Reader
