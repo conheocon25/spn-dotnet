@@ -1,9 +1,0 @@
-D:\AppWebServer\SPN_DOTNET\ConnectMysqlDB\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
-D:\AppWebServer\SPN_DOTNET\ConnectMysqlDB\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
-D:\AppWebServer\SPN_DOTNET\ConnectMysqlDB\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Main.resources
-D:\AppWebServer\SPN_DOTNET\ConnectMysqlDB\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
-D:\AppWebServer\SPN_DOTNET\ConnectMysqlDB\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
-D:\AppWebServer\SPN_DOTNET\ConnectMysqlDB\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
-D:\AppWebServer\SPN_DOTNET\ConnectMysqlDB\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
-D:\AppWebServer\SPN_DOTNET\ConnectMysqlDB\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
-D:\AppWebServer\SPN_DOTNET\ConnectMysqlDB\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
