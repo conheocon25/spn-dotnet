@@ -25,8 +25,7 @@ namespace WindowsFormsApplication1
         private void Main_Load(object sender, EventArgs e)
         {
             myDBConnection = new cMySQLConnection();
-            myDBConnection.LoadToDataGridView("Select * From cafecoirieng_employee", DGView1);
-            
+            myDBConnection.LoadToDataGridView("Select * From cafecoirieng_employee", DGView1);    
 
         }
 
@@ -53,17 +52,53 @@ namespace WindowsFormsApplication1
             connection.Close();
         }
 
-       
-        private void DGView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        public void LoadToText()
         {
             txtStt.Text = DGView1.CurrentRow.Cells[0].Value.ToString();
             txtName.Text = DGView1.CurrentRow.Cells[1].Value.ToString();
             txtJob.Text = DGView1.CurrentRow.Cells[2].Value.ToString();
-
             cboGender.SelectedIndex = int.Parse(DGView1.CurrentRow.Cells[3].Value.ToString());
             txtPhone.Text = DGView1.CurrentRow.Cells[4].Value.ToString();
             txtAddress.Text = DGView1.CurrentRow.Cells[5].Value.ToString();
             txtSalaryBase.Text = DGView1.CurrentRow.Cells[6].Value.ToString();
+        }
+
+        public void SetToText()
+        {
+            txtStt.Text = "";
+            txtName.Text = "";
+            txtJob.Text = "";
+            cboGender.SelectedIndex = 1;
+            txtPhone.Text = "";
+            txtAddress.Text = "";
+            txtSalaryBase.Text = "";
+        }
+        private void DGView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            LoadToText();
+        }
+
+        private void DGView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            LoadToText();
+        }
+
+        private void DGView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            LoadToText();
+        }
+
+        private void btAddNew_Click(object sender, EventArgs e)
+        {
+            SetToText();
+            btAddNew.Visible = false;
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            btAddNew.Visible = true;
+
         }
     }
 }

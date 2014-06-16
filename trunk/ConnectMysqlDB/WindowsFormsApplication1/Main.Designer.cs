@@ -47,6 +47,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtJob = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
+            this.btSave = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.DGView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,7 +59,9 @@
             this.DGView1.Name = "DGView1";
             this.DGView1.Size = new System.Drawing.Size(702, 251);
             this.DGView1.TabIndex = 0;
+            this.DGView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGView1_CellClick);
             this.DGView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGView1_CellContentClick);
+            this.DGView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DGView1_CellMouseClick);
             // 
             // button1
             // 
@@ -78,6 +81,7 @@
             this.btAddNew.TabIndex = 2;
             this.btAddNew.Text = "Thêm NV mới";
             this.btAddNew.UseVisualStyleBackColor = true;
+            this.btAddNew.Click += new System.EventHandler(this.btAddNew_Click);
             // 
             // btUpdate
             // 
@@ -213,11 +217,22 @@
             this.label7.TabIndex = 6;
             this.label7.Text = "Chức vụ:";
             // 
+            // btSave
+            // 
+            this.btSave.Location = new System.Drawing.Point(81, 152);
+            this.btSave.Name = "btSave";
+            this.btSave.Size = new System.Drawing.Size(90, 23);
+            this.btSave.TabIndex = 8;
+            this.btSave.Text = "Lưu lại";
+            this.btSave.UseVisualStyleBackColor = true;
+            this.btSave.Click += new System.EventHandler(this.button2_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(715, 463);
+            this.Controls.Add(this.btSave);
             this.Controls.Add(this.cboGender);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label7);
@@ -267,6 +282,7 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtJob;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btSave;
     }
 }
 
