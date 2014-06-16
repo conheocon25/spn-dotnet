@@ -31,14 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.mnuSystem = new System.Windows.Forms.MenuStrip();
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuCustomerInsert = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTagView = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCustomerView = new System.Windows.Forms.ToolStripMenuItem();
-            this.eventToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuEventInsert = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuEventView = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuTemplate = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuEvent = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuScheduleView = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuOption = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSystem.SuspendLayout();
             this.SuspendLayout();
@@ -47,9 +45,7 @@
             // 
             this.mnuSystem.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dataToolStripMenuItem,
-            this.eventToolStripMenuItem,
             this.aboutToolStripMenuItem,
-            this.mnuOption,
             this.mnuAbout});
             this.mnuSystem.Location = new System.Drawing.Point(0, 0);
             this.mnuSystem.Name = "mnuSystem";
@@ -60,48 +56,39 @@
             // dataToolStripMenuItem
             // 
             this.dataToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuCustomerInsert,
-            this.mnuCustomerView});
+            this.mnuTagView,
+            this.mnuCustomerView,
+            this.mnuTemplate,
+            this.mnuEvent});
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
-            this.dataToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
-            this.dataToolStripMenuItem.Text = "Khách hàng";
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
+            this.dataToolStripMenuItem.Text = "Thông tin";
             // 
-            // mnuCustomerInsert
+            // mnuTagView
             // 
-            this.mnuCustomerInsert.Name = "mnuCustomerInsert";
-            this.mnuCustomerInsert.Size = new System.Drawing.Size(100, 22);
-            this.mnuCustomerInsert.Text = "Thêm";
-            this.mnuCustomerInsert.Click += new System.EventHandler(this.mnuCustomerInsert_Click);
+            this.mnuTagView.Name = "mnuTagView";
+            this.mnuTagView.Size = new System.Drawing.Size(152, 22);
+            this.mnuTagView.Text = "Thẻ";
+            this.mnuTagView.Click += new System.EventHandler(this.mnuCustomerInsert_Click);
             // 
             // mnuCustomerView
             // 
             this.mnuCustomerView.Name = "mnuCustomerView";
-            this.mnuCustomerView.Size = new System.Drawing.Size(100, 22);
-            this.mnuCustomerView.Text = "Xem";
+            this.mnuCustomerView.Size = new System.Drawing.Size(152, 22);
+            this.mnuCustomerView.Text = "Khách hàng";
             this.mnuCustomerView.Click += new System.EventHandler(this.mnuCustomerView_Click);
             // 
-            // eventToolStripMenuItem
+            // mnuTemplate
             // 
-            this.eventToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mnuEventInsert,
-            this.mnuEventView});
-            this.eventToolStripMenuItem.Name = "eventToolStripMenuItem";
-            this.eventToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.eventToolStripMenuItem.Text = "Sự kiện";
+            this.mnuTemplate.Name = "mnuTemplate";
+            this.mnuTemplate.Size = new System.Drawing.Size(152, 22);
+            this.mnuTemplate.Text = "Mẫu Email";
             // 
-            // mnuEventInsert
+            // mnuEvent
             // 
-            this.mnuEventInsert.Name = "mnuEventInsert";
-            this.mnuEventInsert.Size = new System.Drawing.Size(100, 22);
-            this.mnuEventInsert.Text = "Thêm";
-            this.mnuEventInsert.Click += new System.EventHandler(this.mnuEventInsert_Click);
-            // 
-            // mnuEventView
-            // 
-            this.mnuEventView.Name = "mnuEventView";
-            this.mnuEventView.Size = new System.Drawing.Size(100, 22);
-            this.mnuEventView.Text = "Xem";
-            this.mnuEventView.Click += new System.EventHandler(this.mnuEventView_Click);
+            this.mnuEvent.Name = "mnuEvent";
+            this.mnuEvent.Size = new System.Drawing.Size(152, 22);
+            this.mnuEvent.Text = "Sự kiện";
             // 
             // aboutToolStripMenuItem
             // 
@@ -114,16 +101,9 @@
             // mnuScheduleView
             // 
             this.mnuScheduleView.Name = "mnuScheduleView";
-            this.mnuScheduleView.Size = new System.Drawing.Size(94, 22);
+            this.mnuScheduleView.Size = new System.Drawing.Size(152, 22);
             this.mnuScheduleView.Text = "Xem";
             this.mnuScheduleView.Click += new System.EventHandler(this.mnuScheduleView_Click);
-            // 
-            // mnuOption
-            // 
-            this.mnuOption.Name = "mnuOption";
-            this.mnuOption.Size = new System.Drawing.Size(60, 20);
-            this.mnuOption.Text = "Thiết lập";
-            this.mnuOption.Click += new System.EventHandler(this.mnuOption_Click);
             // 
             // mnuAbout
             // 
@@ -161,13 +141,11 @@
         private System.Windows.Forms.ToolStripMenuItem dataToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mnuAbout;
-        private System.Windows.Forms.ToolStripMenuItem mnuCustomerInsert;
+        private System.Windows.Forms.ToolStripMenuItem mnuTagView;
         private System.Windows.Forms.ToolStripMenuItem mnuCustomerView;
-        private System.Windows.Forms.ToolStripMenuItem eventToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mnuEventInsert;
-        private System.Windows.Forms.ToolStripMenuItem mnuEventView;
         private System.Windows.Forms.ToolStripMenuItem mnuScheduleView;
-        private System.Windows.Forms.ToolStripMenuItem mnuOption;
+        private System.Windows.Forms.ToolStripMenuItem mnuTemplate;
+        private System.Windows.Forms.ToolStripMenuItem mnuEvent;
     }
 }
 

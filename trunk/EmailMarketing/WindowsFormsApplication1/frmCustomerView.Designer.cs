@@ -28,15 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomerView));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvwTag = new System.Windows.Forms.TreeView();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
+            this.mnuAction = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuCustomerInsert = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuUpdate = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDelete = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
+            this.mnuAction.SuspendLayout();
+            this.mnuGrid.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -63,8 +71,9 @@
             this.tvwTag.Name = "tvwTag";
             this.tvwTag.Size = new System.Drawing.Size(264, 573);
             this.tvwTag.TabIndex = 0;
-            this.tvwTag.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwTag_AfterSelect);
+            
             this.tvwTag.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvwTag_NodeMouseDoubleClick);
+            this.tvwTag.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tvwTag_MouseUp);
             // 
             // dgvCustomer
             // 
@@ -74,6 +83,43 @@
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.Size = new System.Drawing.Size(524, 573);
             this.dgvCustomer.TabIndex = 0;
+            this.dgvCustomer.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvCustomer_MouseClick);
+            // 
+            // mnuAction
+            // 
+            this.mnuAction.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuCustomerInsert});
+            this.mnuAction.Name = "mnuAction";
+            this.mnuAction.Size = new System.Drawing.Size(135, 26);
+            // 
+            // mnuCustomerInsert
+            // 
+            this.mnuCustomerInsert.Name = "mnuCustomerInsert";
+            this.mnuCustomerInsert.Size = new System.Drawing.Size(134, 22);
+            this.mnuCustomerInsert.Text = "Thêm mới ...";
+            this.mnuCustomerInsert.Click += new System.EventHandler(this.mnuCustomerInsert_Click);
+            // 
+            // mnuGrid
+            // 
+            this.mnuGrid.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuUpdate,
+            this.mnuDelete});
+            this.mnuGrid.Name = "mnuGrid";
+            this.mnuGrid.Size = new System.Drawing.Size(119, 48);
+            // 
+            // mnuUpdate
+            // 
+            this.mnuUpdate.Name = "mnuUpdate";
+            this.mnuUpdate.Size = new System.Drawing.Size(118, 22);
+            this.mnuUpdate.Text = "Cập nhật";
+            this.mnuUpdate.Click += new System.EventHandler(this.mnuUpdate_Click);
+            // 
+            // mnuDelete
+            // 
+            this.mnuDelete.Name = "mnuDelete";
+            this.mnuDelete.Size = new System.Drawing.Size(118, 22);
+            this.mnuDelete.Text = "Xóa";
+            this.mnuDelete.Click += new System.EventHandler(this.mnuDelete_Click);
             // 
             // frmCustomerView
             // 
@@ -93,6 +139,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
+            this.mnuAction.ResumeLayout(false);
+            this.mnuGrid.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -102,6 +150,11 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.TreeView tvwTag;
         private System.Windows.Forms.DataGridView dgvCustomer;
+        private System.Windows.Forms.ContextMenuStrip mnuAction;
+        private System.Windows.Forms.ToolStripMenuItem mnuCustomerInsert;
+        private System.Windows.Forms.ContextMenuStrip mnuGrid;
+        private System.Windows.Forms.ToolStripMenuItem mnuUpdate;
+        private System.Windows.Forms.ToolStripMenuItem mnuDelete;
 
     }
 }

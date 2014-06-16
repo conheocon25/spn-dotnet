@@ -26,12 +26,12 @@ namespace EmailMarketing
         {
             lstMain.DisplayMember = "Name";
             lstMain.ValueMember = "Id";
-
+            /*
             foreach (var Event in CApp.colEvent.getAll())
             {
                 lstMain.Items.Add(Event);
             }
-            
+            */
         }
 
         private void lstMain_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -39,17 +39,21 @@ namespace EmailMarketing
             CEvent curE = (CEvent)lstMain.SelectedItem;
 
             //Phát sinh ra danh sách thư mời
+            /*
             int i = 1;
             foreach( var Customer in CApp.colCustomer.findByTag(curE.IdTag) ){
                 var Scheduler = new CScheduler(i++, curE.Name, curE.Time, curE.IdTemplate, Customer.Id, false);
                 CApp.colScheduler.Add(Scheduler);
                 
             }
+             */
             //Gán vào lưới dữ liệu để xem
+            /*
             var blist = new BindingList<CScheduler>(CApp.colScheduler.getAll());
             dgvScheduler.DataSource = blist;
 
             updateProcesssing();
+             */
         }
 
         private void lstMain_SelectedIndexChanged(object sender, EventArgs e)
@@ -59,7 +63,7 @@ namespace EmailMarketing
 
         private void tmrSending_Tick(object sender, EventArgs e)
         {
-
+            /*
             if (CApp.bNextMessage == true && CApp.colScheduler.getAll().Count > curMessage)
             {
                 CApp.colScheduler.getAll()[curMessage].sendMail();
@@ -67,6 +71,7 @@ namespace EmailMarketing
                 CApp.bNextMessage = false;
                 updateProcesssing();
             }
+             */
         }
 
         private void cmdStart_Click(object sender, EventArgs e)
@@ -83,7 +88,7 @@ namespace EmailMarketing
             updateProcesssing();
         }
         public void updateProcesssing(){
-            lblProcessing.Text = curMessage + " / " + CApp.colScheduler.getAll().Count;
+            //lblProcessing.Text = curMessage + " / " + CApp.colScheduler.getAll().Count;
         }
     }
 }

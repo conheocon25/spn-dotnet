@@ -20,8 +20,8 @@ namespace EmailMarketing
 
         private void frmEventView_Load(object sender, EventArgs e)
         {
-            var blist = new BindingList<CEvent>(CApp.colEvent.getAll());
-            grdEvent.DataSource = blist;
+            //var blist = new BindingList<CEvent>(CApp.colEvent.getAll());
+            //grdEvent.DataSource = blist;
         }
     }
 }

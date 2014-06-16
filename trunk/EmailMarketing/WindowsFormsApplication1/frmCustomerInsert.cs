@@ -7,15 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace EmailMarketing
 {
     public partial class frmCustomerInsert : Form
     {
-        private CollectionCustomer lstCustomer;    
-        public frmCustomerInsert(CollectionCustomer lstCustomer_=null)
-        {
-            this.lstCustomer = lstCustomer_;
+        public int IdTag = 1;
+        public int State = -1;
+
+        public frmCustomerInsert()
+        {            
             InitializeComponent();
         }
 
@@ -24,11 +26,21 @@ namespace EmailMarketing
 
         }
 
-        private void btnInsert_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            CCustomer Cus = new CCustomer(Convert.ToInt32(txtId.Text), 1, txtName.Text, txtEmail.Text, txtPhone.Text);
-            this.lstCustomer.Add(Cus);
+            CApp.connect();
+
+            SqlCommand cmd = new SqlCommand("INSERT INTO tbl_customer(name, phone, email, id_tag) VALUES(@name, @phone, @email, @id_tag)", CApp.connection);
+            cmd.Parameters.AddWithValue("@name", txtName.Text);
+            cmd.Parameters.AddWithValue("@phone", txtPhone.Text);
+            cmd.Parameters.AddWithValue("@email", txtEmail.Text);
+            cmd.Parameters.AddWithValue("@id_tag", IdTag);
+            cmd.ExecuteNonQuery();
+            State = 1;                            
+            CApp.close();
+
             this.Close();
         }
+               
     }
 }
