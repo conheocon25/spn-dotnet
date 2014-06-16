@@ -14,8 +14,8 @@ namespace WindowsFormsApplication1
 {
     public partial class Main : Form
     {
-        string myConnectionString;
-        object connection;
+        cMySQLConnection myDBConnection;
+        
         public Main()
         {
             InitializeComponent();
@@ -24,29 +24,9 @@ namespace WindowsFormsApplication1
 
         private void Main_Load(object sender, EventArgs e)
         {
-            string myConnectionString = "Server=localhost;Database=spncom_qlcuahang_hdncomputer;Uid=root;Pwd=admin123456";
-            var connection = new MySqlConnection(myConnectionString);
-            connection.Open();
-            try
-            {
-                MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "Select id, name, email From shopc_user";
-                var dataAdapter = new MySqlDataAdapter(cmd);
-                var dataSet = new DataSet();
-                dataAdapter.Fill(dataSet);
-                dataGridView1.DataSource = dataSet.Tables[0].DefaultView;
-
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("loi");
-                throw;
-            }
-            connection.Close();
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
+            myDBConnection = new cMySQLConnection();
+            myDBConnection.LoadToDataGridView("Select * From cafecoirieng_employee", DGView1);
+            
 
         }
 
@@ -62,7 +42,7 @@ namespace WindowsFormsApplication1
                 var dataAdapter = new MySqlDataAdapter(cmd);
                 var dataSet = new DataSet();
                 dataAdapter.Fill(dataSet);
-                dataGridView1.DataSource = dataSet.Tables[0].DefaultView;
+                DGView1.DataSource = dataSet.Tables[0].DefaultView;
                 
             }
             catch (Exception)
@@ -71,6 +51,19 @@ namespace WindowsFormsApplication1
                 throw;
             }
             connection.Close();
+        }
+
+       
+        private void DGView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtStt.Text = DGView1.CurrentRow.Cells[0].Value.ToString();
+            txtName.Text = DGView1.CurrentRow.Cells[1].Value.ToString();
+            txtJob.Text = DGView1.CurrentRow.Cells[2].Value.ToString();
+
+            cboGender.SelectedIndex = int.Parse(DGView1.CurrentRow.Cells[3].Value.ToString());
+            txtPhone.Text = DGView1.CurrentRow.Cells[4].Value.ToString();
+            txtAddress.Text = DGView1.CurrentRow.Cells[5].Value.ToString();
+            txtSalaryBase.Text = DGView1.CurrentRow.Cells[6].Value.ToString();
         }
     }
 }

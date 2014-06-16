@@ -29,9 +29,9 @@ namespace WindowsFormsApplication1
         private void Initialize()
         {
             server = "localhost";
-            database = "connectcsharptomysql";
-            uid = "username";
-            password = "password";
+            database = "qlcafe_cafecoirieng";
+            uid = "root";
+            password = "admin123456";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
@@ -78,6 +78,26 @@ namespace WindowsFormsApplication1
             }
         }
 
+        public void LoadToDataGridView(String query, DataGridView DataGrid)
+        {
+            try
+            {
+                this.OpenConnection();
+                MySqlCommand cmd = connection.CreateCommand();
+                cmd.CommandText = query;
+                var dataAdapter = new MySqlDataAdapter(cmd);
+                var dataSet = new DataSet();
+                dataAdapter.Fill(dataSet);
+                DataGrid.DataSource = dataSet.Tables[0].DefaultView;
+
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("loi");
+                throw;
+            }
+            this.CloseConnection();
+        }
         //Insert statement
         public void Insert()
         {
