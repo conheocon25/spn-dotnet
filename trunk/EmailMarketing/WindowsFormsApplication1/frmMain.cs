@@ -41,7 +41,7 @@ namespace EmailMarketing
         
         private void mnuScheduleView_Click(object sender, EventArgs e)
         {
-            frmSchedulerView F = new frmSchedulerView();
+            frmScheduler F = new frmScheduler();
             F.ShowDialog();
         }
                 

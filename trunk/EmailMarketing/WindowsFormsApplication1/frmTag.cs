@@ -77,22 +77,15 @@ namespace EmailMarketing
         }
 
         private void mnuDelete_Click(object sender, EventArgs e)
-        {
-            int Index = -1;
-            string Id = "";
+        {            
             if (dgvTag.SelectedRows.Count > 0)
             {
-                Index = dgvTag.SelectedRows[0].Index;
-                Id = dgvTag.Rows[Index].Cells[0].Value.ToString();
+                int Index = dgvTag.SelectedRows[0].Index;
+                int Id = (int)dgvTag.Rows[Index].Cells[0].Value;
                 DialogResult result = MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
-                {
-                    CApp.connect();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM tbl_tag WHERE id=@id", CApp.connection);
-                    cmd.Parameters.AddWithValue("@id", Id);
-                    cmd.ExecuteNonQuery();
-                    CApp.close();
-
+                {                    
+                    CService.deleteById("tbl_tag", Id);
                     CService.updateGrid(dgvTag, "SELECT * FROM tbl_tag");
                 }
             }

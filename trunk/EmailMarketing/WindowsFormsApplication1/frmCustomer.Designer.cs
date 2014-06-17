@@ -32,13 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomer));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvwTag = new System.Windows.Forms.TreeView();
+            this.imlTag = new System.Windows.Forms.ImageList(this.components);
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.mnuAction = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuCustomerInsert = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDelete = new System.Windows.Forms.ToolStripMenuItem();
-            this.imlTag = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -79,6 +79,13 @@
             this.tvwTag.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvwTag_NodeMouseDoubleClick);
             this.tvwTag.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tvwTag_MouseUp);
             // 
+            // imlTag
+            // 
+            this.imlTag.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imlTag.ImageStream")));
+            this.imlTag.TransparentColor = System.Drawing.Color.Transparent;
+            this.imlTag.Images.SetKeyName(0, "Folder-icon.png");
+            this.imlTag.Images.SetKeyName(1, "Folder-Open-icon.png");
+            // 
             // dgvCustomer
             // 
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -87,7 +94,6 @@
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.Size = new System.Drawing.Size(524, 573);
             this.dgvCustomer.TabIndex = 0;
-            this.dgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellContentClick);
             this.dgvCustomer.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvCustomer_MouseClick);
             // 
             // mnuAction
@@ -126,14 +132,7 @@
             this.mnuDelete.Text = "Xóa";
             this.mnuDelete.Click += new System.EventHandler(this.mnuDelete_Click);
             // 
-            // imlTag
-            // 
-            this.imlTag.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imlTag.ImageStream")));
-            this.imlTag.TransparentColor = System.Drawing.Color.Transparent;
-            this.imlTag.Images.SetKeyName(0, "Folder-icon.png");
-            this.imlTag.Images.SetKeyName(1, "Folder-Open-icon.png");
-            // 
-            // frmCustomerView
+            // frmCustomer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,7 +141,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmCustomerView";
+            this.Name = "frmCustomer";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Email Marketing > Khách hàng";
             this.Load += new System.EventHandler(this.frmCustomerView_Load);

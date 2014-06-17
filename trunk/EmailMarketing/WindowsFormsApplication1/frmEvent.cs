@@ -39,22 +39,15 @@ namespace EmailMarketing
         }
 
         private void mnuDelete_Click(object sender, EventArgs e)
-        {
-            int Index = -1;
-            string Id = "";
+        {            
             if (dgvEvent.SelectedRows.Count > 0)
             {
-                Index = dgvEvent.SelectedRows[0].Index;
-                Id = dgvEvent.Rows[Index].Cells[0].Value.ToString();
+                int Index = dgvEvent.SelectedRows[0].Index;
+                int Id = (int)dgvEvent.Rows[Index].Cells[0].Value;
                 DialogResult result = MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    CApp.connect();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM tbl_event WHERE id=@id", CApp.connection);
-                    cmd.Parameters.AddWithValue("@id", Id);
-                    cmd.ExecuteNonQuery();
-                    CApp.close();
-
+                    CService.deleteById("tbl_event", Id);
                     CService.updateGrid(dgvEvent, "SELECT * FROM tbl_event");
                 }
             }
@@ -62,7 +55,50 @@ namespace EmailMarketing
 
         private void mnuUpdate_Click(object sender, EventArgs e)
         {
+            int Index = -1;
+            string Id = "";
+            if (dgvEvent.SelectedRows.Count > 0)
+            {
+                CApp.connect();
+                Index = dgvEvent.SelectedRows[0].Index;
+                Id = dgvEvent.Rows[Index].Cells[0].Value.ToString();
 
+                SqlCommand cmdTag = new SqlCommand("SELECT * FROM tbl_tag", CApp.connection);
+                SqlDataReader rdrTag = cmdTag.ExecuteReader();
+                DataTable dtTag = new DataTable();
+                dtTag.Load(rdrTag);
+
+                SqlCommand cmdTemplate = new SqlCommand("SELECT * FROM tbl_template", CApp.connection);
+                SqlDataReader rdrTemplate = cmdTemplate.ExecuteReader();
+                DataTable dtTemplate = new DataTable();
+                dtTemplate.Load(rdrTemplate);
+                                
+                SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_event WHERE id=@id", CApp.connection);
+                cmd.Parameters.AddWithValue("@id", Id);
+
+                SqlDataReader reader = cmd.ExecuteReader();
+                reader.Read();
+                frmEventUpdate F = new frmEventUpdate(dtTag, dtTemplate, reader["name"].ToString(), (int)reader["id_tag"], (int)reader["id_template"], DateTime.Parse(reader["time"].ToString()));
+                
+                F.ShowDialog();
+                CApp.close();
+                
+                CApp.connect();
+                if (F.State == 1)
+                {
+                    SqlCommand cmdUpdate = new SqlCommand("UPDATE tbl_event SET name=@name, id_tag=@id_tag, id_template=@id_template, time=@time WHERE id=@id", CApp.connection);
+                    cmdUpdate.Parameters.AddWithValue("@id", Id);
+                    cmdUpdate.Parameters.AddWithValue("@name", F.NameEvent);
+                    cmdUpdate.Parameters.AddWithValue("@id_tag", F.IdTag);
+                    cmdUpdate.Parameters.AddWithValue("@id_template", F.IdTemplate);
+                    cmdUpdate.Parameters.AddWithValue("@time", F.Time);
+
+                    cmdUpdate.ExecuteNonQuery();
+                    CService.updateGrid(dgvEvent, "SELECT * FROM tbl_event");
+                }
+
+                CApp.close();
+            }
         }
 
         private void mnuInsert_Click(object sender, EventArgs e)
