@@ -80,16 +80,16 @@ namespace ThuyetPhapApp
 
                 foreach (var obj in qryVideo)
                 {
-                    string StrId    = obj.Element("id").Value;
-                    string StrName  = obj.Element("name").Value;
-                    string StrURL   = obj.Element("url").Value;
-                    string StrTime  = obj.Element("time").Value;
-                    string StrCount = obj.Element("count").Value;
+                    string id    = obj.Element("id").Value;
+                    string name  = obj.Element("name").Value;
+                    string url   = obj.Element("url").Value;
+                    string time  = obj.Element("time").Value;
+                    string count = obj.Element("count").Value;
 
-                    var Video = new ListViewItem(new[] { StrName, StrTime, StrCount });
-                    Video.Tag = StrURL;
-                    Video.ImageIndex = 0;
-                    lvVideo.Items.Add(Video);
+                    var video = new ListViewItem(new[] { name, time, count });
+                    video.Tag = url;
+                    video.ImageIndex = 0;
+                    lvVideo.Items.Add(video);
                 }
                 
             }
