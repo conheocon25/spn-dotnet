@@ -1,6 +1,6 @@
 ﻿namespace EmailMarketing
 {
-    partial class frmEventInsert
+    partial class frmEventUpdate
     {
         /// <summary>
         /// Required designer variable.
@@ -28,24 +28,66 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEventInsert));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmEventUpdate));
+            this.label4 = new System.Windows.Forms.Label();
+            this.cboTemplate = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cboTag = new System.Windows.Forms.ComboBox();
+            this.dtpTime = new System.Windows.Forms.DateTimePicker();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dtpTime = new System.Windows.Forms.DateTimePicker();
-            this.cboTag = new System.Windows.Forms.ComboBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.cboTemplate = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(193, 171);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(28, 13);
+            this.label4.TabIndex = 27;
+            this.label4.Text = "Mẫu";
+            // 
+            // cboTemplate
+            // 
+            this.cboTemplate.FormattingEnabled = true;
+            this.cboTemplate.Location = new System.Drawing.Point(234, 168);
+            this.cboTemplate.Name = "cboTemplate";
+            this.cboTemplate.Size = new System.Drawing.Size(187, 21);
+            this.cboTemplate.TabIndex = 26;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(193, 144);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 13);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Nhóm";
+            // 
+            // cboTag
+            // 
+            this.cboTag.FormattingEnabled = true;
+            this.cboTag.Location = new System.Drawing.Point(234, 141);
+            this.cboTag.Name = "cboTag";
+            this.cboTag.Size = new System.Drawing.Size(187, 21);
+            this.cboTag.TabIndex = 24;
+            // 
+            // dtpTime
+            // 
+            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dtpTime.Location = new System.Drawing.Point(234, 115);
+            this.dtpTime.Name = "dtpTime";
+            this.dtpTime.Size = new System.Drawing.Size(187, 20);
+            this.dtpTime.TabIndex = 23;
             // 
             // btnUpdate
             // 
             this.btnUpdate.Location = new System.Drawing.Point(234, 205);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(102, 31);
-            this.btnUpdate.TabIndex = 13;
+            this.btnUpdate.TabIndex = 22;
             this.btnUpdate.Text = "Lưu";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -56,17 +98,15 @@
             this.label2.Location = new System.Drawing.Point(177, 115);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(51, 13);
-            this.label2.TabIndex = 9;
+            this.label2.TabIndex = 21;
             this.label2.Text = "Thời gian";
-            
             // 
             // txtName
             // 
             this.txtName.Location = new System.Drawing.Point(234, 89);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(187, 20);
-            this.txtName.TabIndex = 8;
-            
+            this.txtName.TabIndex = 20;
             // 
             // label1
             // 
@@ -74,58 +114,10 @@
             this.label1.Location = new System.Drawing.Point(170, 89);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(63, 13);
-            this.label1.TabIndex = 7;
+            this.label1.TabIndex = 19;
             this.label1.Text = "Tên sự kiện";
-            
             // 
-            // dtpTime
-            // 
-            this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpTime.Location = new System.Drawing.Point(234, 115);
-            this.dtpTime.Name = "dtpTime";
-            this.dtpTime.Size = new System.Drawing.Size(187, 20);
-            this.dtpTime.TabIndex = 14;
-            
-            // 
-            // cboTag
-            // 
-            this.cboTag.FormattingEnabled = true;
-            this.cboTag.Location = new System.Drawing.Point(234, 141);
-            this.cboTag.Name = "cboTag";
-            this.cboTag.Size = new System.Drawing.Size(187, 21);
-            this.cboTag.TabIndex = 15;
-            
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(193, 144);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 13);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "Nhóm";
-            
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(193, 171);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(28, 13);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Mẫu";
-            
-            // 
-            // cboTemplate
-            // 
-            this.cboTemplate.FormattingEnabled = true;
-            this.cboTemplate.Location = new System.Drawing.Point(234, 168);
-            this.cboTemplate.Name = "cboTemplate";
-            this.cboTemplate.Size = new System.Drawing.Size(187, 21);
-            this.cboTemplate.TabIndex = 17;
-            
-            // 
-            // frmEventInsert
+            // frmEventUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -140,10 +132,12 @@
             this.Controls.Add(this.txtName);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "frmEventInsert";
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
+            this.Name = "frmEventUpdate";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Email Marketing > Sự Kiện > Thêm";
-            this.Load += new System.EventHandler(this.frmEventInsert_Load);
+            this.Text = "Email Marketing > Sự Kiện > Cập nhật";
+            this.Load += new System.EventHandler(this.frmEventUpdate_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -151,15 +145,14 @@
 
         #endregion
 
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ComboBox cboTemplate;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox cboTag;
+        private System.Windows.Forms.DateTimePicker dtpTime;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dtpTime;
-        private System.Windows.Forms.ComboBox cboTag;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox cboTemplate;
-
     }
 }

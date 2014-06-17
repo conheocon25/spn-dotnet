@@ -106,21 +106,14 @@ namespace EmailMarketing
         }
 
         private void mnuDelete_Click(object sender, EventArgs e)
-        {
-            int Index = -1;
-            string Id = "";
+        {            
             if (dgvCustomer.SelectedRows.Count > 0) {
-                Index = dgvCustomer.SelectedRows[0].Index;
-                Id = dgvCustomer.Rows[Index].Cells[0].Value.ToString();
+                int Index = dgvCustomer.SelectedRows[0].Index;
+                int Id = (int)dgvCustomer.Rows[Index].Cells[0].Value;
                 DialogResult result = MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
-                {                    
-                    CApp.connect();                                        
-                    SqlCommand cmd = new SqlCommand("DELETE FROM tbl_customer WHERE id=@id", CApp.connection);
-                    cmd.Parameters.AddWithValue("@id", Id);
-                    cmd.ExecuteNonQuery();                                        
-                    CApp.close();
-
+                {
+                    CService.deleteById("tbl_customer", Id);
                     clickTag(curNode);
                 }
             }
@@ -185,10 +178,6 @@ namespace EmailMarketing
         {
 
         }
-
-        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+        
     }
 }

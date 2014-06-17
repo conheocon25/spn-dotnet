@@ -23,5 +23,15 @@ namespace EmailMarketing
 
             CApp.close();              
         }
+
+        public static void deleteById(string strName, int Id) {
+            CApp.connect();
+            
+            SqlCommand cmd = new SqlCommand("DELETE FROM " + strName + " WHERE id=@id", CApp.connection);
+            cmd.Parameters.AddWithValue("@id", Id);
+            cmd.ExecuteNonQuery();
+
+            CApp.close();
+        }
     }
 }

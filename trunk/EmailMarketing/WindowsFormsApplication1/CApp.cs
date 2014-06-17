@@ -33,6 +33,6 @@ namespace EmailMarketing
 
         static public SqlConnection connection;
         static public bool bNextMessage = false;
-        
+        static public CSender Sender = new CSender();
     }
 }

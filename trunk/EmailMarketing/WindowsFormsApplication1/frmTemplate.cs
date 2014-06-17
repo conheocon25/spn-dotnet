@@ -77,16 +77,11 @@ namespace EmailMarketing
             if (dgvTemplate.SelectedRows.Count > 0)
             {
                 int Index = dgvTemplate.SelectedRows[0].Index;
-                string Id = dgvTemplate.Rows[Index].Cells[0].Value.ToString();
+                int Id = (int)dgvTemplate.Rows[Index].Cells[0].Value;
                 DialogResult result = MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
-                {
-                    CApp.connect();
-                    SqlCommand cmd = new SqlCommand("DELETE FROM tbl_template WHERE id=@id", CApp.connection);
-                    cmd.Parameters.AddWithValue("@id", Id);
-                    cmd.ExecuteNonQuery();
-                    CApp.close();
-
+                {                    
+                    CService.deleteById("tbl_template", Id);
                     CService.updateGrid(dgvTemplate, "SELECT * FROM tbl_template");
                 }
             }

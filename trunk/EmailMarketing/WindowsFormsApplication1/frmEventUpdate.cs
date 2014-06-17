@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace EmailMarketing
 {
-    public partial class frmEventInsert : Form
+    public partial class frmEventUpdate : Form
     {
         public int State = -1;
         public string NameEvent;
@@ -18,23 +18,31 @@ namespace EmailMarketing
         public int IdTemplate;
         public DateTime Time;
 
-        public frmEventInsert(DataTable dtTag_, DataTable dtTemplate_)
+        public frmEventUpdate(DataTable dtTag_, DataTable dtTemplate_, string Name_="", int IdTag_=0, int IdTemplate_=0, DateTime time_=new DateTime())
         {
             InitializeComponent();
-            
+
+            txtName.Text = Name_;
+
             cboTag.DataSource = dtTag_;
             cboTag.DisplayMember = "name";
             cboTag.ValueMember = "id";
+            cboTag.SelectedIndex = IdTag_;
 
             cboTemplate.DataSource = dtTemplate_;
             cboTemplate.DisplayMember = "name";
             cboTemplate.ValueMember = "id";
-        }
+            cboTemplate.SelectedIndex = IdTemplate_;
 
-        private void frmEventInsert_Load(object sender, EventArgs e)
-        {
             dtpTime.Format = DateTimePickerFormat.Custom;
             dtpTime.CustomFormat = "dd/MM/yyyy hh:mm";
+            dtpTime.Value = time_;
+            
+        }
+
+        private void frmEventUpdate_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -47,7 +55,5 @@ namespace EmailMarketing
 
             this.Close();
         }
-
-        
     }
 }

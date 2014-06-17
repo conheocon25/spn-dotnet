@@ -1,6 +1,6 @@
 ﻿namespace EmailMarketing
 {
-    partial class frmSchedulerView
+    partial class frmScheduler
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSchedulerView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmScheduler));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.lstMain = new System.Windows.Forms.ListBox();
             this.dgvScheduler = new System.Windows.Forms.DataGridView();
