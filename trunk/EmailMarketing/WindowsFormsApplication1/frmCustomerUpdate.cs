@@ -14,7 +14,7 @@ namespace EmailMarketing
     {
         public int State = -1;
         public string Id = "";
-        public string Name = "";
+        public string NameCustomer = "";
         public string Phone = "";
         public string Email = "";
 
@@ -30,9 +30,9 @@ namespace EmailMarketing
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            Name = txtName.Text;
-            Phone = txtName.Text;
-            Email = txtName.Text;
+            NameCustomer = txtName.Text;
+            Phone = txtPhone.Text;
+            Email = txtEmail.Text;
             State = 1;
             this.Close();            
         }

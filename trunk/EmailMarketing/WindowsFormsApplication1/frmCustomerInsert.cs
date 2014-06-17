@@ -12,9 +12,12 @@ using System.Data.SqlClient;
 namespace EmailMarketing
 {
     public partial class frmCustomerInsert : Form
-    {
-        public int IdTag = 1;
+    {        
         public int State = -1;
+        public string Id = "";
+        public string NameCustomer = "";
+        public string Phone = "";
+        public string Email = "";
 
         public frmCustomerInsert()
         {            
@@ -27,18 +30,11 @@ namespace EmailMarketing
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            CApp.connect();
-
-            SqlCommand cmd = new SqlCommand("INSERT INTO tbl_customer(name, phone, email, id_tag) VALUES(@name, @phone, @email, @id_tag)", CApp.connection);
-            cmd.Parameters.AddWithValue("@name", txtName.Text);
-            cmd.Parameters.AddWithValue("@phone", txtPhone.Text);
-            cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-            cmd.Parameters.AddWithValue("@id_tag", IdTag);
-            cmd.ExecuteNonQuery();
-            State = 1;                            
-            CApp.close();
-
+        {                        
+            State = 1;
+            NameCustomer = txtName.Text;
+            Email = txtEmail.Text;
+            Phone = txtPhone.Text;
             this.Close();
         }
                

@@ -23,7 +23,7 @@ namespace EmailMarketing
 
         private void mnuCustomerView_Click(object sender, EventArgs e)
         {
-            frmCustomerView F = new frmCustomerView();
+            frmCustomer F = new frmCustomer();
             F.ShowDialog();
         }
 
@@ -35,22 +35,10 @@ namespace EmailMarketing
 
         private void mnuEventView_Click(object sender, EventArgs e)
         {
-            frmEventView F = new frmEventView();
+            frmEvent F = new frmEvent();
             F.ShowDialog();
         }
-
-        private void mnuEventInsert_Click(object sender, EventArgs e)
-        {
-            frmEventInsert F = new frmEventInsert();
-            F.ShowDialog();
-        }
-
-        private void mnuCustomerInsert_Click(object sender, EventArgs e)
-        {
-            frmCustomerInsert F = new frmCustomerInsert();
-            F.ShowDialog();
-        }
-
+        
         private void mnuScheduleView_Click(object sender, EventArgs e)
         {
             frmSchedulerView F = new frmSchedulerView();
@@ -60,6 +48,24 @@ namespace EmailMarketing
         private void mnuAbout_Click(object sender, EventArgs e)
         {
             frmAbout F = new frmAbout();
+            F.ShowDialog();
+        }
+
+        private void mnuEvent_Click(object sender, EventArgs e)
+        {
+            frmEvent F = new frmEvent();
+            F.ShowDialog();
+        }
+
+        private void mnuTemplate_Click(object sender, EventArgs e)
+        {
+            frmTemplate F = new frmTemplate();
+            F.ShowDialog();
+        }
+
+        private void mnuTagView_Click(object sender, EventArgs e)
+        {
+            frmTag F = new frmTag();
             F.ShowDialog();
         }
     }
