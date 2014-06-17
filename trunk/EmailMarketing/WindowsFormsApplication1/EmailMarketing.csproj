@@ -47,103 +47,107 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CApp.cs" />
+    <Compile Include="Mapper\CCustomerMapper.cs" />
+    <Compile Include="Model\CCustomer.cs" />
     <Compile Include="CDeliver.cs" />
     <Compile Include="CEvent.cs" />
     <Compile Include="CService.cs" />
-    <Compile Include="frmAbout.cs">
+    <Compile Include="Model\CTag.cs" />
+    <Compile Include="Mapper\CTagMapper.cs" />
+    <Compile Include="Viewer\frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAbout.Designer.cs">
+    <Compile Include="Viewer\frmAbout.Designer.cs">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCustomerInsert.cs">
+    <Compile Include="Viewer\frmCustomerInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomerInsert.Designer.cs">
+    <Compile Include="Viewer\frmCustomerInsert.Designer.cs">
       <DependentUpon>frmCustomerInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCustomerUpdate.cs">
+    <Compile Include="Viewer\frmCustomerUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomerUpdate.Designer.cs">
+    <Compile Include="Viewer\frmCustomerUpdate.Designer.cs">
       <DependentUpon>frmCustomerUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEventInsert.cs">
+    <Compile Include="Viewer\frmEventInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEventInsert.Designer.cs">
+    <Compile Include="Viewer\frmEventInsert.Designer.cs">
       <DependentUpon>frmEventInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEvent.cs">
+    <Compile Include="Viewer\frmEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEvent.Designer.cs">
+    <Compile Include="Viewer\frmEvent.Designer.cs">
       <DependentUpon>frmEvent.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEventUpdate.cs">
+    <Compile Include="Viewer\frmEventUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEventUpdate.Designer.cs">
+    <Compile Include="Viewer\frmEventUpdate.Designer.cs">
       <DependentUpon>frmEventUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmMain.cs">
+    <Compile Include="Viewer\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmMain.Designer.cs">
+    <Compile Include="Viewer\frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCustomer.cs">
+    <Compile Include="Viewer\frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomer.Designer.cs">
+    <Compile Include="Viewer\frmCustomer.Designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmOption.cs">
+    <Compile Include="Viewer\frmOption.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmOption.Designer.cs">
+    <Compile Include="Viewer\frmOption.Designer.cs">
       <DependentUpon>frmOption.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmScheduler.cs">
+    <Compile Include="Viewer\frmScheduler.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmScheduler.Designer.cs">
+    <Compile Include="Viewer\frmScheduler.Designer.cs">
       <DependentUpon>frmScheduler.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTag.cs">
+    <Compile Include="Viewer\frmTag.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTag.Designer.cs">
+    <Compile Include="Viewer\frmTag.Designer.cs">
       <DependentUpon>frmTag.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTagInsert.cs">
+    <Compile Include="Viewer\frmTagInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTagInsert.Designer.cs">
+    <Compile Include="Viewer\frmTagInsert.Designer.cs">
       <DependentUpon>frmTagInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTagUpdate.cs">
+    <Compile Include="Viewer\frmTagUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTagUpdate.Designer.cs">
+    <Compile Include="Viewer\frmTagUpdate.Designer.cs">
       <DependentUpon>frmTagUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTemplate.cs">
+    <Compile Include="Viewer\frmTemplate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTemplate.Designer.cs">
+    <Compile Include="Viewer\frmTemplate.Designer.cs">
       <DependentUpon>frmTemplate.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTemplateInsert.cs">
+    <Compile Include="Viewer\frmTemplateInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTemplateInsert.Designer.cs">
+    <Compile Include="Viewer\frmTemplateInsert.Designer.cs">
       <DependentUpon>frmTemplateInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmTemplateUpdate.cs">
+    <Compile Include="Viewer\frmTemplateUpdate.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmTemplateUpdate.Designer.cs">
+    <Compile Include="Viewer\frmTemplateUpdate.Designer.cs">
       <DependentUpon>frmTemplateUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="MyEncrypt.cs" />
@@ -151,52 +155,52 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="CScheduler.cs" />
     <Compile Include="CSender.cs" />
-    <EmbeddedResource Include="frmAbout.resx">
+    <EmbeddedResource Include="Viewer\frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCustomerInsert.resx">
+    <EmbeddedResource Include="Viewer\frmCustomerInsert.resx">
       <DependentUpon>frmCustomerInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCustomerUpdate.resx">
+    <EmbeddedResource Include="Viewer\frmCustomerUpdate.resx">
       <DependentUpon>frmCustomerUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEventInsert.resx">
+    <EmbeddedResource Include="Viewer\frmEventInsert.resx">
       <DependentUpon>frmEventInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEvent.resx">
+    <EmbeddedResource Include="Viewer\frmEvent.resx">
       <DependentUpon>frmEvent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEventUpdate.resx">
+    <EmbeddedResource Include="Viewer\frmEventUpdate.resx">
       <DependentUpon>frmEventUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmMain.resx">
+    <EmbeddedResource Include="Viewer\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCustomer.resx">
+    <EmbeddedResource Include="Viewer\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmOption.resx">
+    <EmbeddedResource Include="Viewer\frmOption.resx">
       <DependentUpon>frmOption.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmScheduler.resx">
+    <EmbeddedResource Include="Viewer\frmScheduler.resx">
       <DependentUpon>frmScheduler.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTag.resx">
+    <EmbeddedResource Include="Viewer\frmTag.resx">
       <DependentUpon>frmTag.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTagInsert.resx">
+    <EmbeddedResource Include="Viewer\frmTagInsert.resx">
       <DependentUpon>frmTagInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTagUpdate.resx">
+    <EmbeddedResource Include="Viewer\frmTagUpdate.resx">
       <DependentUpon>frmTagUpdate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTemplate.resx">
+    <EmbeddedResource Include="Viewer\frmTemplate.resx">
       <DependentUpon>frmTemplate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTemplateInsert.resx">
+    <EmbeddedResource Include="Viewer\frmTemplateInsert.resx">
       <DependentUpon>frmTemplateInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmTemplateUpdate.resx">
+    <EmbeddedResource Include="Viewer\frmTemplateUpdate.resx">
       <DependentUpon>frmTemplateUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -225,7 +229,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="image\e_mail.png" />
+    <None Include="Image\e_mail.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
