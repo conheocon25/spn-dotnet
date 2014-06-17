@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.trvCategory = new System.Windows.Forms.TreeView();
+            this.categoryTreeView = new System.Windows.Forms.TreeView();
             this.imApp = new System.Windows.Forms.ImageList(this.components);
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.sfMovie = new AxShockwaveFlashObjects.AxShockwaveFlash();
@@ -56,7 +56,7 @@
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.trvCategory);
+            this.splitContainer1.Panel1.Controls.Add(this.categoryTreeView);
             // 
             // splitContainer1.Panel2
             // 
@@ -67,16 +67,16 @@
             // 
             // trvCategory
             // 
-            this.trvCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.trvCategory.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.trvCategory.ImageIndex = 0;
-            this.trvCategory.ImageList = this.imApp;
-            this.trvCategory.Location = new System.Drawing.Point(0, 0);
-            this.trvCategory.Name = "trvCategory";
-            this.trvCategory.SelectedImageIndex = 0;
-            this.trvCategory.Size = new System.Drawing.Size(304, 741);
-            this.trvCategory.TabIndex = 2;
-            this.trvCategory.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.trvCategory_NodeMouseClick);
+            this.categoryTreeView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.categoryTreeView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.categoryTreeView.ImageIndex = 0;
+            this.categoryTreeView.ImageList = this.imApp;
+            this.categoryTreeView.Location = new System.Drawing.Point(0, 0);
+            this.categoryTreeView.Name = "trvCategory";
+            this.categoryTreeView.SelectedImageIndex = 0;
+            this.categoryTreeView.Size = new System.Drawing.Size(304, 741);
+            this.categoryTreeView.TabIndex = 2;
+            this.categoryTreeView.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.trvCategory_NodeMouseClick);
             // 
             // imApp
             // 
@@ -161,7 +161,7 @@
         #endregion
 
         private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.TreeView trvCategory;
+        private System.Windows.Forms.TreeView categoryTreeView;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.ImageList imApp;
         private System.Windows.Forms.ImageList imVideo;

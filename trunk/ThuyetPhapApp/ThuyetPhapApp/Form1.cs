@@ -28,40 +28,42 @@ namespace ThuyetPhapApp
             lvVideo.Columns.Add("Lượt xem");
             lvVideo.View = System.Windows.Forms.View.LargeIcon;
             
-            TreeNode N = new TreeNode("Chùa Long Viễn", 0, 1);
+            TreeNode rootNode = new TreeNode("Chùa Long Viễn", 0, 1);
                         
             //Load dữ liệu từ file XML của Chùa Long Viễn
-            var docCat1 = XDocument.Load("http://chualongvien.com/model/load/CategoryBType/all");
-            var docCat2 = XDocument.Load("http://chualongvien.com/model/load/CategoryVideo/all");
+            var typeData = XDocument.Load("http://chualongvien.com/model/load/CategoryBType/all");
+            var subTypeData = XDocument.Load("http://chualongvien.com/model/load/CategoryVideo/all");
 
             //Thực hiện truy vấn để lấy dữ  liệu về
-            var qryCat1 = from c in docCat1.Root.Descendants("object")
-                              select c;
+            var types = 
+from c in typeData.Root.Descendants("object")
+select c;
 
-            foreach (var obj in qryCat1)
+            foreach (var type in types)
             {
-                string StrId = obj.Element("id").Value;
-                string StrName = obj.Element("name").Value;
+                string id = type.Element("id").Value;
+                string name = type.Element("name").Value;
 
                 //Thêm danh mục cha
-                TreeNode N1 = new TreeNode(StrName,0 , 1);
+                TreeNode node = new TreeNode(name, 0, 1);
                 
                 //Thêm danh mục con
-                var qryCat2 = from c1 in docCat2.Root.Descendants("object")
-                              where (c1.Element("btype").Value == StrId) 
-                              select c1;
+                var subTypes = 
+from c1 in subTypeData.Root.Descendants("object")
+where (c1.Element("btype").Value == id) 
+select c1;
 
-                foreach (var obj1 in qryCat2)
+                foreach (var subType in subTypes)
                 {
-                    string StrId1   = obj1.Element("id").Value;
-                    string StrName1 = obj1.Element("name").Value;
-                    TreeNode N2 = new TreeNode(StrName1, 0, 1);
-                    N2.Tag = StrId1;
-                    N1.Nodes.Add(N2);
+                    string subId   = subType.Element("id").Value;
+                    string subName = subType.Element("name").Value;
+                    TreeNode childNode = new TreeNode(subName, 0, 1);
+                    childNode.Tag = subId;
+                    node.Nodes.Add(childNode);
                 }
-                N.Nodes.Add(N1);
+                rootNode.Nodes.Add(node);
             }
-            trvCategory.Nodes.Add(N);
+            categoryTreeView.Nodes.Add(rootNode);
         }
                 
         private void trvCategory_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
@@ -75,21 +77,21 @@ namespace ThuyetPhapApp
 
                 //Nạp danh sách  Video Từ Website chualongvien.com
                 var docVideo = XDocument.Load("http://chualongvien.com/model/findby/VideoLibrary/" + e.Node.Tag);
-                var qryVideo = from c in docVideo.Root.Descendants("object")
+                var videos = from c in docVideo.Root.Descendants("object")
                                 select c;
 
-                foreach (var obj in qryVideo)
+                foreach (var video in videos)
                 {
-                    string id    = obj.Element("id").Value;
-                    string name  = obj.Element("name").Value;
-                    string url   = obj.Element("url").Value;
-                    string time  = obj.Element("time").Value;
-                    string count = obj.Element("count").Value;
+                    string id = video.Element("id").Value;
+                    string name = video.Element("name").Value;
+                    string url = video.Element("url").Value;
+                    string time = video.Element("time").Value;
+                    string count = video.Element("count").Value;
 
-                    var video = new ListViewItem(new[] { name, time, count });
-                    video.Tag = url;
-                    video.ImageIndex = 0;
-                    lvVideo.Items.Add(video);
+                    var item = new ListViewItem(new[] { name, time, count });
+                    item.Tag = url;
+                    item.ImageIndex = 0;
+                    lvVideo.Items.Add(item);
                 }
                 
             }
