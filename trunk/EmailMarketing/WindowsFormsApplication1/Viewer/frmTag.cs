@@ -13,66 +13,41 @@ namespace EmailMarketing
 {
     public partial class frmTag : Form
     {
+        CTagMapper mapper = new CTagMapper();
         public frmTag()
         {
-            InitializeComponent();            
-            CService.updateGrid(dgvTag, "SELECT * FROM tbl_tag");
+            InitializeComponent();
+            //CService.updateGrid(dgvTag, "SELECT * FROM tbl_tag");
+            var TagAll = mapper.getAll();
+            dgvTag.DataSource = TagAll;
         }
-
-        private void dgvTag_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-                
+                               
         private void mnuInsert_Click(object sender, EventArgs e)
         {
             frmTagInsert F = new frmTagInsert();
             F.ShowDialog();
             if (F.State == 1)
-            {
-                CApp.connect();
-                SqlCommand cmd = new SqlCommand("INSERT INTO tbl_tag(name) VALUES(@name)", CApp.connection);
-                cmd.Parameters.AddWithValue("@name", F.NameTag);                
-                cmd.ExecuteNonQuery();
-                CApp.close();
-
+            {                
+                mapper.insert(new CTag(0, F.NameTag));
                 CService.updateGrid(dgvTag, "SELECT * FROM tbl_tag");
-            }                
+            }
         }
 
         private void mnuUpdate_Click(object sender, EventArgs e)
-        {
-            
-            int Index = -1;
-            string Id = "";
+        {                                    
             if (dgvTag.SelectedRows.Count > 0)
             {
-                CApp.connect();
-                Index = dgvTag.SelectedRows[0].Index;
-                Id = dgvTag.Rows[Index].Cells[0].Value.ToString();
-
-                //Lọc danh sách khách hàng đưa vào lưới                
-                SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_tag WHERE id=@id", CApp.connection);
-                cmd.Parameters.AddWithValue("@id", Id);
-
-                SqlDataReader reader = cmd.ExecuteReader();
-                reader.Read();                
-                frmTagUpdate F = new frmTagUpdate(reader["name"].ToString());
-
-                CApp.close();
-
-                CApp.connect();
+                int Index = dgvTag.SelectedRows[0].Index;
+                CTag Tag = mapper.get(Index);
+                frmTagUpdate F = new frmTagUpdate(Tag);
+                
                 F.ShowDialog();
                 if (F.State == 1)
                 {
-                    SqlCommand cmdUpdate = new SqlCommand("UPDATE tbl_tag SET name=@name  WHERE id=@id", CApp.connection);
-                    cmdUpdate.Parameters.AddWithValue("@id", Id);
-                    cmdUpdate.Parameters.AddWithValue("@name", F.NameTag);
-                    cmdUpdate.ExecuteNonQuery();
+                    Tag.Name = F.NameTag;
+                    mapper.update(Tag);
                     CService.updateGrid(dgvTag, "SELECT * FROM tbl_tag");
                 }
-
-                CApp.close();
             }
         }
 
@@ -84,8 +59,8 @@ namespace EmailMarketing
                 int Id = (int)dgvTag.Rows[Index].Cells[0].Value;
                 DialogResult result = MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
-                {                    
-                    CService.deleteById("tbl_tag", Id);
+                {                                        
+                    mapper.delete(Id);
                     CService.updateGrid(dgvTag, "SELECT * FROM tbl_tag");
                 }
             }

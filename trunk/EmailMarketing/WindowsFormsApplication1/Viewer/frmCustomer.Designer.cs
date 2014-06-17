@@ -75,7 +75,7 @@
             this.tvwTag.SelectedImageIndex = 0;
             this.tvwTag.Size = new System.Drawing.Size(264, 573);
             this.tvwTag.TabIndex = 0;
-            this.tvwTag.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwTag_AfterSelect);
+            
             this.tvwTag.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvwTag_NodeMouseDoubleClick);
             this.tvwTag.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tvwTag_MouseUp);
             // 

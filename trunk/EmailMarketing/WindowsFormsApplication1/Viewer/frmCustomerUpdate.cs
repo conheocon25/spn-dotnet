@@ -12,20 +12,19 @@ namespace EmailMarketing
 {
     public partial class frmCustomerUpdate : Form
     {
-        public int State = -1;
-        public string Id = "";
+        public int State = -1;        
         public string NameCustomer = "";
         public string Phone = "";
         public string Email = "";
 
-        public frmCustomerUpdate(string Id_="", string Name_="", string Email_="", string Phone_="")
+        public frmCustomerUpdate(CCustomer Customer)
         {
             InitializeComponent();
 
-            txtName.Text = Name_;
-            txtPhone.Text = Phone_;
-            txtEmail.Text = Email_;
-            Id = Id_;
+            txtName.Text = Customer.Name;
+            txtPhone.Text = Customer.Phone;
+            txtEmail.Text = Customer.Email;
+
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -34,6 +33,7 @@ namespace EmailMarketing
             Phone = txtPhone.Text;
             Email = txtEmail.Text;
             State = 1;
+
             this.Close();            
         }
 

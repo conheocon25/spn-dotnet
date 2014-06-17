@@ -15,10 +15,10 @@ namespace EmailMarketing
         public int State = -1;
         public string NameTag = "";
 
-        public frmTagUpdate(string Name_)
+        public frmTagUpdate(CTag Tag)
         {
             InitializeComponent();
-            txtName.Text = Name_;
+            txtName.Text = Tag.Name;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

@@ -47,7 +47,7 @@ namespace EmailMarketing
                 DialogResult result = MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {
-                    CService.deleteById("tbl_event", Id);
+                    //CService.deleteById("tbl_event", Id);
                     CService.updateGrid(dgvEvent, "SELECT * FROM tbl_event");
                 }
             }
