@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace EmailMarketing
 {
-    public partial class frmCustomerView : Form
+    public partial class frmCustomer : Form
     {
         public TreeNode curNode = null;
-        public frmCustomerView()
+        public frmCustomer()
         {
             InitializeComponent();                        
         }
@@ -79,11 +79,20 @@ namespace EmailMarketing
         {
             //Lấy về Tag mặc định
             int IdTag = Convert.ToInt32(tvwTag.SelectedNode.Tag);
-            frmCustomerInsert f = new frmCustomerInsert();
-            f.IdTag = IdTag;
+            frmCustomerInsert f = new frmCustomerInsert();            
             f.ShowDialog();
-            if (f.State == 1)
+            if (f.State == 1) {
+                CApp.connect();
+                SqlCommand cmd = new SqlCommand("INSERT INTO tbl_customer(name, phone, email, id_tag) VALUES(@name, @phone, @email, @id_tag)", CApp.connection);
+                cmd.Parameters.AddWithValue("@name", f.Name);
+                cmd.Parameters.AddWithValue("@phone", f.Phone);
+                cmd.Parameters.AddWithValue("@email", f.Email);
+                cmd.Parameters.AddWithValue("@id_tag", IdTag);
+                cmd.ExecuteNonQuery();
+                CApp.close();
+
                 clickTag(curNode);
+            }                
         }
                 
         private void dgvCustomer_MouseClick(object sender, MouseEventArgs e)
@@ -141,7 +150,7 @@ namespace EmailMarketing
                 if (f.State == 1){
                     SqlCommand cmdUpdate = new SqlCommand("UPDATE tbl_customer SET name=@name, email=@email, phone=@phone  WHERE id=@id", CApp.connection);
                     cmdUpdate.Parameters.AddWithValue("@id", Id);
-                    cmdUpdate.Parameters.AddWithValue("@name", f.Name);
+                    cmdUpdate.Parameters.AddWithValue("@name", f.NameCustomer);
                     cmdUpdate.Parameters.AddWithValue("@email", f.Email);
                     cmdUpdate.Parameters.AddWithValue("@phone", f.Phone);
                     cmdUpdate.ExecuteNonQuery();
@@ -170,6 +179,16 @@ namespace EmailMarketing
 
                 CApp.close();
             }
+        }
+
+        private void tvwTag_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+
+        }
+
+        private void dgvCustomer_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

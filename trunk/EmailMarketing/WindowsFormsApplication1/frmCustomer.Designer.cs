@@ -1,6 +1,6 @@
 ﻿namespace EmailMarketing
 {
-    partial class frmCustomerView
+    partial class frmCustomer
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomerView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCustomer));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tvwTag = new System.Windows.Forms.TreeView();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
@@ -38,6 +38,7 @@
             this.mnuGrid = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.mnuUpdate = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.imlTag = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -67,11 +68,14 @@
             // tvwTag
             // 
             this.tvwTag.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tvwTag.ImageIndex = 0;
+            this.tvwTag.ImageList = this.imlTag;
             this.tvwTag.Location = new System.Drawing.Point(0, 0);
             this.tvwTag.Name = "tvwTag";
+            this.tvwTag.SelectedImageIndex = 0;
             this.tvwTag.Size = new System.Drawing.Size(264, 573);
             this.tvwTag.TabIndex = 0;
-            
+            this.tvwTag.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvwTag_AfterSelect);
             this.tvwTag.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvwTag_NodeMouseDoubleClick);
             this.tvwTag.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tvwTag_MouseUp);
             // 
@@ -83,6 +87,7 @@
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.Size = new System.Drawing.Size(524, 573);
             this.dgvCustomer.TabIndex = 0;
+            this.dgvCustomer.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCustomer_CellContentClick);
             this.dgvCustomer.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvCustomer_MouseClick);
             // 
             // mnuAction
@@ -121,6 +126,13 @@
             this.mnuDelete.Text = "Xóa";
             this.mnuDelete.Click += new System.EventHandler(this.mnuDelete_Click);
             // 
+            // imlTag
+            // 
+            this.imlTag.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imlTag.ImageStream")));
+            this.imlTag.TransparentColor = System.Drawing.Color.Transparent;
+            this.imlTag.Images.SetKeyName(0, "Folder-icon.png");
+            this.imlTag.Images.SetKeyName(1, "Folder-Open-icon.png");
+            // 
             // frmCustomerView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -155,6 +167,7 @@
         private System.Windows.Forms.ContextMenuStrip mnuGrid;
         private System.Windows.Forms.ToolStripMenuItem mnuUpdate;
         private System.Windows.Forms.ToolStripMenuItem mnuDelete;
+        private System.Windows.Forms.ImageList imlTag;
 
     }
 }

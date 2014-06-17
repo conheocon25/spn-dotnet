@@ -49,6 +49,7 @@
     <Compile Include="CApp.cs" />
     <Compile Include="CDeliver.cs" />
     <Compile Include="CEvent.cs" />
+    <Compile Include="CService.cs" />
     <Compile Include="frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,11 +74,11 @@
     <Compile Include="frmEventInsert.Designer.cs">
       <DependentUpon>frmEventInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmEventView.cs">
+    <Compile Include="frmEvent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmEventView.Designer.cs">
-      <DependentUpon>frmEventView.cs</DependentUpon>
+    <Compile Include="frmEvent.Designer.cs">
+      <DependentUpon>frmEvent.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
@@ -85,11 +86,11 @@
     <Compile Include="frmMain.Designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmCustomerView.cs">
+    <Compile Include="frmCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmCustomerView.Designer.cs">
-      <DependentUpon>frmCustomerView.cs</DependentUpon>
+    <Compile Include="frmCustomer.Designer.cs">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="frmOption.cs">
       <SubType>Form</SubType>
@@ -102,6 +103,42 @@
     </Compile>
     <Compile Include="frmSchedulerView.Designer.cs">
       <DependentUpon>frmSchedulerView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTag.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTag.Designer.cs">
+      <DependentUpon>frmTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTagInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTagInsert.Designer.cs">
+      <DependentUpon>frmTagInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTagUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTagUpdate.Designer.cs">
+      <DependentUpon>frmTagUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTemplate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTemplate.Designer.cs">
+      <DependentUpon>frmTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTemplateInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTemplateInsert.Designer.cs">
+      <DependentUpon>frmTemplateInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTemplateUpdate.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTemplateUpdate.Designer.cs">
+      <DependentUpon>frmTemplateUpdate.cs</DependentUpon>
     </Compile>
     <Compile Include="MyEncrypt.cs" />
     <Compile Include="Program.cs" />
@@ -120,20 +157,38 @@
     <EmbeddedResource Include="frmEventInsert.resx">
       <DependentUpon>frmEventInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmEventView.resx">
-      <DependentUpon>frmEventView.cs</DependentUpon>
+    <EmbeddedResource Include="frmEvent.resx">
+      <DependentUpon>frmEvent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmCustomerView.resx">
-      <DependentUpon>frmCustomerView.cs</DependentUpon>
+    <EmbeddedResource Include="frmCustomer.resx">
+      <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmOption.resx">
       <DependentUpon>frmOption.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSchedulerView.resx">
       <DependentUpon>frmSchedulerView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTag.resx">
+      <DependentUpon>frmTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTagInsert.resx">
+      <DependentUpon>frmTagInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTagUpdate.resx">
+      <DependentUpon>frmTagUpdate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemplate.resx">
+      <DependentUpon>frmTemplate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemplateInsert.resx">
+      <DependentUpon>frmTemplateInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTemplateUpdate.resx">
+      <DependentUpon>frmTemplateUpdate.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

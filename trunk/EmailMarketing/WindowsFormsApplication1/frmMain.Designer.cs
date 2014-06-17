@@ -69,7 +69,7 @@
             this.mnuTagView.Name = "mnuTagView";
             this.mnuTagView.Size = new System.Drawing.Size(152, 22);
             this.mnuTagView.Text = "Thẻ";
-            this.mnuTagView.Click += new System.EventHandler(this.mnuCustomerInsert_Click);
+            this.mnuTagView.Click += new System.EventHandler(this.mnuTagView_Click);
             // 
             // mnuCustomerView
             // 
@@ -83,12 +83,14 @@
             this.mnuTemplate.Name = "mnuTemplate";
             this.mnuTemplate.Size = new System.Drawing.Size(152, 22);
             this.mnuTemplate.Text = "Mẫu Email";
+            this.mnuTemplate.Click += new System.EventHandler(this.mnuTemplate_Click);
             // 
             // mnuEvent
             // 
             this.mnuEvent.Name = "mnuEvent";
             this.mnuEvent.Size = new System.Drawing.Size(152, 22);
             this.mnuEvent.Text = "Sự kiện";
+            this.mnuEvent.Click += new System.EventHandler(this.mnuEvent_Click);
             // 
             // aboutToolStripMenuItem
             // 
@@ -101,7 +103,7 @@
             // mnuScheduleView
             // 
             this.mnuScheduleView.Name = "mnuScheduleView";
-            this.mnuScheduleView.Size = new System.Drawing.Size(152, 22);
+            this.mnuScheduleView.Size = new System.Drawing.Size(94, 22);
             this.mnuScheduleView.Text = "Xem";
             this.mnuScheduleView.Click += new System.EventHandler(this.mnuScheduleView_Click);
             // 

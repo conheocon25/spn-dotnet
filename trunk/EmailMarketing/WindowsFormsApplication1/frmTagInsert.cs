@@ -10,18 +10,20 @@ using System.Windows.Forms;
 
 namespace EmailMarketing
 {
-    public partial class frmEventView : Form
+    public partial class frmTagInsert : Form
     {
-
-        public frmEventView(CollectionEvent lstEvent_ = null)
-        {            
+        public string NameTag = "";
+        public int State = -1;
+        public frmTagInsert()
+        {
             InitializeComponent();
         }
 
-        private void frmEventView_Load(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            //var blist = new BindingList<CEvent>(CApp.colEvent.getAll());
-            //grdEvent.DataSource = blist;
+            NameTag = txtName.Text;
+            State = 1;
+            this.Close();
         }
     }
 }
