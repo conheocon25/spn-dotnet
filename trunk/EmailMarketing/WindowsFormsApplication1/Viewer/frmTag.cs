@@ -13,12 +13,12 @@ namespace EmailMarketing
 {
     public partial class frmTag : Form
     {
-        CTagMapper mapper = new CTagMapper();
+        CTagMapper mTag = new CTagMapper();
         public frmTag()
         {
             InitializeComponent();
             //CService.updateGrid(dgvTag, "SELECT * FROM tbl_tag");
-            var TagAll = mapper.getAll();
+            var TagAll = mTag.getAll();
             dgvTag.DataSource = TagAll;
         }
                                
@@ -28,8 +28,8 @@ namespace EmailMarketing
             F.ShowDialog();
             if (F.State == 1)
             {                
-                mapper.insert(new CTag(0, F.NameTag));
-                CService.updateGrid(dgvTag, "SELECT * FROM tbl_tag");
+                mTag.insert(new CTag(0, F.NameTag));
+                dgvTag.DataSource = mTag.getAll();                
             }
         }
 
@@ -38,15 +38,15 @@ namespace EmailMarketing
             if (dgvTag.SelectedRows.Count > 0)
             {
                 int Index = dgvTag.SelectedRows[0].Index;
-                CTag Tag = mapper.get(Index);
+                CTag Tag = mTag.get(Index);
                 frmTagUpdate F = new frmTagUpdate(Tag);
                 
                 F.ShowDialog();
                 if (F.State == 1)
                 {
                     Tag.Name = F.NameTag;
-                    mapper.update(Tag);
-                    CService.updateGrid(dgvTag, "SELECT * FROM tbl_tag");
+                    mTag.update(Tag);
+                    dgvTag.DataSource = mTag.getAll();
                 }
             }
         }
@@ -60,8 +60,8 @@ namespace EmailMarketing
                 DialogResult result = MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
                 {                                        
-                    mapper.delete(Id);
-                    CService.updateGrid(dgvTag, "SELECT * FROM tbl_tag");
+                    mTag.delete(Id);
+                    dgvTag.DataSource = mTag.getAll();
                 }
             }
         }

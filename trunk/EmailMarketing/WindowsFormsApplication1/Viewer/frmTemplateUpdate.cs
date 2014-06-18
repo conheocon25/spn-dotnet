@@ -16,11 +16,11 @@ namespace EmailMarketing
         public string NameTemplate = "";
         public string Content = "";
 
-        public frmTemplateUpdate(string Name_="", string Content_="")
+        public frmTemplateUpdate(CTemplate Template)
         {
             InitializeComponent();
-            txtName.Text = Name_;
-            txtContent.Text = Content_;
+            txtName.Text = Template.Name;
+            txtContent.Text = Template.Content;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)

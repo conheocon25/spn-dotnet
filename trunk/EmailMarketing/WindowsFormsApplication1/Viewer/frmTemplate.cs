@@ -12,10 +12,12 @@ namespace EmailMarketing
 {
     public partial class frmTemplate : Form
     {
+        CTemplateMapper mTemplate = new CTemplateMapper();
+
         public frmTemplate()
         {
-            InitializeComponent();
-            CService.updateGrid(dgvTemplate, "SELECT * FROM tbl_template");
+            InitializeComponent();            
+            dgvTemplate.DataSource = mTemplate.getAll();            
         }
                                 
         private void mnuInsert_Click(object sender, EventArgs e)
@@ -23,52 +25,32 @@ namespace EmailMarketing
             frmTemplateInsert F = new frmTemplateInsert();
             F.ShowDialog();
             if (F.State == 1)
-            {
-                CApp.connect();
-                SqlCommand cmd = new SqlCommand("INSERT INTO tbl_template(name, content) VALUES(@name, @content)", CApp.connection);
-                cmd.Parameters.AddWithValue("@name", F.NameTemplate);
-                cmd.Parameters.AddWithValue("@content", F.Content);
-                cmd.ExecuteNonQuery();
-                CApp.close();
-
-                CService.updateGrid(dgvTemplate, "SELECT * FROM tbl_template");
+            {                                
+                mTemplate.insert(new CTemplate(1, F.NameTemplate, F.Content));
+                dgvTemplate.DataSource = mTemplate.getAll();                
             }
         }
 
         private void mnuUpdate_Click(object sender, EventArgs e)
         {
-            int Index = -1;
-            string Id = "";
+            int Index = -1;            
             if (dgvTemplate.SelectedRows.Count > 0)
-            {
-                CApp.connect();
+            {                
                 Index = dgvTemplate.SelectedRows[0].Index;
-                Id = dgvTemplate.Rows[Index].Cells[0].Value.ToString();
+                int Id = (int)dgvTemplate.Rows[Index].Cells[0].Value;
+                CTemplate Template = mTemplate.get(Id);
 
-                //Lọc danh sách khách hàng đưa vào lưới                
-                SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_template WHERE id=@id", CApp.connection);
-                cmd.Parameters.AddWithValue("@id", Id);
-
-                SqlDataReader reader = cmd.ExecuteReader();
-                reader.Read();
-                frmTemplateUpdate F = new frmTemplateUpdate(reader["name"].ToString(), reader["content"].ToString());
-
-                CApp.close();
-
-                CApp.connect();
+                frmTemplateUpdate F = new frmTemplateUpdate(Template);
+                             
                 F.ShowDialog();
                 if (F.State == 1)
-                {
-                    SqlCommand cmdUpdate = new SqlCommand("UPDATE tbl_template SET name=@name, content=@content  WHERE id=@id", CApp.connection);
-                    cmdUpdate.Parameters.AddWithValue("@id", Id);
-                    cmdUpdate.Parameters.AddWithValue("@name", F.NameTemplate);
-                    cmdUpdate.Parameters.AddWithValue("@content", F.Content);
+                {                       
+                    Template.Name = F.NameTemplate;
+                    Template.Content = F.Content;
 
-                    cmdUpdate.ExecuteNonQuery();
-                    CService.updateGrid(dgvTemplate, "SELECT * FROM tbl_template");
-                }
-
-                CApp.close();
+                    mTemplate.update(Template);
+                    dgvTemplate.DataSource = mTemplate.getAll();
+                }             
             }
         }
 
@@ -80,9 +62,9 @@ namespace EmailMarketing
                 int Id = (int)dgvTemplate.Rows[Index].Cells[0].Value;
                 DialogResult result = MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
-                {                    
-                    //CService.deleteById("tbl_template", Id);
-                    CService.updateGrid(dgvTemplate, "SELECT * FROM tbl_template");
+                {                                                            
+                    mTemplate.delete(Id);
+                    dgvTemplate.DataSource = mTemplate.getAll();
                 }
             }
         }

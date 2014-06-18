@@ -50,10 +50,12 @@ namespace EmailMarketing
 
         public void update(CTag Tag)
         {
+            CApp.connect();
             SqlCommand cmdUpdate = new SqlCommand("UPDATE tbl_tag SET name=@name  WHERE id=@id", CApp.connection);
             cmdUpdate.Parameters.AddWithValue("@id", Tag.Id);
             cmdUpdate.Parameters.AddWithValue("@name", Tag.Name);
             cmdUpdate.ExecuteNonQuery();
+            CApp.close();
         }
 
         public void delete(int Id) {

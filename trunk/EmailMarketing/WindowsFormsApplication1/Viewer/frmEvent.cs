@@ -13,22 +13,21 @@ namespace EmailMarketing
 {
     public partial class frmEvent : Form
     {
-
-        public frmEvent(CollectionEvent lstEvent_ = null)
+        CEventMapper mEvent = new CEventMapper();
+        CTagMapper mTag = new CTagMapper();
+        CTemplateMapper mTemplate = new CTemplateMapper();
+ 
+        public frmEvent()
         {            
             InitializeComponent();
         }
 
         private void frmEventView_Load(object sender, EventArgs e)
         {
-            CService.updateGrid(dgvEvent, "SELECT * FROM tbl_event");
+            var EventAll = mEvent.getAll();
+            dgvEvent.DataSource = EventAll;
         }
-
-        private void gdvEvent_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+                
         private void gdvEvent_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
@@ -46,90 +45,49 @@ namespace EmailMarketing
                 int Id = (int)dgvEvent.Rows[Index].Cells[0].Value;
                 DialogResult result = MessageBox.Show("Có muốn xóa không ?", "Thông báo", MessageBoxButtons.YesNo);
                 if (result == DialogResult.Yes)
-                {
-                    //CService.deleteById("tbl_event", Id);
-                    CService.updateGrid(dgvEvent, "SELECT * FROM tbl_event");
+                {                    
+                    mEvent.delete(Id);
+                    dgvEvent.DataSource = mEvent.getAll();
                 }
             }
         }
 
         private void mnuUpdate_Click(object sender, EventArgs e)
-        {
-            int Index = -1;
-            string Id = "";
+        {            
             if (dgvEvent.SelectedRows.Count > 0)
-            {
-                CApp.connect();
-                Index = dgvEvent.SelectedRows[0].Index;
-                Id = dgvEvent.Rows[Index].Cells[0].Value.ToString();
+            {                
+                int Index = dgvEvent.SelectedRows[0].Index;
+                int Id = (int)dgvEvent.Rows[Index].Cells[0].Value;
 
-                SqlCommand cmdTag = new SqlCommand("SELECT * FROM tbl_tag", CApp.connection);
-                SqlDataReader rdrTag = cmdTag.ExecuteReader();
-                DataTable dtTag = new DataTable();
-                dtTag.Load(rdrTag);
+                var TagAll = mTag.getAll();
+                var TemplateAll = mTemplate.getAll();
+                var Event = mEvent.get(Id);
 
-                SqlCommand cmdTemplate = new SqlCommand("SELECT * FROM tbl_template", CApp.connection);
-                SqlDataReader rdrTemplate = cmdTemplate.ExecuteReader();
-                DataTable dtTemplate = new DataTable();
-                dtTemplate.Load(rdrTemplate);
-                                
-                SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_event WHERE id=@id", CApp.connection);
-                cmd.Parameters.AddWithValue("@id", Id);
-
-                SqlDataReader reader = cmd.ExecuteReader();
-                reader.Read();
-                frmEventUpdate F = new frmEventUpdate(dtTag, dtTemplate, reader["name"].ToString(), (int)reader["id_tag"], (int)reader["id_template"], DateTime.Parse(reader["time"].ToString()));
-                
+                frmEventUpdate F = new frmEventUpdate(Event, TagAll, TemplateAll);                
                 F.ShowDialog();
-                CApp.close();
                 
-                CApp.connect();
                 if (F.State == 1)
-                {
-                    SqlCommand cmdUpdate = new SqlCommand("UPDATE tbl_event SET name=@name, id_tag=@id_tag, id_template=@id_template, time=@time WHERE id=@id", CApp.connection);
-                    cmdUpdate.Parameters.AddWithValue("@id", Id);
-                    cmdUpdate.Parameters.AddWithValue("@name", F.NameEvent);
-                    cmdUpdate.Parameters.AddWithValue("@id_tag", F.IdTag);
-                    cmdUpdate.Parameters.AddWithValue("@id_template", F.IdTemplate);
-                    cmdUpdate.Parameters.AddWithValue("@time", F.Time);
-
-                    cmdUpdate.ExecuteNonQuery();
-                    CService.updateGrid(dgvEvent, "SELECT * FROM tbl_event");
+                {                    
+                    mEvent.update(new CEvent(Id, F.NameEvent, F.Time, F.IdTemplate, F.IdTag));
+                    dgvEvent.DataSource = mEvent.getAll();                    
                 }
-
-                CApp.close();
             }
         }
 
         private void mnuInsert_Click(object sender, EventArgs e)
         {
-            CApp.connect();
+            var TagAll = mTag.getAll();
+            var TemplateAll = mTemplate.getAll();
 
-            SqlCommand cmdTag = new SqlCommand("SELECT * FROM tbl_tag", CApp.connection);
-            SqlDataReader rdrTag = cmdTag.ExecuteReader();
-            DataTable dtTag = new DataTable();
-            dtTag.Load(rdrTag);
-
-            SqlCommand cmdTemplate = new SqlCommand("SELECT * FROM tbl_template", CApp.connection);
-            SqlDataReader rdrTemplate = cmdTemplate.ExecuteReader();
-            DataTable dtTemplate = new DataTable();
-            dtTemplate.Load(rdrTemplate);
-
-            frmEventInsert F = new frmEventInsert(dtTag, dtTemplate);
+            frmEventInsert F = new frmEventInsert(TagAll, TemplateAll);
             F.ShowDialog();
 
             if (F.State == 1)
-            {
-                SqlCommand cmdInsert = new SqlCommand("INSERT INTO tbl_event(name, time, id_tag, id_template) VALUES(@name, @time, @id_tag, @id_template)", CApp.connection);
-                cmdInsert.Parameters.AddWithValue("@name", F.NameEvent);
-                cmdInsert.Parameters.AddWithValue("@time", F.Time);
-                cmdInsert.Parameters.AddWithValue("@id_template", F.IdTemplate);
-                cmdInsert.Parameters.AddWithValue("@id_tag", F.IdTag);
-                cmdInsert.ExecuteNonQuery();
+            {                
+                mEvent.insert(new CEvent(1, F.NameEvent, F.Time, F.IdTemplate, F.IdTag));
+                dgvEvent.DataSource= mEvent.getAll();
             }
-            CApp.close();
 
-            CService.updateGrid(dgvEvent, "SELECT * FROM tbl_event");
         }
     }
 }
