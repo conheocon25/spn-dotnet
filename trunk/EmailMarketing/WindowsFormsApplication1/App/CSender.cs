@@ -19,8 +19,7 @@ namespace EmailMarketing
         public CSender() {
             
             string Emailpassword = ConfigurationManager.AppSettings["password"];
-            this.UserName = ConfigurationManager.AppSettings["sender"];
-            //string encryptedstring = MyEncrypt.Encrypt("yourpassword", "654789spncompanyadmin368068...");
+            this.UserName = ConfigurationManager.AppSettings["sender"];            
             this.UserPass = MyEncrypt.Decrypt(Emailpassword,"654789spncompanyadmin368068...");
             this._smtpClient = new SmtpClient();
             this._smtpClient.Host = "smtp.gmail.com";
@@ -48,8 +47,7 @@ namespace EmailMarketing
             else
             {
                 //Console.WriteLine("Message sent.");
-                CApp.bNextMessage = true;
-                                
+                CApp.bNextMessage = true;                                
                 //Đánh dấu là thư đã được gửi
             }
                 

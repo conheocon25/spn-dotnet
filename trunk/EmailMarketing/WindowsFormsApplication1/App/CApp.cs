@@ -32,7 +32,8 @@ namespace EmailMarketing
         }
 
         static public SqlConnection connection;
-        static public bool bNextMessage = false;
+        static public bool bAuto = false;
+        static public bool bNextMessage = true;
         static public CSender Sender = new CSender();
     }
 }
