@@ -37,6 +37,7 @@
             this.cmdStart = new System.Windows.Forms.Button();
             this.dgvScheduler = new System.Windows.Forms.DataGridView();
             this.tmrSending = new System.Windows.Forms.Timer(this.components);
+            this.cmdSchedulerDeleteAll = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -56,6 +57,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.cmdSchedulerDeleteAll);
             this.splitContainer1.Panel2.Controls.Add(this.prbSending);
             this.splitContainer1.Panel2.Controls.Add(this.lblProcessing);
             this.splitContainer1.Panel2.Controls.Add(this.cmdStart);
@@ -78,9 +80,9 @@
             // prbSending
             // 
             this.prbSending.ForeColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.prbSending.Location = new System.Drawing.Point(137, 535);
+            this.prbSending.Location = new System.Drawing.Point(154, 535);
             this.prbSending.Name = "prbSending";
-            this.prbSending.Size = new System.Drawing.Size(369, 23);
+            this.prbSending.Size = new System.Drawing.Size(306, 23);
             this.prbSending.Step = 100;
             this.prbSending.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.prbSending.TabIndex = 3;
@@ -120,6 +122,17 @@
             this.tmrSending.Interval = 1000;
             this.tmrSending.Tick += new System.EventHandler(this.tmrSending_Tick);
             // 
+            // cmdSchedulerDeleteAll
+            // 
+            this.cmdSchedulerDeleteAll.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cmdSchedulerDeleteAll.Location = new System.Drawing.Point(466, 528);
+            this.cmdSchedulerDeleteAll.Name = "cmdSchedulerDeleteAll";
+            this.cmdSchedulerDeleteAll.Size = new System.Drawing.Size(55, 39);
+            this.cmdSchedulerDeleteAll.TabIndex = 4;
+            this.cmdSchedulerDeleteAll.Text = "Xóa hết";
+            this.cmdSchedulerDeleteAll.UseVisualStyleBackColor = true;
+            this.cmdSchedulerDeleteAll.Click += new System.EventHandler(this.cmdSchedulerDeleteAll_Click);
+            // 
             // frmScheduler
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -153,6 +166,7 @@
         private System.Windows.Forms.Label lblProcessing;
         private System.Windows.Forms.Button cmdStart;
         private System.Windows.Forms.ProgressBar prbSending;
+        private System.Windows.Forms.Button cmdSchedulerDeleteAll;
 
     }
 }

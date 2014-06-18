@@ -69,6 +69,13 @@ namespace EmailMarketing
             }
         }
 
+        [DisplayName("Mẫu thư")]
+        public string TemplateName
+        {
+            get { return this.getTemplate().Name; }
+            set { }
+        }
+
         [Browsable(false)]
         public int IdCustomer
         {
@@ -82,12 +89,19 @@ namespace EmailMarketing
             }
         }
 
+        [DisplayName("Khách hàng")]
+        public string CustomerName
+        {
+            get { return this.getCustomer().Name; }
+            set { }
+        }
+
         public CCustomer getCustomer() {
             var mCustomer = new CCustomerMapper();
             return mCustomer.get(this._IdCustomer);
         }
                 
-        //[Browsable(false)]
+        [Browsable(false)]
         public int State
         {
             get
@@ -98,6 +112,13 @@ namespace EmailMarketing
             {
                 this._State = State;
             }
+        }
+
+        [DisplayName("Trạng  thái")]
+        public string StatePrint
+        {
+            get { return this.State==1?"Đã gửi":"Chưa gửi"; }
+            set { }
         }
 
         public void sendMail() {
