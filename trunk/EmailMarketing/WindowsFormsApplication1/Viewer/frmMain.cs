@@ -29,7 +29,7 @@ namespace EmailMarketing
 
         private void mnuOption_Click(object sender, EventArgs e)
         {
-            frmOption F = new frmOption();
+            frmConfig F = new frmConfig();
             F.ShowDialog();
         }
 
@@ -66,6 +66,12 @@ namespace EmailMarketing
         private void mnuTagView_Click(object sender, EventArgs e)
         {
             frmTag F = new frmTag();
+            F.ShowDialog();
+        }
+
+        private void mnuConfig_Click(object sender, EventArgs e)
+        {
+            frmConfig F = new frmConfig();
             F.ShowDialog();
         }
     }

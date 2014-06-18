@@ -42,6 +42,7 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Location = new System.Drawing.Point(234, 205);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(102, 31);
@@ -58,15 +59,14 @@
             this.label2.Size = new System.Drawing.Size(51, 13);
             this.label2.TabIndex = 9;
             this.label2.Text = "Thời gian";
-            
             // 
             // txtName
             // 
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Location = new System.Drawing.Point(234, 89);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(187, 20);
-            this.txtName.TabIndex = 8;
-            
+            this.txtName.Size = new System.Drawing.Size(311, 20);
+            this.txtName.TabIndex = 1;
             // 
             // label1
             // 
@@ -76,25 +76,23 @@
             this.label1.Size = new System.Drawing.Size(63, 13);
             this.label1.TabIndex = 7;
             this.label1.Text = "Tên sự kiện";
-            
             // 
             // dtpTime
             // 
             this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpTime.Location = new System.Drawing.Point(234, 115);
             this.dtpTime.Name = "dtpTime";
-            this.dtpTime.Size = new System.Drawing.Size(187, 20);
-            this.dtpTime.TabIndex = 14;
-            
+            this.dtpTime.Size = new System.Drawing.Size(311, 20);
+            this.dtpTime.TabIndex = 2;
             // 
             // cboTag
             // 
+            this.cboTag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTag.FormattingEnabled = true;
             this.cboTag.Location = new System.Drawing.Point(234, 141);
             this.cboTag.Name = "cboTag";
-            this.cboTag.Size = new System.Drawing.Size(187, 21);
-            this.cboTag.TabIndex = 15;
-            
+            this.cboTag.Size = new System.Drawing.Size(311, 21);
+            this.cboTag.TabIndex = 3;
             // 
             // label3
             // 
@@ -104,7 +102,6 @@
             this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 16;
             this.label3.Text = "Nhóm";
-            
             // 
             // label4
             // 
@@ -114,16 +111,15 @@
             this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 18;
             this.label4.Text = "Mẫu";
-            
             // 
             // cboTemplate
             // 
+            this.cboTemplate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTemplate.FormattingEnabled = true;
             this.cboTemplate.Location = new System.Drawing.Point(234, 168);
             this.cboTemplate.Name = "cboTemplate";
-            this.cboTemplate.Size = new System.Drawing.Size(187, 21);
-            this.cboTemplate.TabIndex = 17;
-            
+            this.cboTemplate.Size = new System.Drawing.Size(311, 21);
+            this.cboTemplate.TabIndex = 5;
             // 
             // frmEventInsert
             // 

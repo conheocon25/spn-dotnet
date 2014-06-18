@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.ComponentModel;
+using System.Net.Mail;
+using System.Net;
 
 namespace EmailMarketing
 {
@@ -23,6 +25,17 @@ namespace EmailMarketing
             this.Id = Id;
             this.Name = Name;
             this.Content = Content;
+        }
+
+        public MailMessage getEmail()
+        {
+            MailMessage Mail = new MailMessage();
+            MailAddress From = new MailAddress("thanhbao2007vl@gmail.com", "Thanh Bảo");
+            Mail.IsBodyHtml = true;
+            Mail.From = From;
+            Mail.Subject = this.Name;
+            Mail.Body = this.Content;
+            return Mail;
         }
 
     }

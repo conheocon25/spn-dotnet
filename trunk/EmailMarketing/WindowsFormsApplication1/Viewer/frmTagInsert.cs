@@ -21,8 +21,8 @@ namespace EmailMarketing
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            this.DialogResult = DialogResult.OK;
             NameTag = txtName.Text;
-            State = 1;
             this.Close();
         }
     }

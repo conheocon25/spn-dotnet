@@ -67,6 +67,7 @@
             // 
             // tvwTag
             // 
+            this.tvwTag.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tvwTag.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tvwTag.ImageIndex = 0;
             this.tvwTag.ImageList = this.imlTag;
@@ -75,7 +76,6 @@
             this.tvwTag.SelectedImageIndex = 0;
             this.tvwTag.Size = new System.Drawing.Size(264, 573);
             this.tvwTag.TabIndex = 0;
-            
             this.tvwTag.NodeMouseDoubleClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.tvwTag_NodeMouseDoubleClick);
             this.tvwTag.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tvwTag_MouseUp);
             // 

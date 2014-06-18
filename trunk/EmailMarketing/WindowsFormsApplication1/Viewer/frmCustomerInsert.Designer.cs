@@ -49,6 +49,7 @@
             // 
             // txtName
             // 
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Location = new System.Drawing.Point(267, 50);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(187, 20);
@@ -56,10 +57,11 @@
             // 
             // txtPhone
             // 
+            this.txtPhone.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtPhone.Location = new System.Drawing.Point(267, 76);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(187, 20);
-            this.txtPhone.TabIndex = 3;
+            this.txtPhone.TabIndex = 2;
             // 
             // label2
             // 
@@ -72,10 +74,11 @@
             // 
             // txtEmail
             // 
+            this.txtEmail.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtEmail.Location = new System.Drawing.Point(267, 102);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(187, 20);
-            this.txtEmail.TabIndex = 5;
+            this.txtEmail.TabIndex = 3;
             // 
             // label3
             // 
@@ -88,10 +91,11 @@
             // 
             // btnUpdate
             // 
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Location = new System.Drawing.Point(267, 128);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(102, 31);
-            this.btnUpdate.TabIndex = 6;
+            this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "Lưu";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);

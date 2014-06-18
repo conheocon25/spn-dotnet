@@ -30,11 +30,11 @@ namespace EmailMarketing
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
-        {                        
-            State = 1;
+        {                                    
             NameCustomer = txtName.Text;
             Email = txtEmail.Text;
             Phone = txtPhone.Text;
+            this.DialogResult = DialogResult.OK;
             this.Close();
         }
                

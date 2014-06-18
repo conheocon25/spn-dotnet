@@ -51,11 +51,12 @@
             // 
             // cboTemplate
             // 
+            this.cboTemplate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTemplate.FormattingEnabled = true;
             this.cboTemplate.Location = new System.Drawing.Point(234, 168);
             this.cboTemplate.Name = "cboTemplate";
-            this.cboTemplate.Size = new System.Drawing.Size(187, 21);
-            this.cboTemplate.TabIndex = 26;
+            this.cboTemplate.Size = new System.Drawing.Size(313, 21);
+            this.cboTemplate.TabIndex = 4;
             // 
             // label3
             // 
@@ -68,26 +69,28 @@
             // 
             // cboTag
             // 
+            this.cboTag.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cboTag.FormattingEnabled = true;
             this.cboTag.Location = new System.Drawing.Point(234, 141);
             this.cboTag.Name = "cboTag";
-            this.cboTag.Size = new System.Drawing.Size(187, 21);
-            this.cboTag.TabIndex = 24;
+            this.cboTag.Size = new System.Drawing.Size(313, 21);
+            this.cboTag.TabIndex = 3;
             // 
             // dtpTime
             // 
             this.dtpTime.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpTime.Location = new System.Drawing.Point(234, 115);
             this.dtpTime.Name = "dtpTime";
-            this.dtpTime.Size = new System.Drawing.Size(187, 20);
-            this.dtpTime.TabIndex = 23;
+            this.dtpTime.Size = new System.Drawing.Size(313, 20);
+            this.dtpTime.TabIndex = 2;
             // 
             // btnUpdate
             // 
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUpdate.Location = new System.Drawing.Point(234, 205);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(102, 31);
-            this.btnUpdate.TabIndex = 22;
+            this.btnUpdate.TabIndex = 5;
             this.btnUpdate.Text = "Lưu";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -103,10 +106,11 @@
             // 
             // txtName
             // 
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtName.Location = new System.Drawing.Point(234, 89);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(187, 20);
-            this.txtName.TabIndex = 20;
+            this.txtName.Size = new System.Drawing.Size(313, 20);
+            this.txtName.TabIndex = 1;
             // 
             // label1
             // 

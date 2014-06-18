@@ -12,7 +12,6 @@ namespace EmailMarketing
 {
     public partial class frmEventInsert : Form
     {
-        public int State = -1;
         public string NameEvent;
         public int IdTag;
         public int IdTemplate;
@@ -39,7 +38,7 @@ namespace EmailMarketing
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            State = 1;
+            this.DialogResult = DialogResult.OK;
             NameEvent = txtName.Text;
             IdTag = (int)cboTag.SelectedValue;
             IdTemplate = (int)cboTemplate.SelectedValue;

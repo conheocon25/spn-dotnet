@@ -24,7 +24,7 @@ namespace EmailMarketing
         {
             frmTemplateInsert F = new frmTemplateInsert();
             F.ShowDialog();
-            if (F.State == 1)
+            if (F.DialogResult == DialogResult.OK)
             {                                
                 mTemplate.insert(new CTemplate(1, F.NameTemplate, F.Content));
                 dgvTemplate.DataSource = mTemplate.getAll();                
@@ -40,11 +40,10 @@ namespace EmailMarketing
                 int Id = (int)dgvTemplate.Rows[Index].Cells[0].Value;
                 CTemplate Template = mTemplate.get(Id);
 
-                frmTemplateUpdate F = new frmTemplateUpdate(Template);
-                             
-                F.ShowDialog();
-                if (F.State == 1)
-                {                       
+                frmTemplateUpdate F = new frmTemplateUpdate(Template);                                             
+                DialogResult result = F.ShowDialog();
+                if (result == DialogResult.OK)
+                {
                     Template.Name = F.NameTemplate;
                     Template.Content = F.Content;
 
@@ -76,6 +75,11 @@ namespace EmailMarketing
                 int currentMouseOverRow = dgvTemplate.HitTest(e.X, e.Y).RowIndex;
                 mnuAction.Show(dgvTemplate, new Point(e.X, e.Y));
             }
+        }
+
+        private void mnuAction_Opening(object sender, CancelEventArgs e)
+        {
+
         }
 
     }

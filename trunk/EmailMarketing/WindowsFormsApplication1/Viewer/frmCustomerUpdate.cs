@@ -12,7 +12,6 @@ namespace EmailMarketing
 {
     public partial class frmCustomerUpdate : Form
     {
-        public int State = -1;        
         public string NameCustomer = "";
         public string Phone = "";
         public string Email = "";
@@ -32,9 +31,13 @@ namespace EmailMarketing
             NameCustomer = txtName.Text;
             Phone = txtPhone.Text;
             Email = txtEmail.Text;
-            State = 1;
-
+            this.DialogResult = DialogResult.OK;
             this.Close();            
+        }
+
+        private void txtPhone_TextChanged(object sender, EventArgs e)
+        {
+
         }
 
     }

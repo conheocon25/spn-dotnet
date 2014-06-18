@@ -11,8 +11,7 @@ using System.Windows.Forms;
 namespace EmailMarketing
 {
     public partial class frmTemplateUpdate : Form
-    {
-        public int State = -1;
+    {        
         public string NameTemplate = "";
         public string Content = "";
 
@@ -24,11 +23,22 @@ namespace EmailMarketing
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
-        {
-            State = 1;
+        {     
             NameTemplate = txtName.Text;
             Content = txtContent.Text;
+            this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void txtContent_TextChanged(object sender, EventArgs e)
+        {
+            webPreview.DocumentText = txtContent.Text;
+        }
+
+        private void frmTemplateUpdate_Load(object sender, EventArgs e)
+        {            
+            webPreview.DocumentText = txtContent.Text;
+            webPreview.Refresh();
         }
     }
 }

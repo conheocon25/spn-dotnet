@@ -69,8 +69,9 @@ namespace EmailMarketing
         {            
             int IdTag = Convert.ToInt32(tvwTag.SelectedNode.Tag);
             frmCustomerInsert F = new frmCustomerInsert();
-            F.ShowDialog();
-            if (F.State == 1) {                
+            var Result = F.ShowDialog();
+            if (Result == DialogResult.OK)
+            {
                 mCustomer.insert(new CCustomer(1, IdTag, F.NameCustomer, F.Email, F.Phone));
                 clickTag(curNode);
             }                
@@ -109,8 +110,8 @@ namespace EmailMarketing
                 CCustomer Customer = mCustomer.get(IdCustomer);                
                 frmCustomerUpdate F = new frmCustomerUpdate(Customer);
                                 
-                F.ShowDialog();
-                if (F.State == 1){                    
+                var Result = F.ShowDialog();
+                if (Result == DialogResult.OK){                    
                     CCustomer C = new CCustomer(IdCustomer, Customer.IdTag, F.NameCustomer, F.Email, F.Phone);
                     mCustomer.update(C);
                     clickTag(curNode);
