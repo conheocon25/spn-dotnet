@@ -14,12 +14,12 @@ using System.Net;
 namespace EmailMarketing
 {
     public partial class frmScheduler : Form
-    {
-        public List<CScheduler> lstMessage;
-        public int              curMessage=0;
+    {        
+        public int curMessage=0;
         public int nScheduler = 0;
         
         CEventMapper mEvent = new CEventMapper();
+        CCustomerMapper mCustomer = new CCustomerMapper();
         CSchedulerMapper mScheduler = new CSchedulerMapper();
         
         public frmScheduler()
@@ -37,46 +37,25 @@ namespace EmailMarketing
         }
 
         private void lstMain_MouseDoubleClick(object sender, MouseEventArgs e)
-        {                        
-            CApp.connect();
-            
-            //Lấy về Event
-            string IdEvent = lstMain.SelectedValue.ToString();
-            SqlCommand cmdEvent = new SqlCommand("SELECT * FROM tbl_event WHERE id=@id", CApp.connection);
-            cmdEvent.Parameters.AddWithValue("@id", IdEvent);
-            SqlDataReader rdrEvent = cmdEvent.ExecuteReader();
-            rdrEvent.Read();
-            int IdCustomer = (int)rdrEvent["id"];
-            int IdTemplate = (int)rdrEvent["id_template"];
-            int IdTag = (int)rdrEvent["id_tag"];
-            DateTime Time = DateTime.Parse(rdrEvent["time"].ToString());
+        {                                                            
+            int IdEvent = (int)lstMain.SelectedValue;
+            var Event = mEvent.get(IdEvent);
+            var CustomerAll = mCustomer.getByTag(Event.IdTag);
 
-            CApp.close();
-
-            CApp.connect();
-            //Lấy về danh sách KH tương ứng của Event
-            SqlCommand cmdCustomer = new SqlCommand("SELECT * FROM tbl_customer WHERE id_tag=@id_tag", CApp.connection);
-            cmdCustomer.Parameters.AddWithValue("@id_tag", IdTag);
-            SqlDataReader rdrCustomer = cmdCustomer.ExecuteReader();                        
-            List<int> CA = new List<int>();
-            while (rdrCustomer.Read())
-            {
-                CA.Add((int)rdrCustomer["id"]);                
+            foreach (var Customer in CustomerAll)
+            {                                
+                mScheduler.insert(
+                    new CScheduler(
+                        1,
+                        Event.Time,
+                        Event.IdTemplate,
+                        Customer.Id,
+                        0
+                        )
+                );
             }
-            CApp.close();
-
-            CApp.connect();
-            foreach (int IdCur in CA)
-            {                
-                SqlCommand cmdScheduler = new SqlCommand("INSERT INTO tbl_scheduler(time, id_template, id_customer, state) VALUES(@time, @id_template, @id_customer, @state)", CApp.connection);
-                cmdScheduler.Parameters.AddWithValue("@time", Time);
-                cmdScheduler.Parameters.AddWithValue("@id_template", IdTemplate);
-                cmdScheduler.Parameters.AddWithValue("@id_customer", IdCur);
-                cmdScheduler.Parameters.AddWithValue("@state", 0);
-                cmdScheduler.ExecuteNonQuery();
-            }
-            CApp.close();
-                        
+            dgvScheduler.DataSource = mScheduler.getAllReady();
+            updateProcesssing();
         }
                 
         private void tmrSending_Tick(object sender, EventArgs e)
@@ -89,8 +68,7 @@ namespace EmailMarketing
             if (CApp.bNextMessage == true && nScheduler > curMessage)
             {                
                 SchedulerAll[curMessage].sendMail();
-                curMessage++;
-                prbSending.Value = curMessage;
+                curMessage++;                
                 CApp.bNextMessage = false;
                 updateProcesssing();
             }            
@@ -111,11 +89,19 @@ namespace EmailMarketing
         }
         public void updateProcesssing(){
             lblProcessing.Text = curMessage + " / " + nScheduler.ToString();
+            prbSending.Value = curMessage;
         }
 
         private void frmScheduler_FormClosed(object sender, FormClosedEventArgs e)
         {
             CApp.bNextMessage = false;
-        }        
+        }
+
+        private void cmdSchedulerDeleteAll_Click(object sender, EventArgs e)
+        {
+            mScheduler.deleteAll();
+            dgvScheduler.DataSource = mScheduler.getAll();
+        }
+        
     }
 }

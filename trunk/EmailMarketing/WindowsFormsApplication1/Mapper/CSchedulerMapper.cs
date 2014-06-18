@@ -75,7 +75,7 @@ namespace EmailMarketing
         public void insert(CScheduler Tag)
         {
             CApp.connect();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tbl_scheduler(time, id_template, id_customer, state) VALUES(@name, @time, @id_template, @id_customer, @state)", CApp.connection);            
+            SqlCommand cmd = new SqlCommand("INSERT INTO tbl_scheduler(time, id_template, id_customer, state) VALUES(@time, @id_template, @id_customer, @state)", CApp.connection);            
             cmd.Parameters.AddWithValue("@time", Tag.Time);
             cmd.Parameters.AddWithValue("@id_template", Tag.IdTemplate);
             cmd.Parameters.AddWithValue("@id_customer", Tag.IdCustomer);
@@ -106,5 +106,12 @@ namespace EmailMarketing
             CApp.close();
         }
 
+        public void deleteAll()
+        {
+            CApp.connect();
+            SqlCommand cmd = new SqlCommand("DELETE FROM  tbl_scheduler", CApp.connection);            
+            cmd.ExecuteNonQuery();
+            CApp.close();
+        }
     }
 }
