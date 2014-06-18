@@ -49,13 +49,20 @@
     <Compile Include="App\CApp.cs" />
     <Compile Include="Mapper\CCustomerMapper.cs" />
     <Compile Include="Mapper\CEventMapper.cs" />
+    <Compile Include="Mapper\CLogMapper.cs" />
     <Compile Include="Mapper\CSchedulerMapper.cs" />
     <Compile Include="Mapper\CTemplateMapper.cs" />
     <Compile Include="Model\CCustomer.cs" />
     <Compile Include="Model\CEvent.cs" />
+    <Compile Include="Model\CLog.cs" />
     <Compile Include="Model\CTag.cs" />
     <Compile Include="Mapper\CTagMapper.cs" />
     <Compile Include="Model\CTemplate.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Viewer\frmAbout.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -91,6 +98,12 @@
     </Compile>
     <Compile Include="Viewer\frmEventUpdate.Designer.cs">
       <DependentUpon>frmEventUpdate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Viewer\frmLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viewer\frmLog.Designer.cs">
+      <DependentUpon>frmLog.cs</DependentUpon>
     </Compile>
     <Compile Include="Viewer\frmMain.cs">
       <SubType>Form</SubType>
@@ -175,6 +188,9 @@
     <EmbeddedResource Include="Viewer\frmEventUpdate.resx">
       <DependentUpon>frmEventUpdate.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Viewer\frmLog.resx">
+      <DependentUpon>frmLog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Viewer\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -207,14 +223,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -231,10 +242,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Image\e_mail.png" />
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <None Include="Resources\305.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -9,14 +9,8 @@ using System.Windows.Forms;
 namespace EmailMarketing
 {
     public partial class frmMain : Form
-    {
-        public int curMessage = 0;
-        public int nScheduler = 0;
-
-        CEventMapper mEvent = new CEventMapper();
-        CCustomerMapper mCustomer = new CCustomerMapper();
+    {                
         CSchedulerMapper mScheduler = new CSchedulerMapper();
-
         public frmMain()
         {            
             InitializeComponent();
@@ -25,8 +19,10 @@ namespace EmailMarketing
         private void frmMain_Load(object sender, EventArgs e)
         {
             IList<CScheduler> SchedulerAll = mScheduler.getAllReady();
-            nScheduler = SchedulerAll.Count;
-            pgbSending.Maximum = nScheduler;
+            CApp.nSum = SchedulerAll.Count;
+            CApp.nSend = 0;
+            pgbSending.Maximum = SchedulerAll.Count;
+
             updateProcesssing();
         }
 
@@ -107,6 +103,10 @@ namespace EmailMarketing
             {
                 CApp.bAuto = true;                
                 mnuSending.Text = "Ngưng gửi";
+
+                IList<CScheduler> SchedulerAll = mScheduler.getAllReady();
+                CApp.nSum = SchedulerAll.Count;
+
             }
             else {
                 CApp.bAuto = false;                
@@ -115,26 +115,21 @@ namespace EmailMarketing
         }
         public void updateProcesssing()
         {
-            lblState.Text = "Thông báo " + curMessage + " / " + nScheduler.ToString();
-            pgbSending.Maximum = nScheduler;
-            pgbSending.Value = curMessage;
+            lblState.Text = "Thông báo " + CApp.nSend + " / " + (CApp.nSum + CApp.nSend);
+            pgbSending.Maximum = (CApp.nSum + CApp.nSend);
+            pgbSending.Value = CApp.nSend;
         }
 
         private void tmrSending_Tick(object sender, EventArgs e)
-        {            
-            IList<CScheduler> SchedulerAll = mScheduler.getAllReady();
-            nScheduler = SchedulerAll.Count;
-            pgbSending.Maximum = nScheduler;
+        {
+            CApp.sending();
+            updateProcesssing();                        
+        }
 
-            if (CApp.bAuto == true) {
-                if (CApp.bNextMessage == true && nScheduler > curMessage)
-                {
-                    SchedulerAll[curMessage].sendMail();
-                    curMessage++;
-                    CApp.bNextMessage = false;
-                    updateProcesssing();
-                }
-            }            
+        private void mnuLog_Click(object sender, EventArgs e)
+        {
+            frmLog F = new frmLog();
+            F.ShowDialog();
         }
     }
 }

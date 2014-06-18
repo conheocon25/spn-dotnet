@@ -1,6 +1,6 @@
-﻿namespace EmailMarketingDeliver
+﻿namespace EmailMarketing
 {
-    partial class frmMain
+    partial class frmLog
     {
         /// <summary>
         /// Required designer variable.
@@ -28,39 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
-            this.ntiApp = new System.Windows.Forms.NotifyIcon(this.components);
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLog));
+            this.dgvLog = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLog)).BeginInit();
             this.SuspendLayout();
             // 
-            // ntiApp
+            // dgvLog
             // 
-            this.ntiApp.BalloonTipText = "Hệ thống gửi Email";
-            this.ntiApp.BalloonTipTitle = "Email Marketing Deliver";
-            this.ntiApp.Icon = ((System.Drawing.Icon)(resources.GetObject("ntiApp.Icon")));
-            this.ntiApp.Text = "Email Marketing Deliver";
-            this.ntiApp.Visible = true;
-            this.ntiApp.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ntiApp_MouseDoubleClick);
+            this.dgvLog.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvLog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvLog.Location = new System.Drawing.Point(0, 0);
+            this.dgvLog.Name = "dgvLog";
+            this.dgvLog.Size = new System.Drawing.Size(792, 573);
+            this.dgvLog.TabIndex = 0;
+            this.dgvLog.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLog_CellContentClick);
             // 
-            // frmMain
+            // frmLog
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 573);
+            this.Controls.Add(this.dgvLog);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.Name = "frmMain";
+            this.MinimizeBox = false;
+            this.Name = "frmLog";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Email Marketing Deliver";
-            this.Load += new System.EventHandler(this.frmMain_Load);
-            this.Resize += new System.EventHandler(this.frmMain_Resize);
+            this.Text = "Email Marketing > Nhật kí";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvLog)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.NotifyIcon ntiApp;
+        private System.Windows.Forms.DataGridView dgvLog;
     }
 }
-
