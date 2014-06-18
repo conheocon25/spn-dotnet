@@ -18,25 +18,25 @@ namespace EmailMarketing
         public int IdTemplate;
         public DateTime Time;
 
-        public frmEventUpdate(DataTable dtTag_, DataTable dtTemplate_, string Name_="", int IdTag_=0, int IdTemplate_=0, DateTime time_=new DateTime())
+        public frmEventUpdate(CEvent Event, IList<CTag> lstTag, IList<CTemplate> lstTemplate)
         {
             InitializeComponent();
 
-            txtName.Text = Name_;
+            txtName.Text = Event.Name;
 
-            cboTag.DataSource = dtTag_;
+            cboTag.DataSource = lstTag;
             cboTag.DisplayMember = "name";
             cboTag.ValueMember = "id";
-            cboTag.SelectedIndex = IdTag_;
+            cboTag.SelectedValue = Event.IdTag;
 
-            cboTemplate.DataSource = dtTemplate_;
+            cboTemplate.DataSource = lstTemplate;
             cboTemplate.DisplayMember = "name";
             cboTemplate.ValueMember = "id";
-            cboTemplate.SelectedIndex = IdTemplate_;
+            cboTemplate.SelectedValue = Event.IdTemplate;
 
             dtpTime.Format = DateTimePickerFormat.Custom;
             dtpTime.CustomFormat = "dd/MM/yyyy hh:mm";
-            dtpTime.Value = time_;
+            dtpTime.Value = Event.Time;
             
         }
 

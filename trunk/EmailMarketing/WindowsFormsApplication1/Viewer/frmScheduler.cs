@@ -19,25 +19,21 @@ namespace EmailMarketing
         public int              curMessage=0;
         public int nScheduler = 0;
         
+        CEventMapper mEvent = new CEventMapper();
+        CSchedulerMapper mScheduler = new CSchedulerMapper();
+        
         public frmScheduler()
         {            
             InitializeComponent();
         }
 
         private void frmSchedulerView_Load(object sender, EventArgs e)
-        {
-            CApp.connect();
-            SqlCommand cmdEvent = new SqlCommand("SELECT * FROM tbl_event", CApp.connection);
-            SqlDataReader rdrEvent = cmdEvent.ExecuteReader();
-            DataTable dtEvent = new DataTable();
-            dtEvent.Load(rdrEvent);
-
-            lstMain.DataSource = dtEvent;
+        {                        
+            lstMain.DataSource = mEvent.getAll();
             lstMain.DisplayMember = "Name";
             lstMain.ValueMember = "Id";
-            CApp.close();
-            CService.updateGrid(dgvScheduler, "SELECT * FROM tbl_scheduler WHERE state=0");
-
+                        
+            dgvScheduler.DataSource = mScheduler.getAll();
         }
 
         private void lstMain_MouseDoubleClick(object sender, MouseEventArgs e)

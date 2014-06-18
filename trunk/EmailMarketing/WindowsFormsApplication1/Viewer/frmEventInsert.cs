@@ -18,15 +18,15 @@ namespace EmailMarketing
         public int IdTemplate;
         public DateTime Time;
 
-        public frmEventInsert(DataTable dtTag_, DataTable dtTemplate_)
+        public frmEventInsert(IList<CTag> TagAll, IList<CTemplate> TemplateAll)
         {
             InitializeComponent();
             
-            cboTag.DataSource = dtTag_;
+            cboTag.DataSource = TagAll;
             cboTag.DisplayMember = "name";
             cboTag.ValueMember = "id";
 
-            cboTemplate.DataSource = dtTemplate_;
+            cboTemplate.DataSource = TemplateAll;
             cboTemplate.DisplayMember = "name";
             cboTemplate.ValueMember = "id";
         }

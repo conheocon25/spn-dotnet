@@ -47,7 +47,7 @@
             this.dgvEvent.Name = "dgvEvent";
             this.dgvEvent.Size = new System.Drawing.Size(792, 573);
             this.dgvEvent.TabIndex = 2;
-            this.dgvEvent.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.gdvEvent_CellContentClick);
+
             this.dgvEvent.MouseClick += new System.Windows.Forms.MouseEventHandler(this.gdvEvent_MouseClick);
             // 
             // mnuAction
