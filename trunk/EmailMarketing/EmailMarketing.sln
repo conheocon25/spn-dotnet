@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailMarketing", "WindowsFormsApplication1\EmailMarketing.csproj", "{DCBD2858-1EE0-43AE-BE28-BCC49662A7E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmailMarketingDeliver", "EmailMarketingDeliver\EmailMarketingDeliver.csproj", "{28E79797-B61D-4A99-B23B-96E260E37C62}"
-EndProject
 Global
 	GlobalSection(SubversionScc) = preSolution
 		Svn-Managed = True
@@ -19,10 +17,6 @@ Global
 		{DCBD2858-1EE0-43AE-BE28-BCC49662A7E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DCBD2858-1EE0-43AE-BE28-BCC49662A7E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DCBD2858-1EE0-43AE-BE28-BCC49662A7E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{28E79797-B61D-4A99-B23B-96E260E37C62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{28E79797-B61D-4A99-B23B-96E260E37C62}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{28E79797-B61D-4A99-B23B-96E260E37C62}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{28E79797-B61D-4A99-B23B-96E260E37C62}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

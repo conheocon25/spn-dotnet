@@ -65,16 +65,7 @@
             this.label3.Size = new System.Drawing.Size(148, 23);
             this.label3.TabIndex = 2;
             this.label3.Text = "Vĩnh Long 2014";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::EmailMarketing.Properties.Resources.e_mail;
-            this.pictureBox1.Location = new System.Drawing.Point(342, 99);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(99, 94);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+                        
             // 
             // frmAbout
             // 

@@ -45,14 +45,19 @@ namespace EmailMarketing
                 CApp.bNextMessage = true;
             }
             else
-            {
-                //Console.WriteLine("Message sent.");
-                CApp.bNextMessage = true;                                
+            {                
+                CApp.bNextMessage = true;
+                CApp.nSend += 1;
+                CApp.nSum -= 1;
+
                 //Đánh dấu là thư đã được gửi
+                var mScheduler = new CSchedulerMapper();
+                var Scheduler = mScheduler.get(CApp.iScheduler);
+                var mLog = new CLogMapper();
+                mLog.insert(new CLog(1, Scheduler.Time, DateTime.Now, Scheduler.IdTemplate, Scheduler.IdCustomer, 1));
+                mScheduler.delete(CApp.iScheduler);
             }
                 
         }
-
-
     }
 }

@@ -40,6 +40,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuScheduleView = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSending = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuLog = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.ntiApp = new System.Windows.Forms.NotifyIcon(this.components);
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -112,8 +113,9 @@
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuSending,
             this.mnuScheduleView,
-            this.mnuSending});
+            this.mnuLog});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.aboutToolStripMenuItem.Text = "Hành động";
@@ -122,15 +124,22 @@
             // 
             this.mnuScheduleView.Name = "mnuScheduleView";
             this.mnuScheduleView.Size = new System.Drawing.Size(152, 22);
-            this.mnuScheduleView.Text = "Xem danh sách";
+            this.mnuScheduleView.Text = "Phát sinh gửi ...";
             this.mnuScheduleView.Click += new System.EventHandler(this.mnuScheduleView_Click);
             // 
             // mnuSending
-            // 
+            //             
             this.mnuSending.Name = "mnuSending";
             this.mnuSending.Size = new System.Drawing.Size(152, 22);
             this.mnuSending.Text = "Gửi tự động";
             this.mnuSending.Click += new System.EventHandler(this.mnuSending_Click);
+            // 
+            // mnuLog
+            // 
+            this.mnuLog.Name = "mnuLog";
+            this.mnuLog.Size = new System.Drawing.Size(152, 22);
+            this.mnuLog.Text = "Nhật kí gửi";
+            this.mnuLog.Click += new System.EventHandler(this.mnuLog_Click);
             // 
             // mnuAbout
             // 
@@ -179,6 +188,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::EmailMarketing.Properties.Resources._305;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(792, 573);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.mnuSystem);
@@ -218,6 +229,7 @@
         private System.Windows.Forms.ToolStripStatusLabel lblState;
         private System.Windows.Forms.ToolStripProgressBar pgbSending;
         private System.Windows.Forms.Timer tmrSending;
+        private System.Windows.Forms.ToolStripMenuItem mnuLog;
     }
 }
 
