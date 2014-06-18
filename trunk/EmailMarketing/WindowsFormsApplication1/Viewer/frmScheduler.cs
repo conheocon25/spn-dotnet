@@ -54,54 +54,9 @@ namespace EmailMarketing
                         )
                 );
             }
-            dgvScheduler.DataSource = mScheduler.getAllReady();
-            updateProcesssing();
+            dgvScheduler.DataSource = mScheduler.getAllReady();            
         }
-                
-        private void tmrSending_Tick(object sender, EventArgs e)
-        {                        
-            //Lấy về tổng số tin cần gửi            
-            IList<CScheduler> SchedulerAll = mScheduler.getAllReady();
-            nScheduler = SchedulerAll.Count;
-            prbSending.Maximum = nScheduler;
-
-            if (CApp.bNextMessage == true && nScheduler > curMessage)
-            {                
-                SchedulerAll[curMessage].sendMail();
-                curMessage++;                
-                CApp.bNextMessage = false;
-                updateProcesssing();
-            }            
-        }
-
-        private void cmdStart_Click(object sender, EventArgs e)
-        {
-            if (CApp.bNextMessage == false)
-            {
-                CApp.bNextMessage = true;
-                cmdStart.Text = "Ngừng lại";
-            }
-            else {
-                CApp.bNextMessage = false;
-                cmdStart.Text = "Bắt đầu";
-            }
-            updateProcesssing();
-        }
-        public void updateProcesssing(){
-            lblProcessing.Text = curMessage + " / " + nScheduler.ToString();
-            prbSending.Value = curMessage;
-        }
-
-        private void frmScheduler_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            CApp.bNextMessage = false;
-        }
-
-        private void cmdSchedulerDeleteAll_Click(object sender, EventArgs e)
-        {
-            mScheduler.deleteAll();
-            dgvScheduler.DataSource = mScheduler.getAll();
-        }
+               
         
     }
 }

@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CApp.cs" />
+    <Compile Include="App\CApp.cs" />
     <Compile Include="Mapper\CCustomerMapper.cs" />
     <Compile Include="Mapper\CEventMapper.cs" />
     <Compile Include="Mapper\CSchedulerMapper.cs" />
@@ -152,11 +152,11 @@
     <Compile Include="Viewer\frmTemplateUpdate.Designer.cs">
       <DependentUpon>frmTemplateUpdate.cs</DependentUpon>
     </Compile>
-    <Compile Include="MyEncrypt.cs" />
+    <Compile Include="App\MyEncrypt.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\CScheduler.cs" />
-    <Compile Include="CSender.cs" />
+    <Compile Include="App\CSender.cs" />
     <EmbeddedResource Include="Viewer\frmAbout.resx">
       <DependentUpon>frmAbout.cs</DependentUpon>
     </EmbeddedResource>
