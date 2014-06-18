@@ -38,6 +38,7 @@
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuScheduleView = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuConfig = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSystem.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,10 +60,11 @@
             this.mnuTagView,
             this.mnuCustomerView,
             this.mnuTemplate,
-            this.mnuEvent});
+            this.mnuEvent,
+            this.mnuConfig});
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
-            this.dataToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
-            this.dataToolStripMenuItem.Text = "Thông tin";
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.dataToolStripMenuItem.Text = "Quản lý";
             // 
             // mnuTagView
             // 
@@ -114,11 +116,17 @@
             this.mnuAbout.Text = "Giới thiệu";
             this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
             // 
+            // mnuConfig
+            // 
+            this.mnuConfig.Name = "mnuConfig";
+            this.mnuConfig.Size = new System.Drawing.Size(152, 22);
+            this.mnuConfig.Text = "Cấu hình";
+            this.mnuConfig.Click += new System.EventHandler(this.mnuConfig_Click);
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::EmailMarketing.Properties.Resources.e_mail;
             this.ClientSize = new System.Drawing.Size(792, 573);
             this.Controls.Add(this.mnuSystem);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -148,6 +156,7 @@
         private System.Windows.Forms.ToolStripMenuItem mnuScheduleView;
         private System.Windows.Forms.ToolStripMenuItem mnuTemplate;
         private System.Windows.Forms.ToolStripMenuItem mnuEvent;
+        private System.Windows.Forms.ToolStripMenuItem mnuConfig;
     }
 }
 

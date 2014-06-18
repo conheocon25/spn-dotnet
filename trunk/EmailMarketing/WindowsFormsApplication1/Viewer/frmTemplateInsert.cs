@@ -20,18 +20,18 @@ namespace EmailMarketing
         {
             InitializeComponent();
         }
-
-        private void frmTemplateInsert_Load(object sender, EventArgs e)
-        {
-
-        }
-                
+                                
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            State = 1;
+            this.DialogResult = DialogResult.OK;
             NameTemplate = txtName.Text;
             Content = txtContent.Text;
             this.Close();
+        }
+
+        private void txtContent_TextChanged(object sender, EventArgs e)
+        {
+            webPreview.DocumentText = txtContent.Text;
         }
     }
 }

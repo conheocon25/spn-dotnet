@@ -64,9 +64,9 @@ namespace EmailMarketing
                 var Event = mEvent.get(Id);
 
                 frmEventUpdate F = new frmEventUpdate(Event, TagAll, TemplateAll);                
-                F.ShowDialog();
-                
-                if (F.State == 1)
+                var Result = F.ShowDialog();
+
+                if (Result == DialogResult.OK)
                 {                    
                     mEvent.update(new CEvent(Id, F.NameEvent, F.Time, F.IdTemplate, F.IdTag));
                     dgvEvent.DataSource = mEvent.getAll();                    
@@ -80,14 +80,19 @@ namespace EmailMarketing
             var TemplateAll = mTemplate.getAll();
 
             frmEventInsert F = new frmEventInsert(TagAll, TemplateAll);
-            F.ShowDialog();
+            var Result = F.ShowDialog();
 
-            if (F.State == 1)
+            if (Result == DialogResult.OK)
             {                
                 mEvent.insert(new CEvent(1, F.NameEvent, F.Time, F.IdTemplate, F.IdTag));
                 dgvEvent.DataSource= mEvent.getAll();
             }
 
+        }
+
+        private void dgvEvent_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            mnuUpdate_Click(sender, e);
         }
     }
 }

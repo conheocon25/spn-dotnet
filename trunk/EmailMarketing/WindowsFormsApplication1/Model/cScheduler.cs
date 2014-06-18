@@ -50,6 +50,12 @@ namespace EmailMarketing
             }
         }
         
+        public CTemplate getTemplate()
+        {
+            var mTemplate = new CTemplateMapper();
+            return mTemplate.get(this._IdTemplate);
+        }
+
         [DisplayName("Thời điểm")]
         public DateTime Time
         {
@@ -75,6 +81,11 @@ namespace EmailMarketing
                 this._IdCustomer = IdCustomer;
             }
         }
+
+        public CCustomer getCustomer() {
+            var mCustomer = new CCustomerMapper();
+            return mCustomer.get(this._IdCustomer);
+        }
                 
         //[Browsable(false)]
         public int State
@@ -90,14 +101,11 @@ namespace EmailMarketing
         }
 
         public void sendMail() {
-            /*
-            string UserState = "Testing ...";
-            MailMessage message = this.Template.getMail();
+            string UserState = "Đang thử nghiệm ...";
+            MailMessage message = this.getTemplate().getEmail();
             SmtpClient smtpClient = CApp.Sender._smtpClient;
-
-            message.To.Add(this.Customer.Email);
-            smtpClient.SendAsync(message, UserState);
-             */
+            message.To.Add(this.getCustomer().Email);
+            smtpClient.SendAsync(message, UserState);            
         }
 
     }    

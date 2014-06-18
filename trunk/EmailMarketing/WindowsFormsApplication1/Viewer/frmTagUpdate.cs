@@ -11,8 +11,7 @@ using System.Windows.Forms;
 namespace EmailMarketing
 {
     public partial class frmTagUpdate : Form
-    {
-        public int State = -1;
+    {        
         public string NameTag = "";
 
         public frmTagUpdate(CTag Tag)
@@ -23,8 +22,8 @@ namespace EmailMarketing
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            NameTag = txtName.Text;
-            State = 1;
+            this.DialogResult = DialogResult.OK;
+            NameTag = txtName.Text;     
             this.Close();
         }
     }

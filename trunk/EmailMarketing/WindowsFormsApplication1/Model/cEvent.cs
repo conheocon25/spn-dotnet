@@ -22,7 +22,7 @@ namespace EmailMarketing
             this._IdTag = IdTag;
         }
         
-        [DisplayName("#ID")]
+        [DisplayName("Id")]
         public int Id
         {
             get
@@ -48,19 +48,6 @@ namespace EmailMarketing
             }
         }
 
-        [Browsable(false)]
-        public int IdTemplate
-        {
-            get
-            {
-                return this._IdTemplate;
-            }
-            set
-            {
-                this._IdTemplate = IdTemplate;
-            }
-        }
-
         [DisplayName("Thời điểm")]
         public DateTime Time
         {
@@ -75,6 +62,33 @@ namespace EmailMarketing
         }
 
         [Browsable(false)]
+        public int IdTemplate
+        {
+            get
+            {
+                return this._IdTemplate;
+            }
+            set
+            {
+                this._IdTemplate = IdTemplate;
+            }
+        }
+
+        public CTemplate getTemplate()
+        {
+            var mTemplate = new CTemplateMapper();
+            return mTemplate.get(this._IdTemplate);
+        }
+        
+        [DisplayName("Mẫu thư")]
+        public string TemplateName
+        {
+            get{ return this.getTemplate().Name;}
+            set{}
+        }
+                       
+
+        [Browsable(false)]
         public int IdTag
         {
             get
@@ -87,6 +101,18 @@ namespace EmailMarketing
             }
         }
 
+        [DisplayName("Nhóm")]
+        public string TagName
+        {
+            get { return this.getTag().Name; }
+            set { }
+        }
+
+        public CTag getTag()
+        {
+            var mTag = new CTagMapper();
+            return mTag.get(this._IdTag);
+        }
 
     }    
 }

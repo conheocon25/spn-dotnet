@@ -30,6 +30,27 @@ namespace EmailMarketing
             return lst;
         }
 
+        public IList<CScheduler> getAllReady()
+        {
+            CApp.connect();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_scheduler WHERE state=0", CApp.connection);
+            SqlDataReader reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+            CApp.close();
+
+            IList<CScheduler> lst = dt.AsEnumerable().Select(row =>
+                new CScheduler(
+                    row.Field<int>("id"),
+                    row.Field<DateTime>("time"),
+                    row.Field<int>("id_template"),
+                    row.Field<int>("id_customer"),
+                    row.Field<int>("state")
+                )
+            ).ToList();
+            return lst;
+        }
+
         public CScheduler get(int Id)
         {
             CApp.connect();

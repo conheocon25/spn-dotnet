@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EmailMarketing
 {
-    public partial class frmOption : Form
+    public partial class frmConfig : Form
     {
-        public frmOption()
+        public frmConfig()
         {
             InitializeComponent();
         }

@@ -78,40 +78,19 @@ namespace EmailMarketing
             CApp.close();
                         
         }
-
-        private void lstMain_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+                
         private void tmrSending_Tick(object sender, EventArgs e)
-        {
-            CApp.connect();
-            
-            //Lấy về tổng số tin cần gửi
-            SqlCommand cmdScheduler = new SqlCommand("SELECT * FROM tbl_scheduler WHERE state=0", CApp.connection);
-            SqlDataReader rdrScheduler = cmdScheduler.ExecuteReader();
-            DataTable dt = new DataTable();
-            dt.Load(rdrScheduler);
-            nScheduler = dt.Rows.Count;
-            CApp.close();
-            
-            if (CApp.bNextMessage == true && this.nScheduler > curMessage)
-            {
-                //Đoạn mã gửi email đi
-                string UserState = "Testing ...";
-                
-                // add from,to mailaddresses
-                MailAddress from = new MailAddress("thanhbao2007vl@gmail.com", "Thanh Bảo");
-                MailAddress to = new MailAddress("tuanbuithanh@gmail.com", "Bùi Thanh Tuấn");
-                MailMessage Message = new MailMessage(from, to);
-                Message.Subject = "Thử nè";
-                Message.Body = "<H1>1. Thử 2. Chơi 3. Ngủ</H1>";
-                Message.IsBodyHtml = true;
+        {                        
+            //Lấy về tổng số tin cần gửi            
+            IList<CScheduler> SchedulerAll = mScheduler.getAllReady();
+            nScheduler = SchedulerAll.Count;
+            prbSending.Maximum = nScheduler;
 
-                CApp.Sender._smtpClient.SendAsync(Message, UserState);
-                
-                curMessage ++;
+            if (CApp.bNextMessage == true && nScheduler > curMessage)
+            {                
+                SchedulerAll[curMessage].sendMail();
+                curMessage++;
+                prbSending.Value = curMessage;
                 CApp.bNextMessage = false;
                 updateProcesssing();
             }            
@@ -134,6 +113,9 @@ namespace EmailMarketing
             lblProcessing.Text = curMessage + " / " + nScheduler.ToString();
         }
 
-
+        private void frmScheduler_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            CApp.bNextMessage = false;
+        }        
     }
 }

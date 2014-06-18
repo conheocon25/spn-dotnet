@@ -104,11 +104,11 @@
     <Compile Include="Viewer\frmCustomer.Designer.cs">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </Compile>
-    <Compile Include="Viewer\frmOption.cs">
+    <Compile Include="Viewer\frmConfig.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Viewer\frmOption.Designer.cs">
-      <DependentUpon>frmOption.cs</DependentUpon>
+    <Compile Include="Viewer\frmConfig.Designer.cs">
+      <DependentUpon>frmConfig.cs</DependentUpon>
     </Compile>
     <Compile Include="Viewer\frmScheduler.cs">
       <SubType>Form</SubType>
@@ -181,8 +181,8 @@
     <EmbeddedResource Include="Viewer\frmCustomer.resx">
       <DependentUpon>frmCustomer.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Viewer\frmOption.resx">
-      <DependentUpon>frmOption.cs</DependentUpon>
+    <EmbeddedResource Include="Viewer\frmConfig.resx">
+      <DependentUpon>frmConfig.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Viewer\frmScheduler.resx">
       <DependentUpon>frmScheduler.cs</DependentUpon>

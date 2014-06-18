@@ -16,17 +16,15 @@ namespace EmailMarketing
         CTagMapper mTag = new CTagMapper();
         public frmTag()
         {
-            InitializeComponent();
-            //CService.updateGrid(dgvTag, "SELECT * FROM tbl_tag");
-            var TagAll = mTag.getAll();
-            dgvTag.DataSource = TagAll;
+            InitializeComponent();                        
+            dgvTag.DataSource = mTag.getAll();
         }
                                
         private void mnuInsert_Click(object sender, EventArgs e)
         {
             frmTagInsert F = new frmTagInsert();
-            F.ShowDialog();
-            if (F.State == 1)
+            var result = F.ShowDialog();
+            if (result == DialogResult.OK)
             {                
                 mTag.insert(new CTag(0, F.NameTag));
                 dgvTag.DataSource = mTag.getAll();                
@@ -36,13 +34,15 @@ namespace EmailMarketing
         private void mnuUpdate_Click(object sender, EventArgs e)
         {                                    
             if (dgvTag.SelectedRows.Count > 0)
-            {
+            {                
                 int Index = dgvTag.SelectedRows[0].Index;
-                CTag Tag = mTag.get(Index);
+                int IdTag = (int)dgvTag.Rows[Index].Cells[0].Value;
+
+                CTag Tag = mTag.get(IdTag);
                 frmTagUpdate F = new frmTagUpdate(Tag);
                 
-                F.ShowDialog();
-                if (F.State == 1)
+                DialogResult result = F.ShowDialog();
+                if (result == DialogResult.OK)
                 {
                     Tag.Name = F.NameTag;
                     mTag.update(Tag);
