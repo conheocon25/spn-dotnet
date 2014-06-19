@@ -74,5 +74,10 @@ namespace EmailMarketing
                 mnuAction.Show(dgvTag, new Point(e.X, e.Y));
             }
         }
+
+        private void dgvTag_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            mnuUpdate_Click(sender, e);
+        }
     }
 }

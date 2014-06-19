@@ -38,12 +38,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cboTemplate = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboState = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // btnUpdate
             // 
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Location = new System.Drawing.Point(234, 205);
+            this.btnUpdate.Location = new System.Drawing.Point(234, 222);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(102, 31);
             this.btnUpdate.TabIndex = 13;
@@ -121,11 +123,31 @@
             this.cboTemplate.Size = new System.Drawing.Size(311, 21);
             this.cboTemplate.TabIndex = 5;
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(173, 198);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 31;
+            this.label5.Text = "Tình trạng";
+            // 
+            // cboState
+            // 
+            this.cboState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboState.FormattingEnabled = true;
+            this.cboState.Location = new System.Drawing.Point(234, 195);
+            this.cboState.Name = "cboState";
+            this.cboState.Size = new System.Drawing.Size(311, 21);
+            this.cboState.TabIndex = 30;
+            // 
             // frmEventInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 573);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cboState);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboTemplate);
             this.Controls.Add(this.label3);
@@ -156,6 +178,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.ComboBox cboTemplate;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cboState;
 
     }
 }

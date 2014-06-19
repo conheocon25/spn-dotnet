@@ -94,6 +94,7 @@
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.Size = new System.Drawing.Size(524, 573);
             this.dgvCustomer.TabIndex = 0;
+            this.dgvCustomer.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCustomer_RowHeaderMouseDoubleClick);
             this.dgvCustomer.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvCustomer_MouseClick);
             // 
             // mnuAction

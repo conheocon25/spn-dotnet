@@ -24,66 +24,36 @@ namespace EmailMarketing
         [DisplayName("Id")]
         public int Id
         {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this._Id = Id;
-            }
+            get{return this._Id;}
+            set{this._Id = value;}
         }
 
         [Browsable(false)]
         public int IdTag
         {
-            get
-            {
-                return this._IdTag;
-            }
-            set
-            {
-                this._IdTag = IdTag;
-            }
+            get{return this._IdTag;}
+            set{this._IdTag = value;}
         }
                         
         [DisplayName("Tên KH")]
         public string Name
         {            
-            get
-            {
-                return this._Name;
-            }
-            set
-            {
-                this._Name = Name;
-            }
+            get{return this._Name;}
+            set{this._Name = value;}
         }
 
         [DisplayName("Email")]
         public string Email
         {
-            get
-            {
-                return this._Email;
-            }
-            set
-            {
-                this._Email = Email;
-            }
+            get{return this._Email;}
+            set{this._Email = value;}
         }
 
         [DisplayName("Điện thoại")]
         public string Phone
         {
-            get
-            {
-                return this._Phone;
-            }
-            set
-            {
-                this._Phone = Phone;
-            }
+            get{return this._Phone;}
+            set{this._Phone = value;}
         }
 
     }

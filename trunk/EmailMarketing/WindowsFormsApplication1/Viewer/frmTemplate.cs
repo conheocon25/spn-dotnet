@@ -82,5 +82,10 @@ namespace EmailMarketing
 
         }
 
+        private void dgvTemplate_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            mnuUpdate_Click(sender, e);
+        }
+
     }
 }

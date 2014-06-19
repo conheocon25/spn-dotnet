@@ -104,7 +104,7 @@ namespace EmailMarketing
         public void delete(int Id)
         {
             CApp.connect();
-            SqlCommand cmd = new SqlCommand("DELETE FROM  tbl_scheduler WHERE id=@id", CApp.connection);
+            SqlCommand cmd = new SqlCommand("DELETE FROM  tbl_log WHERE id=@id", CApp.connection);
             cmd.Parameters.AddWithValue("@id", Id);
             cmd.ExecuteNonQuery();
             CApp.close();
@@ -113,7 +113,7 @@ namespace EmailMarketing
         public void deleteAll()
         {
             CApp.connect();
-            SqlCommand cmd = new SqlCommand("DELETE FROM  tbl_scheduler", CApp.connection);
+            SqlCommand cmd = new SqlCommand("DELETE FROM  tbl_log", CApp.connection);
             cmd.ExecuteNonQuery();
             CApp.close();
         }

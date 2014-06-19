@@ -27,27 +27,15 @@ namespace EmailMarketing
         [DisplayName("Id")]
         public int Id
         {
-            get
-            {
-                return this._Id;
-            }
-            set
-            {
-                this._Id = Id;
-            }
+            get{return this._Id;}
+            set{this._Id = value;}
         }
 
         [Browsable(false)]
         public int IdTemplate
         {
-            get
-            {
-                return this._IdTemplate;
-            }
-            set
-            {
-                this._IdTemplate = IdTemplate;
-            }
+            get{return this._IdTemplate;}
+            set{this._IdTemplate = value;}
         }
         
         public CTemplate getTemplate()
@@ -59,14 +47,8 @@ namespace EmailMarketing
         [DisplayName("Thời điểm")]
         public DateTime Time
         {
-            get
-            {
-                return this._Time;
-            }
-            set
-            {
-                this._Time = Time;
-            }
+            get{return this._Time;}
+            set{this._Time = value;}
         }
 
         [DisplayName("Mẫu thư")]
@@ -79,14 +61,8 @@ namespace EmailMarketing
         [Browsable(false)]
         public int IdCustomer
         {
-            get
-            {
-                return this._IdCustomer;
-            }
-            set
-            {
-                this._IdCustomer = IdCustomer;
-            }
+            get{return this._IdCustomer;}
+            set{this._IdCustomer = value;}
         }
 
         [DisplayName("Khách hàng")]
@@ -104,14 +80,8 @@ namespace EmailMarketing
         [Browsable(false)]
         public int State
         {
-            get
-            {
-                return this._State;
-            }
-            set
-            {
-                this._State = State;
-            }
+            get{return this._State;}
+            set{this._State = value;}
         }
 
         [DisplayName("Trạng  thái")]

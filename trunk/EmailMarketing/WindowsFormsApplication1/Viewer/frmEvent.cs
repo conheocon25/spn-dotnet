@@ -68,7 +68,7 @@ namespace EmailMarketing
 
                 if (Result == DialogResult.OK)
                 {                    
-                    mEvent.update(new CEvent(Id, F.NameEvent, F.Time, F.IdTemplate, F.IdTag));
+                    mEvent.update(new CEvent(Id, F.NameEvent, F.Time, F.IdTemplate, F.IdTag, F.State));
                     dgvEvent.DataSource = mEvent.getAll();                    
                 }
             }
@@ -83,8 +83,8 @@ namespace EmailMarketing
             var Result = F.ShowDialog();
 
             if (Result == DialogResult.OK)
-            {                
-                mEvent.insert(new CEvent(1, F.NameEvent, F.Time, F.IdTemplate, F.IdTag));
+            {
+                mEvent.insert(new CEvent(1, F.NameEvent, F.Time, F.IdTemplate, F.IdTag, F.State));
                 dgvEvent.DataSource= mEvent.getAll();
             }
 

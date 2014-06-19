@@ -36,6 +36,8 @@ namespace EmailMarketing
         static public int nSum = 0;
         static public int iScheduler = -1;
 
+        static public int nCheckScheduler = 5;
+
         static public CSender Sender = new CSender();
         
         static public void sending(){

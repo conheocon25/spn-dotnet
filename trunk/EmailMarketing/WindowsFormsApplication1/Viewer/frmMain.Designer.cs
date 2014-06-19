@@ -38,8 +38,8 @@
             this.mnuEvent = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuConfig = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuScheduleView = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSending = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuScheduleView = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuLog = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.ntiApp = new System.Windows.Forms.NotifyIcon(this.components);
@@ -47,6 +47,8 @@
             this.lblState = new System.Windows.Forms.ToolStripStatusLabel();
             this.pgbSending = new System.Windows.Forms.ToolStripProgressBar();
             this.tmrSending = new System.Windows.Forms.Timer(this.components);
+            this.tmrScheduler = new System.Windows.Forms.Timer(this.components);
+            this.lblSchedulerState = new System.Windows.Forms.ToolStripStatusLabel();
             this.mnuSystem.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -120,24 +122,24 @@
             this.aboutToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.aboutToolStripMenuItem.Text = "Hành động";
             // 
+            // mnuSending
+            // 
+            this.mnuSending.Name = "mnuSending";
+            this.mnuSending.Size = new System.Drawing.Size(151, 22);
+            this.mnuSending.Text = "Gửi tự động";
+            this.mnuSending.Click += new System.EventHandler(this.mnuSending_Click);
+            // 
             // mnuScheduleView
             // 
             this.mnuScheduleView.Name = "mnuScheduleView";
-            this.mnuScheduleView.Size = new System.Drawing.Size(152, 22);
+            this.mnuScheduleView.Size = new System.Drawing.Size(151, 22);
             this.mnuScheduleView.Text = "Phát sinh gửi ...";
             this.mnuScheduleView.Click += new System.EventHandler(this.mnuScheduleView_Click);
-            // 
-            // mnuSending
-            //             
-            this.mnuSending.Name = "mnuSending";
-            this.mnuSending.Size = new System.Drawing.Size(152, 22);
-            this.mnuSending.Text = "Gửi tự động";
-            this.mnuSending.Click += new System.EventHandler(this.mnuSending_Click);
             // 
             // mnuLog
             // 
             this.mnuLog.Name = "mnuLog";
-            this.mnuLog.Size = new System.Drawing.Size(152, 22);
+            this.mnuLog.Size = new System.Drawing.Size(151, 22);
             this.mnuLog.Text = "Nhật kí gửi";
             this.mnuLog.Click += new System.EventHandler(this.mnuLog_Click);
             // 
@@ -160,7 +162,8 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblState,
-            this.pgbSending});
+            this.pgbSending,
+            this.lblSchedulerState});
             this.statusStrip1.Location = new System.Drawing.Point(0, 551);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(792, 22);
@@ -175,6 +178,7 @@
             // 
             // pgbSending
             // 
+            this.pgbSending.Maximum = 300;
             this.pgbSending.Name = "pgbSending";
             this.pgbSending.Size = new System.Drawing.Size(100, 16);
             // 
@@ -183,6 +187,18 @@
             this.tmrSending.Enabled = true;
             this.tmrSending.Interval = 1000;
             this.tmrSending.Tick += new System.EventHandler(this.tmrSending_Tick);
+            // 
+            // tmrScheduler
+            // 
+            this.tmrScheduler.Enabled = true;
+            this.tmrScheduler.Interval = 5500;
+            this.tmrScheduler.Tick += new System.EventHandler(this.tmrScheduler_Tick);
+            // 
+            // lblSchedulerState
+            // 
+            this.lblSchedulerState.Name = "lblSchedulerState";
+            this.lblSchedulerState.Size = new System.Drawing.Size(89, 17);
+            this.lblSchedulerState.Text = "Đang kiểm tra ...";
             // 
             // frmMain
             // 
@@ -230,6 +246,8 @@
         private System.Windows.Forms.ToolStripProgressBar pgbSending;
         private System.Windows.Forms.Timer tmrSending;
         private System.Windows.Forms.ToolStripMenuItem mnuLog;
+        private System.Windows.Forms.Timer tmrScheduler;
+        private System.Windows.Forms.ToolStripStatusLabel lblSchedulerState;
     }
 }
 

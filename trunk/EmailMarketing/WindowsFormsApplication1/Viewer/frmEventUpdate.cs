@@ -16,6 +16,7 @@ namespace EmailMarketing
         public int IdTag;
         public int IdTemplate;
         public DateTime Time;
+        public int State;
 
         public frmEventUpdate(CEvent Event, IList<CTag> lstTag, IList<CTemplate> lstTemplate)
         {
@@ -32,6 +33,15 @@ namespace EmailMarketing
             cboTemplate.DisplayMember = "name";
             cboTemplate.ValueMember = "id";
             cboTemplate.SelectedValue = Event.IdTemplate;
+            
+            Dictionary<int, string> dicState = new Dictionary<int, string>();
+            dicState.Add(0, "Chưa gửi");
+            dicState.Add(1, "Đã gửi");
+
+            cboState.DataSource = new BindingSource(dicState, null);
+            cboState.DisplayMember = "Value";
+            cboState.ValueMember = "Key";
+            cboState.SelectedValue = Event.State;
 
             dtpTime.Format = DateTimePickerFormat.Custom;
             dtpTime.CustomFormat = "dd/MM/yyyy hh:mm";
@@ -51,6 +61,7 @@ namespace EmailMarketing
             IdTag = (int)cboTag.SelectedValue;
             IdTemplate = (int)cboTemplate.SelectedValue;
             Time = dtpTime.Value;
+            State = (int)cboState.SelectedValue;
 
             this.Close();
         }
