@@ -9,7 +9,8 @@ using System.Windows.Forms;
 namespace EmailMarketing
 {
     public partial class frmMain : Form
-    {                
+    {
+        CEventMapper mEvent = new CEventMapper();
         CSchedulerMapper mScheduler = new CSchedulerMapper();
         public frmMain()
         {            
@@ -18,12 +19,16 @@ namespace EmailMarketing
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            //Kiểm tra thông điệp đã đơợc để trong hàng đợi
             IList<CScheduler> SchedulerAll = mScheduler.getAllReady();
             CApp.nSum = SchedulerAll.Count;
             CApp.nSend = 0;
             pgbSending.Maximum = SchedulerAll.Count;
-
             updateProcesssing();
+            
+            //Kiểm tra phát sinh dữ liệu gửi đi
+            tmrScheduler.Interval = 1000 * CApp.nCheckScheduler;
+            tmrScheduler.Enabled = true;
         }
 
         private void mnuCustomerView_Click(object sender, EventArgs e)
@@ -31,25 +36,21 @@ namespace EmailMarketing
             frmCustomer F = new frmCustomer();
             F.ShowDialog();
         }
-
         private void mnuOption_Click(object sender, EventArgs e)
         {
             frmConfig F = new frmConfig();
             F.ShowDialog();
         }
-
         private void mnuEventView_Click(object sender, EventArgs e)
         {
             frmEvent F = new frmEvent();
             F.ShowDialog();
-        }
-        
+        }        
         private void mnuScheduleView_Click(object sender, EventArgs e)
         {
             frmScheduler F = new frmScheduler();
             F.ShowDialog();
-        }
-                
+        }                
         private void mnuAbout_Click(object sender, EventArgs e)
         {
             frmAbout F = new frmAbout();
@@ -104,7 +105,7 @@ namespace EmailMarketing
                 CApp.bAuto = true;                
                 mnuSending.Text = "Ngưng gửi";
 
-                IList<CScheduler> SchedulerAll = mScheduler.getAllReady();
+                var SchedulerAll = mScheduler.getAllReady();
                 CApp.nSum = SchedulerAll.Count;
 
             }
@@ -130,6 +131,23 @@ namespace EmailMarketing
         {
             frmLog F = new frmLog();
             F.ShowDialog();
+        }
+
+        private void tmrScheduler_Tick(object sender, EventArgs e)
+        {            
+            var EventAll = mEvent.getAllReady();
+            if (EventAll.Count > 0) {
+                lblSchedulerState.Text = "Có dữ liệu ...";
+                var Event = EventAll[0];
+                Event.generate();
+                Event.State = 1;
+                mEvent.update(Event);
+
+                CApp.bAuto = true;
+
+                CApp.nSum = mScheduler.getAll().Count;
+                updateProcesssing();
+            }
         }
     }
 }

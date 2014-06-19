@@ -16,6 +16,7 @@ namespace EmailMarketing
         public int IdTag;
         public int IdTemplate;
         public DateTime Time;
+        public int State;
 
         public frmEventInsert(IList<CTag> TagAll, IList<CTemplate> TemplateAll)
         {
@@ -43,7 +44,7 @@ namespace EmailMarketing
             IdTag = (int)cboTag.SelectedValue;
             IdTemplate = (int)cboTemplate.SelectedValue;
             Time = dtpTime.Value;
-
+            State = (int)cboState.SelectedValue;
             this.Close();
         }
 

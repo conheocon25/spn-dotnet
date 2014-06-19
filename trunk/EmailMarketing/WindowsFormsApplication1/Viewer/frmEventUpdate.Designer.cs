@@ -38,12 +38,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cboState = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(193, 171);
+            this.label4.Location = new System.Drawing.Point(198, 171);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
             this.label4.TabIndex = 27;
@@ -87,7 +89,7 @@
             // btnUpdate
             // 
             this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUpdate.Location = new System.Drawing.Point(234, 205);
+            this.btnUpdate.Location = new System.Drawing.Point(234, 222);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(102, 31);
             this.btnUpdate.TabIndex = 5;
@@ -121,11 +123,31 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "Tên sự kiện";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(173, 198);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(55, 13);
+            this.label5.TabIndex = 29;
+            this.label5.Text = "Tình trạng";
+            // 
+            // cboState
+            // 
+            this.cboState.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cboState.FormattingEnabled = true;
+            this.cboState.Location = new System.Drawing.Point(234, 195);
+            this.cboState.Name = "cboState";
+            this.cboState.Size = new System.Drawing.Size(313, 21);
+            this.cboState.TabIndex = 28;
+            // 
             // frmEventUpdate
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(792, 573);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.cboState);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.cboTemplate);
             this.Controls.Add(this.label3);
@@ -158,5 +180,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ComboBox cboState;
     }
 }

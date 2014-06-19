@@ -24,7 +24,30 @@ namespace EmailMarketing
                     row.Field<string>("name"),
                     row.Field<DateTime>("time"), 
                     row.Field<int>("id_template"),
-                    row.Field<int>("id_tag")
+                    row.Field<int>("id_tag"),
+                    row.Field<int>("state")
+                )
+            ).ToList();
+            return lstTag;
+        }
+
+        public IList<CEvent> getAllReady()
+        {
+            CApp.connect();
+            SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_event WHERE DATEDIFF(day, GETDATE(), [time])=0 AND state=0", CApp.connection);
+            SqlDataReader reader = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(reader);
+            CApp.close();
+
+            IList<CEvent> lstTag = dt.AsEnumerable().Select(row =>
+                new CEvent(
+                    row.Field<int>("id"),
+                    row.Field<string>("name"),
+                    row.Field<DateTime>("time"),
+                    row.Field<int>("id_template"),
+                    row.Field<int>("id_tag"),
+                    row.Field<int>("state")
                 )
             ).ToList();
             return lstTag;
@@ -43,7 +66,8 @@ namespace EmailMarketing
                 dt.Rows[0].Field<string>("name"),
                 dt.Rows[0].Field<DateTime>("time"),
                 dt.Rows[0].Field<int>("id_template"),
-                dt.Rows[0].Field<int>("id_tag")
+                dt.Rows[0].Field<int>("id_tag"),
+                dt.Rows[0].Field<int>("state")
             );
             CApp.close();
 
@@ -54,11 +78,12 @@ namespace EmailMarketing
         public void insert(CEvent Tag)
         {
             CApp.connect();
-            SqlCommand cmd = new SqlCommand("INSERT INTO tbl_event(name, time, id_template, id_tag) VALUES(@name, @time, @id_template, @id_tag)", CApp.connection);
+            SqlCommand cmd = new SqlCommand("INSERT INTO tbl_event(name, time, id_template, id_tag, state) VALUES(@name, @time, @id_template, @id_tag)", CApp.connection);
             cmd.Parameters.AddWithValue("@name", Tag.Name);
             cmd.Parameters.AddWithValue("@time", Tag.Time);
             cmd.Parameters.AddWithValue("@id_template", Tag.IdTemplate);
             cmd.Parameters.AddWithValue("@id_tag", Tag.IdTag);
+            cmd.Parameters.AddWithValue("@state", Tag.State);
             cmd.ExecuteNonQuery();
             CApp.close();
         }
@@ -66,12 +91,13 @@ namespace EmailMarketing
         public void update(CEvent Tag)
         {
             CApp.connect();
-            SqlCommand cmd = new SqlCommand("UPDATE tbl_event SET name=@name, time=@time, id_template=@id_template, id_tag=@id_tag  WHERE id=@id", CApp.connection);
+            SqlCommand cmd = new SqlCommand("UPDATE tbl_event SET name=@name, time=@time, id_template=@id_template, id_tag=@id_tag, state=@state  WHERE id=@id", CApp.connection);
             cmd.Parameters.AddWithValue("@id", Tag.Id);
             cmd.Parameters.AddWithValue("@name", Tag.Name);
             cmd.Parameters.AddWithValue("@time", Tag.Time);
             cmd.Parameters.AddWithValue("@id_template", Tag.IdTemplate);
             cmd.Parameters.AddWithValue("@id_tag", Tag.IdTag);
+            cmd.Parameters.AddWithValue("@state", Tag.State);
             cmd.ExecuteNonQuery();
             CApp.close();
         }

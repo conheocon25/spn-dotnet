@@ -47,6 +47,7 @@
             this.dgvTemplate.Name = "dgvTemplate";
             this.dgvTemplate.Size = new System.Drawing.Size(792, 573);
             this.dgvTemplate.TabIndex = 0;
+            this.dgvTemplate.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTemplate_RowHeaderMouseDoubleClick);
             this.dgvTemplate.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvTemplate_MouseClick);
             // 
             // mnuAction
@@ -56,27 +57,27 @@
             this.mnuUpdate,
             this.mnuDelete});
             this.mnuAction.Name = "mnuAction";
-            this.mnuAction.Size = new System.Drawing.Size(153, 92);
+            this.mnuAction.Size = new System.Drawing.Size(119, 70);
             this.mnuAction.Opening += new System.ComponentModel.CancelEventHandler(this.mnuAction_Opening);
             // 
             // mnuInsert
             // 
             this.mnuInsert.Name = "mnuInsert";
-            this.mnuInsert.Size = new System.Drawing.Size(152, 22);
+            this.mnuInsert.Size = new System.Drawing.Size(118, 22);
             this.mnuInsert.Text = "Thêm";
             this.mnuInsert.Click += new System.EventHandler(this.mnuInsert_Click);
             // 
             // mnuUpdate
             // 
             this.mnuUpdate.Name = "mnuUpdate";
-            this.mnuUpdate.Size = new System.Drawing.Size(152, 22);
+            this.mnuUpdate.Size = new System.Drawing.Size(118, 22);
             this.mnuUpdate.Text = "Cập nhật";
             this.mnuUpdate.Click += new System.EventHandler(this.mnuUpdate_Click);
             // 
             // mnuDelete
             // 
             this.mnuDelete.Name = "mnuDelete";
-            this.mnuDelete.Size = new System.Drawing.Size(152, 22);
+            this.mnuDelete.Size = new System.Drawing.Size(118, 22);
             this.mnuDelete.Text = "Xóa";
             this.mnuDelete.Click += new System.EventHandler(this.mnuDelete_Click);
             // 

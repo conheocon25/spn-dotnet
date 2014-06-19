@@ -28,9 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLog));
             this.dgvLog = new System.Windows.Forms.DataGridView();
+            this.mnuAction = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mnuDelete = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuDeleteAll = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLog)).BeginInit();
+            this.mnuAction.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvLog
@@ -42,6 +47,29 @@
             this.dgvLog.Size = new System.Drawing.Size(792, 573);
             this.dgvLog.TabIndex = 0;
             this.dgvLog.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLog_CellContentClick);
+            this.dgvLog.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvLog_MouseClick);
+            // 
+            // mnuAction
+            // 
+            this.mnuAction.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuDelete,
+            this.mnuDeleteAll});
+            this.mnuAction.Name = "mnuAction";
+            this.mnuAction.Size = new System.Drawing.Size(112, 48);
+            // 
+            // mnuDelete
+            // 
+            this.mnuDelete.Name = "mnuDelete";
+            this.mnuDelete.Size = new System.Drawing.Size(111, 22);
+            this.mnuDelete.Text = "Xóa";
+            this.mnuDelete.Click += new System.EventHandler(this.mnuDelete_Click);
+            // 
+            // mnuDeleteAll
+            // 
+            this.mnuDeleteAll.Name = "mnuDeleteAll";
+            this.mnuDeleteAll.Size = new System.Drawing.Size(111, 22);
+            this.mnuDeleteAll.Text = "Xóa hết";
+            this.mnuDeleteAll.Click += new System.EventHandler(this.mnuDeleteAll_Click);
             // 
             // frmLog
             // 
@@ -57,6 +85,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Email Marketing > Nhật kí";
             ((System.ComponentModel.ISupportInitialize)(this.dgvLog)).EndInit();
+            this.mnuAction.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -64,5 +93,8 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvLog;
+        private System.Windows.Forms.ContextMenuStrip mnuAction;
+        private System.Windows.Forms.ToolStripMenuItem mnuDelete;
+        private System.Windows.Forms.ToolStripMenuItem mnuDeleteAll;
     }
 }

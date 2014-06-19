@@ -128,6 +128,11 @@ namespace EmailMarketing
                 curNode = N;
             }
         }
+
+        private void dgvCustomer_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            mnuUpdate_Click(sender, e);
+        }
         
     }
 }

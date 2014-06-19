@@ -47,6 +47,7 @@
             this.dgvTag.Name = "dgvTag";
             this.dgvTag.Size = new System.Drawing.Size(792, 573);
             this.dgvTag.TabIndex = 0;
+            this.dgvTag.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvTag_RowHeaderMouseDoubleClick);
             this.dgvTag.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dgvTag_MouseClick);
             // 
             // mnuAction

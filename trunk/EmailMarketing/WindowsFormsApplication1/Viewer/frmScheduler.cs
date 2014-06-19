@@ -40,21 +40,8 @@ namespace EmailMarketing
         {                                                            
             int IdEvent = (int)lstMain.SelectedValue;
             var Event = mEvent.get(IdEvent);
-            var CustomerAll = mCustomer.getByTag(Event.IdTag);
-
-            foreach (var Customer in CustomerAll)
-            {                                
-                mScheduler.insert(
-                    new CScheduler(
-                        1,
-                        Event.Time,
-                        Event.IdTemplate,
-                        Customer.Id,
-                        0
-                        )
-                );
-            }
-            dgvScheduler.DataSource = mScheduler.getAllReady();            
+            Event.generate();
+            dgvScheduler.DataSource = mScheduler.getAllReady();
         }
                
         
