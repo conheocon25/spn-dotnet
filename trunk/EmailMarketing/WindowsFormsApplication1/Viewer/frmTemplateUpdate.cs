@@ -20,6 +20,7 @@ namespace EmailMarketing
             InitializeComponent();
             txtName.Text = Template.Name;
             txtContent.Text = Template.Content;
+            webPreview.DocumentText = Template.Content;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -36,9 +37,13 @@ namespace EmailMarketing
         }
 
         private void frmTemplateUpdate_Load(object sender, EventArgs e)
-        {            
+        {                        
+            webPreview.Navigate("about:blank");
+            if (webPreview.Document != null)
+            {
+                webPreview.Document.Write(string.Empty);
+            }
             webPreview.DocumentText = txtContent.Text;
-            webPreview.Refresh();
         }
     }
 }
