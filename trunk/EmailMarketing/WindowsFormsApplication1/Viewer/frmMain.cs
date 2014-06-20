@@ -97,23 +97,7 @@ namespace EmailMarketing
             this.ShowInTaskbar = true;
             ntiApp.Visible = false;
         }
-                
-        private void mnuSending_Click(object sender, EventArgs e)
-        {
-            if (CApp.bAuto == false)
-            {
-                CApp.bAuto = true;                
-                mnuSending.Text = "Ngưng gửi";
-
-                var SchedulerAll = mScheduler.getAllReady();
-                CApp.nSum = SchedulerAll.Count;
-
-            }
-            else {
-                CApp.bAuto = false;                
-                mnuSending.Text = "Gửi tự động";            
-            }         
-        }
+                        
         public void updateProcesssing()
         {
             lblState.Text = "Thông báo " + CApp.nSend + " / " + (CApp.nSum + CApp.nSend);
@@ -137,12 +121,12 @@ namespace EmailMarketing
         {            
             var EventAll = mEvent.getAllReady();
             if (EventAll.Count > 0) {
-                lblSchedulerState.Text = "Có dữ liệu ...";
-                var Event = EventAll[0];
-                Event.generate();
-                Event.State = 1;
-                mEvent.update(Event);
-
+                lblSchedulerState.Text = "Có dữ liệu ...";                
+                foreach (var Event in EventAll){
+                    Event.generate();
+                    Event.State = 1;
+                    mEvent.update(Event);
+                }
                 CApp.bAuto = true;
 
                 CApp.nSum = mScheduler.getAll().Count;
