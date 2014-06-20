@@ -31,7 +31,7 @@ namespace WindowsFormsApplication1
             server = "mysql.net";
             database = "spncom_qlcafe_cafecoirieng";
             uid = "root";
-            password = "nhatkyty25";
+            password = "admin123456";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
