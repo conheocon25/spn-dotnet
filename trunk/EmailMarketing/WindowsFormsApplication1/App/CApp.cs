@@ -12,7 +12,7 @@ namespace EmailMarketing
     {        
         static public void connect()
         {
-            string strConnect = "Data Source= .\\SPNTEAM;Initial catalog=dbEmailMarketing;Integrated security=SSPI;Application Name=True";
+            string strConnect = "Data Source= STUDIO-PC;Initial catalog=dbEmailMarketing;Integrated security=SSPI;Application Name=True";
             try
             {
                 connection  = new SqlConnection(strConnect);
