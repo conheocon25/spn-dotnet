@@ -1,0 +1,8 @@
+F:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\bin\Debug\KaraokeBaDuc.exe.config
+F:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\bin\Debug\KaraokeBaDuc.exe
+F:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\bin\Debug\KaraokeBaDuc.pdb
+F:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.csprojResolveAssemblyReference.cache
+F:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.Properties.Resources.resources
+F:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.csproj.GenerateResource.Cache
+F:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.exe
+F:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.pdb
