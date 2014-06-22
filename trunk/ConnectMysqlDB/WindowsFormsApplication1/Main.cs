@@ -24,35 +24,14 @@ namespace WindowsFormsApplication1
         public void LoadData()
         {
             myDBConnection = new cMySQLConnection();
-            myDBConnection.LoadToDataGridView("Select * From cafecoirieng_employee", DGView1); 
+            myDBConnection.LoadToDataGridView("Select * From k3d_employee", DGView1); 
         }
         private void Main_Load(object sender, EventArgs e)
         {
             LoadData();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            string myConnectionString = "Server=gator3155.hostgator.com;Database=spncom_qlcuahang_hdncomputer;Uid=spncom_admindb;Pwd=admin368189";
-            var connection = new MySqlConnection(myConnectionString);
-            connection.Open();
-            try
-            {
-                MySqlCommand cmd = connection.CreateCommand();
-                cmd.CommandText = "Select id, name, email From shopc_user";
-                var dataAdapter = new MySqlDataAdapter(cmd);
-                var dataSet = new DataSet();
-                dataAdapter.Fill(dataSet);
-                DGView1.DataSource = dataSet.Tables[0].DefaultView;
-                
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("loi");
-                throw;
-            }
-            connection.Close();
-        }
+       
 
         public void LoadToText()
         {
@@ -106,13 +85,13 @@ namespace WindowsFormsApplication1
             {
                 gender = 0;
             }
-            string mysql = "Insert into cafecoirieng_employee (id, name, job, gender, phone, address, salary_base, card) VALUES(null,'" 
+            string mysql = "Insert into k3d_employee (id, name, job, gender, phone, address, salary_base) VALUES(null,'" 
                 + txtName.Text + "','"
                 + txtJob.Text + "',"
                 + gender + ",'"
                 + txtPhone.Text + "','"
                 + txtAddress.Text + "',"
-                + txtSalaryBase.Text + ",'')";
+                + txtSalaryBase.Text + ")";
             myDBConnection = new cMySQLConnection();
             myDBConnection.Insert(mysql);
 
@@ -126,13 +105,13 @@ namespace WindowsFormsApplication1
             {
                 gender = 0;
             }
-            string mysql = "Update cafecoirieng_employee set name='" + txtName.Text 
+            string mysql = "Update k3d_employee set name='" + txtName.Text 
                 +"', job='" + txtJob.Text
                 + "', gender=" + gender
                 + ", phone='" + txtPhone.Text
                 + "', address='" + txtAddress.Text
                 + "', salary_base=" + txtSalaryBase.Text
-                + ", card='' Where id=" + txtStt.Text;
+                + " Where id=" + txtStt.Text;
                 
             myDBConnection = new cMySQLConnection();
             myDBConnection.Update(mysql);
@@ -141,7 +120,7 @@ namespace WindowsFormsApplication1
 
         private void btDelete_Click(object sender, EventArgs e)
         {
-            string mysql = "DELETE FROM cafecoirieng_employee WHERE id=" + txtStt.Text;
+            string mysql = "DELETE FROM k3d_employee WHERE id=" + txtStt.Text;
             myDBConnection = new cMySQLConnection();
             myDBConnection.Delete(mysql);
             LoadData();

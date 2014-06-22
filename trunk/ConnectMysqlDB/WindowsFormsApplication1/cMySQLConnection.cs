@@ -28,10 +28,10 @@ namespace WindowsFormsApplication1
         }
         private void Initialize()
         {
-            server = "mysql.net";
-            database = "spncom_qlcafe_cafecoirieng";
-            uid = "root";
-            password = "admin123456";
+            server = "gator3155.hostgator.com";
+            database = "spncom_qlkaraoke_baduc";
+            uid = "spncom_admindb";
+            password = "admin368189";
             string connectionString;
             connectionString = "SERVER=" + server + ";" + "DATABASE=" +
             database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
