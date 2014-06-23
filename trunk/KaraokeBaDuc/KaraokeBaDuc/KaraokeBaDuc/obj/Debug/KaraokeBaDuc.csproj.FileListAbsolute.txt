@@ -6,3 +6,6 @@ F:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\Kara
 F:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.csproj.GenerateResource.Cache
 F:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.exe
 F:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.pdb
+D:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\bin\Debug\KaraokeBaDuc.exe.config
+D:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.exe
+D:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.pdb
