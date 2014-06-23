@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RestaurantApp.Data
+
+namespace RestaurantApp
 {
-    class CGlobal
+    static class CGlobal
     {
+        public static CData Data = new CData();
+
     }
 }
