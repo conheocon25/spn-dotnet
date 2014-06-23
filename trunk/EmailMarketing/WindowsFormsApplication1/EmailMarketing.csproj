@@ -32,6 +32,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.4.6.0, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Library\HtmlAgilityPack.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
@@ -246,6 +250,11 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\305.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Library\HtmlAgilityPack.dll" />
+    <Content Include="Library\HtmlAgilityPack.pdb" />
+    <Content Include="Library\HtmlAgilityPack.XML" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

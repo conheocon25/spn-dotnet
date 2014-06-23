@@ -81,7 +81,6 @@ namespace EmailMarketing
             cmdInsert.Parameters.AddWithValue("@phone", Customer.Phone);
             cmdInsert.ExecuteNonQuery();
             CApp.close();
-
         }
         public void update(CCustomer Customer)
         {
@@ -103,6 +102,5 @@ namespace EmailMarketing
             cmd.ExecuteNonQuery();
             CApp.close();
         }
-
     }
 }

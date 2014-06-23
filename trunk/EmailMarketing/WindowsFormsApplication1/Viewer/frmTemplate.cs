@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using HtmlAgilityPack;
 
 namespace EmailMarketing
 {
@@ -17,7 +18,8 @@ namespace EmailMarketing
         public frmTemplate()
         {
             InitializeComponent();            
-            dgvTemplate.DataSource = mTemplate.getAll();            
+            dgvTemplate.DataSource = mTemplate.getAll();
+            
         }
                                 
         private void mnuInsert_Click(object sender, EventArgs e)

@@ -18,9 +18,16 @@ namespace EmailMarketing
         public frmTemplateUpdate(CTemplate Template)
         {
             InitializeComponent();
+            
+            var doc = new HtmlAgilityPack.HtmlDocument();
+            doc.LoadHtml(Template.Content);
+            doc.DocumentNode.SelectSingleNode("//h1[@id='Title']").InnerHtml = "<h1>Tiêu đề của tui nè</h1>";
+            //doc.Save(
             txtName.Text = Template.Name;
-            txtContent.Text = Template.Content;
-            webPreview.DocumentText = Template.Content;
+            txtContent.Text = doc.DocumentNode.OuterHtml;
+            
+            //webPreview.DocumentText = Template.Content;
+            webPreview.DocumentText = doc.DocumentNode.OuterHtml;
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
