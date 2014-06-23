@@ -54,6 +54,8 @@
   <ItemGroup>
     <Compile Include="App\CApp.cs" />
     <Compile Include="App\MyEncrypt.cs" />
+    <Compile Include="Mapper\CDomainMapper.cs" />
+    <Compile Include="Model\CDomain.cs" />
     <Compile Include="Viewer\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,8 +90,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Mapper\" />
-    <Folder Include="Model\" />
     <Folder Include="Resource\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
