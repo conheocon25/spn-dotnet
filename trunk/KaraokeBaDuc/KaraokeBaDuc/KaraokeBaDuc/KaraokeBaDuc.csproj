@@ -56,6 +56,10 @@
     <Compile Include="App\MyEncrypt.cs" />
     <Compile Include="Mapper\CDomainMapper.cs" />
     <Compile Include="Model\CDomain.cs" />
+    <Compile Include="Viewer\FrmAbout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viewer\FrmAbout.Designer.cs" />
     <Compile Include="Viewer\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -73,6 +77,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Viewer\FrmAbout.resx" />
     <EmbeddedResource Include="Viewer\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
