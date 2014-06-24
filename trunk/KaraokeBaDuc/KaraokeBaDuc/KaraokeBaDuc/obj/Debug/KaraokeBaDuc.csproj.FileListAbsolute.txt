@@ -15,3 +15,4 @@ D:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\Kara
 D:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.csproj.GenerateResource.Cache
 D:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\bin\Debug\KaraokeBaDuc.exe
 D:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\bin\Debug\KaraokeBaDuc.pdb
+D:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.Viewer.FrmAbout.resources

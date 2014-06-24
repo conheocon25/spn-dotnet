@@ -16,5 +16,11 @@ namespace KaraokeBaDuc
         {
             InitializeComponent();
         }
+
+        private void mnuAbout_Click(object sender, EventArgs e)
+        {
+            frmAbout F = new frmAbout();
+            F.ShowDialog();
+        }
     }
 }
