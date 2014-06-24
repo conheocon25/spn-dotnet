@@ -35,13 +35,14 @@ namespace KaraokeBaDuc
         }
 
         //open MySQLConnection to DataBaseServer
-        private bool OpenMySQLConnection()
+        static public void Connect()
         {
             try
             {
+               
                 MySQLConnection = new MySqlConnection(ConnectionString);
                 MySQLConnection.Open();
-                return true;
+                //return true;
             }
             catch (MySqlException ex)
             {                
@@ -55,23 +56,23 @@ namespace KaraokeBaDuc
                         MessageBox.Show("Sai Mật khẩu và tài khoản!");
                         break;
                 }
-                return false;
+                //return false;
             }
         }
 
         //Close MySQLConnection
-        private bool CloseMySQLConnection()
+        static public void Close()
         {
             try
             {
                 if (MySQLConnection.State == ConnectionState.Open)
                     MySQLConnection.Close();
-                return true;
+                //return true;
             }
             catch (MySqlException ex)
             {
                 MessageBox.Show(ex.Message);
-                return false;
+                //return false;
             }           
         }
 
