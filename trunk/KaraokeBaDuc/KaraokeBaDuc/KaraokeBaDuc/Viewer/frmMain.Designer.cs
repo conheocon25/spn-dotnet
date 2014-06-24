@@ -32,10 +32,10 @@
             this.dataToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuCustomerView = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuConfig = new System.Windows.Forms.ToolStripMenuItem();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuConfigDomain = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuConfigRoom = new System.Windows.Forms.ToolStripMenuItem();
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mnuAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.mnuSystem.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,6 +75,19 @@
             this.mnuConfig.Size = new System.Drawing.Size(152, 22);
             this.mnuConfig.Text = "Cấu hình";
             // 
+            // mnuConfigDomain
+            // 
+            this.mnuConfigDomain.Name = "mnuConfigDomain";
+            this.mnuConfigDomain.Size = new System.Drawing.Size(154, 22);
+            this.mnuConfigDomain.Text = "Khu Vực";
+            this.mnuConfigDomain.Click += new System.EventHandler(this.mnuConfigDomain_Click);
+            // 
+            // mnuConfigRoom
+            // 
+            this.mnuConfigRoom.Name = "mnuConfigRoom";
+            this.mnuConfigRoom.Size = new System.Drawing.Size(154, 22);
+            this.mnuConfigRoom.Text = "Phòng Karaoke";
+            // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
@@ -87,18 +100,6 @@
             this.mnuAbout.Size = new System.Drawing.Size(70, 20);
             this.mnuAbout.Text = "Giới thiệu";
             this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
-            // 
-            // mnuConfigDomain
-            // 
-            this.mnuConfigDomain.Name = "mnuConfigDomain";
-            this.mnuConfigDomain.Size = new System.Drawing.Size(154, 22);
-            this.mnuConfigDomain.Text = "Khu Vực";
-            // 
-            // mnuConfigRoom
-            // 
-            this.mnuConfigRoom.Name = "mnuConfigRoom";
-            this.mnuConfigRoom.Size = new System.Drawing.Size(154, 22);
-            this.mnuConfigRoom.Text = "Phòng Karaoke";
             // 
             // frmMain
             // 

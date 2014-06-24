@@ -22,5 +22,11 @@ namespace KaraokeBaDuc
             frmAbout F = new frmAbout();
             F.ShowDialog();
         }
+
+        private void mnuConfigDomain_Click(object sender, EventArgs e)
+        {
+            FrmDomain F = new FrmDomain();
+            F.ShowDialog();
+        }
     }
 }

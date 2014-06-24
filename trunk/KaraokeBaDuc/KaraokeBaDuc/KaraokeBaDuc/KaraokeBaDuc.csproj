@@ -60,6 +60,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Viewer\FrmAbout.Designer.cs" />
+    <Compile Include="Viewer\FrmDomain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Viewer\FrmDomain.Designer.cs">
+      <DependentUpon>FrmDomain.cs</DependentUpon>
+    </Compile>
     <Compile Include="Viewer\frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -78,6 +84,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Viewer\FrmAbout.resx" />
+    <EmbeddedResource Include="Viewer\FrmDomain.resx">
+      <DependentUpon>FrmDomain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Viewer\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>

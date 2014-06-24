@@ -22,24 +22,22 @@ namespace KaraokeBaDuc
         //Constructor
         public CApp()
         {
-            Initialize();
+            
         }
-        private void Initialize()
-        {
-            Server = "gator3155.hostgator.com";
-            DataBaseServer = "spncom_qlkaraoke_baduc";
-            UserID = "spncom_admindb";
-            PassWord = "admin368189";
-            ConnectionString = "SERVER=" + Server + ";" + "DATABASE=" +
-            DataBaseServer + ";" + "UID=" + UserID + ";" + "PASSWORD=" + PassWord + ";";                        
-        }
-
+       
         //open MySQLConnection to DataBaseServer
         static public void Connect()
         {
             try
             {
-               
+                //Server = "gator3155.hostgator.com";
+                Server = "localhost";
+                DataBaseServer = "spncom_qlkaraoke_baduc";
+                UserID = "spncom_admindb";
+                PassWord = "admin368189";
+                ConnectionString = "SERVER=" + Server + ";" + "DATABASE=" +
+                DataBaseServer + ";" + "UID=" + UserID + ";" + "PASSWORD=" + PassWord + ";"; 
+
                 MySQLConnection = new MySqlConnection(ConnectionString);
                 MySQLConnection.Open();
                 //return true;
