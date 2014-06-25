@@ -17,3 +17,5 @@ D:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\bin\Debug\Kara
 D:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\bin\Debug\KaraokeBaDuc.pdb
 D:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.Viewer.FrmAbout.resources
 D:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.FrmDomain.resources
+D:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.FrmDomainInsert.resources
+D:\AppWebServer\SPN_DOTNET\KaraokeBaDuc\KaraokeBaDuc\KaraokeBaDuc\obj\Debug\KaraokeBaDuc.FrmDomainUpdate.resources
