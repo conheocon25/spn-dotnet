@@ -10,7 +10,7 @@ namespace EmailMarketing
 {
     public static class CApp
     {        
-        static public connect()
+        static public void connect()
         {
             string strConnect = "Data Source= STUDIO-PC;Initial catalog=dbEmailMarketing;Integrated security=SSPI;Application Name=True";
             try

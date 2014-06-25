@@ -73,41 +73,41 @@
             this.mnuEvent,
             this.mnuConfig});
             this.dataToolStripMenuItem.Name = "dataToolStripMenuItem";
-            this.dataToolStripMenuItem.Size = new System.Drawing.Size(56, 20);
+            this.dataToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.dataToolStripMenuItem.Text = "Quản lý";
             // 
             // mnuTagView
             // 
             this.mnuTagView.Name = "mnuTagView";
-            this.mnuTagView.Size = new System.Drawing.Size(130, 22);
+            this.mnuTagView.Size = new System.Drawing.Size(137, 22);
             this.mnuTagView.Text = "Thẻ";
             this.mnuTagView.Click += new System.EventHandler(this.mnuTagView_Click);
             // 
             // mnuCustomerView
             // 
             this.mnuCustomerView.Name = "mnuCustomerView";
-            this.mnuCustomerView.Size = new System.Drawing.Size(130, 22);
+            this.mnuCustomerView.Size = new System.Drawing.Size(137, 22);
             this.mnuCustomerView.Text = "Khách hàng";
             this.mnuCustomerView.Click += new System.EventHandler(this.mnuCustomerView_Click);
             // 
             // mnuTemplate
             // 
             this.mnuTemplate.Name = "mnuTemplate";
-            this.mnuTemplate.Size = new System.Drawing.Size(130, 22);
+            this.mnuTemplate.Size = new System.Drawing.Size(137, 22);
             this.mnuTemplate.Text = "Mẫu Email";
             this.mnuTemplate.Click += new System.EventHandler(this.mnuTemplate_Click);
             // 
             // mnuEvent
             // 
             this.mnuEvent.Name = "mnuEvent";
-            this.mnuEvent.Size = new System.Drawing.Size(130, 22);
+            this.mnuEvent.Size = new System.Drawing.Size(137, 22);
             this.mnuEvent.Text = "Sự kiện";
             this.mnuEvent.Click += new System.EventHandler(this.mnuEvent_Click);
             // 
             // mnuConfig
             // 
             this.mnuConfig.Name = "mnuConfig";
-            this.mnuConfig.Size = new System.Drawing.Size(130, 22);
+            this.mnuConfig.Size = new System.Drawing.Size(137, 22);
             this.mnuConfig.Text = "Cấu hình";
             this.mnuConfig.Click += new System.EventHandler(this.mnuConfig_Click);
             // 
@@ -117,27 +117,27 @@
             this.mnuScheduleView,
             this.mnuLog});
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
             this.aboutToolStripMenuItem.Text = "Nhật kí";
             // 
             // mnuScheduleView
             // 
             this.mnuScheduleView.Name = "mnuScheduleView";
-            this.mnuScheduleView.Size = new System.Drawing.Size(152, 22);
+            this.mnuScheduleView.Size = new System.Drawing.Size(155, 22);
             this.mnuScheduleView.Text = "Phát sinh gửi ...";
             this.mnuScheduleView.Click += new System.EventHandler(this.mnuScheduleView_Click);
             // 
             // mnuLog
             // 
             this.mnuLog.Name = "mnuLog";
-            this.mnuLog.Size = new System.Drawing.Size(152, 22);
+            this.mnuLog.Size = new System.Drawing.Size(155, 22);
             this.mnuLog.Text = "Nhật kí gửi";
             this.mnuLog.Click += new System.EventHandler(this.mnuLog_Click);
             // 
             // mnuAbout
             // 
             this.mnuAbout.Name = "mnuAbout";
-            this.mnuAbout.Size = new System.Drawing.Size(63, 20);
+            this.mnuAbout.Size = new System.Drawing.Size(70, 20);
             this.mnuAbout.Text = "Giới thiệu";
             this.mnuAbout.Click += new System.EventHandler(this.mnuAbout_Click);
             // 
@@ -164,7 +164,7 @@
             // lblState
             // 
             this.lblState.Name = "lblState";
-            this.lblState.Size = new System.Drawing.Size(73, 17);
+            this.lblState.Size = new System.Drawing.Size(74, 17);
             this.lblState.Text = "Đang rảnh ...";
             // 
             // pgbSending
@@ -176,8 +176,8 @@
             // lblSchedulerState
             // 
             this.lblSchedulerState.Name = "lblSchedulerState";
-            this.lblSchedulerState.Size = new System.Drawing.Size(89, 17);
-            this.lblSchedulerState.Text = "Đang kiểm tra ...";
+            this.lblSchedulerState.Size = new System.Drawing.Size(20, 17);
+            this.lblSchedulerState.Text = "+-";
             // 
             // tmrSending
             // 

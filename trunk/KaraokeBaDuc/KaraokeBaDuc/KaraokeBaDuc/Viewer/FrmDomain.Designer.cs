@@ -34,6 +34,7 @@
             // dgvDomain
             // 
             this.dgvDomain.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDomain.ContextMenuStrip = this.mnuAction;
             this.dgvDomain.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDomain.Location = new System.Drawing.Point(0, 0);
             this.dgvDomain.Name = "dgvDomain";
@@ -47,19 +48,21 @@
             this.mnuUpdate,
             this.mnuDelete});
             this.mnuAction.Name = "mnuAction";
-            this.mnuAction.Size = new System.Drawing.Size(123, 70);
+            this.mnuAction.Size = new System.Drawing.Size(153, 92);
             // 
             // mnuInsert
             // 
             this.mnuInsert.Name = "mnuInsert";
-            this.mnuInsert.Size = new System.Drawing.Size(122, 22);
+            this.mnuInsert.Size = new System.Drawing.Size(152, 22);
             this.mnuInsert.Text = "Thêm";
+            this.mnuInsert.Click += new System.EventHandler(this.mnuInsert_Click);
             // 
             // mnuUpdate
             // 
             this.mnuUpdate.Name = "mnuUpdate";
-            this.mnuUpdate.Size = new System.Drawing.Size(122, 22);
+            this.mnuUpdate.Size = new System.Drawing.Size(152, 22);
             this.mnuUpdate.Text = "Cập nhật";
+            this.mnuUpdate.Click += new System.EventHandler(this.mnuUpdate_Click);
             // 
             // mnuDelete
             // 
